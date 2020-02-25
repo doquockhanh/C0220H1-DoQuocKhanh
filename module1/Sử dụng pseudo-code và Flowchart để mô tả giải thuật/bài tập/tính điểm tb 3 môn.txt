@@ -1,0 +1,5 @@
+begin
+    input DLi,DToan,DHoa
+    TB=(DLi + Dtoan +DHoa)/3
+    display TB
+end
