@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let inputNum;
+    let total = 0;
+
+    while (inputNum != -1) {
+        inputNum = prompt("Enter number (-1 to stop)")*1;
+        total += inputNum;
+    }
+    document.getElementById("result").innerHTML = total;
+</script>
+</body>
+</html>
