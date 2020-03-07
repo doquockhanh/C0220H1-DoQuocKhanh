@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    alert("nhap vao 3 canh tam giac de kiem tra");
+    let a = prompt("nhap canh a");
+    let b = prompt("nhap canh b");
+    let c = prompt("nhap canh c");
+    if (a <= 0 || b <= 0 || c <= 0) {
+        alert("khong phai canh cua 1 tam giac");
+    } else {
+        if (a + b < c || a + c < b || b + c < a) {
+            alert("khong phai canh 1 tam giac");
+        } else {
+            alert("a , b , c la 3 canh cua 1 tam giac");
+        }
+    }
+</script>
+</body>
+</html>

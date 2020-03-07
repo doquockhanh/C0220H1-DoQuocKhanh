@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    alert("giai phuong trinh bac 2");
+    let a = prompt("nhap a");
+    let b = prompt("nhap b");
+    let c = prompt("nhap c");
+    let delta = (b*b) - (4*a*c);
+    if (a == 0) {
+        if (b == 0) {
+            if (c == 0) {
+                alert("phuong trinh vo so nghiem");
+            } else {
+                alert("phuong trinh vo nghiem");
+            }
+        } else {
+            alert("phuong trinh co nghiem : x= " + (-b / a));
+        }
+    }else{
+        if (delta > 0){
+            alert("nghiem phuong trinh la x1 = " + (-b + Math.sqrt(delta))/(2*a) + " x2 = " + (-b - Math.sqrt(delta))/(2*a));
+        }else if (delta == 0){
+            alert("phuong trinh nghiem kep x = " + (-b/2*a));
+        }else {
+            alert("phuong trinh vo nghiem");
+        }
+    }
+</script>
+</body>
+</html>

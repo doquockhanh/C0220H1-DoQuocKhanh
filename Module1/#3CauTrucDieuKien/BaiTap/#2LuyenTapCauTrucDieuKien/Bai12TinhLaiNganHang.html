@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let loan = prompt("nhap so tien vay");
+    let time = prompt("nhap thang vay");
+    let total = loan * Math.pow((1 + 0.1/12) , time);
+    alert("số tiền lãi là : " + parseInt(total-loan)+ "\n" +"tổng tiền : " + parseInt(total));
+</script>
+</body>
+</html>

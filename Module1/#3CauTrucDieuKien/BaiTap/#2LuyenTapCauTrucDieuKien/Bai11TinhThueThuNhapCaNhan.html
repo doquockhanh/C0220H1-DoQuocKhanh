@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt("Nhap thu nhap cua ban");
+    let thueCaNhan = 0;
+    if (a > 80000000) {
+        thueCaNhan = a*(35/100);
+    }else if (a > 52000000){
+        thueCaNhan = a*(30/100);
+    }else if (a > 32000000){
+        thueCaNhan = a*(25/100);
+    }else if (a > 18000000){
+        thueCaNhan = a*(20/100);
+    }else if (a > 10000000){
+        thueCaNhan = a*(15/100);
+    }else  if (a> 5000000){
+        thueCaNhan = a*(10/100);
+    }else {
+        thueCaNhan = a*(5/100);
+    }
+    alert("tien thue ca nhan phai tra la : " + parseInt(thueCaNhan));
+</script>
+
+</body>
+</html>
