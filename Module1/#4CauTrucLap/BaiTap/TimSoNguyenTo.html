@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    alert("hien thi 10 so nguyen to dau tien");
+    let flag;
+    let total = "";
+    for (let count = 0 ; count < 11 ; ) {
+        let a = prompt("nhap so");
+        for (let i = 2; i < a; i++) {
+            if (a % i === 0) {
+                flag = false;
+                break;
+            } else {
+                flag = true;
+            }
+        }
+        console.log(flag);
+        if (flag === false) {
+            count += 0;
+            total += "";
+        } else {
+            count += 1;
+            total += a + " ";
+        }
+    }
+    alert("cac so nguyen to vua nhap la : " + total);
+</script>
+</body>
+</html>

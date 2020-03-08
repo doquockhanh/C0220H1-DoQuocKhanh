@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let total = "";
+    for (let i = 1; i < 101; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            total += "FizzBuzz "
+        }else  if (i % 3 === 0 && i % 5 !== 0) {
+            total += "Fizz "
+        }else if (i % 3 !== 0 && i % 5 === 0) {
+            total += "Buzz "
+        }else {
+            total += i + " ";
+        }
+    }
+    alert(total);
+</script>
+</body>
+</html>

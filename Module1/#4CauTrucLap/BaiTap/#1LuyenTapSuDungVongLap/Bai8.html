@@ -6,6 +6,16 @@
 </head>
 <body>
 <p><b>Hãy đoán số!</b></p>
-<button onclick="show()" >Play!</button>
+<button onclick="getRandomInt()" >Play!</button>
+<script>
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    alert(min + max);
+</script>
+
+<!--<script src="Bai8.js"></script>-->
 </body>
 </html>
