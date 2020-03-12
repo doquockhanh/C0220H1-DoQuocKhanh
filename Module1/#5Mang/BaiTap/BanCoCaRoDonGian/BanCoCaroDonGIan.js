@@ -46,30 +46,21 @@ function veBanCo() {
     }
 }
 
-function checkDoc(a , b ) {
-    //  for (let i = 0; i < 8; i++) {
-    for ( a = 0; a < 8; a++) {
-        check += banCo[a][b];
+function checkDoc(a, b) {
+    let flag = "";
+    for (b = 0; b < 8; b++) {
+        for (a = 0; a < 8; a++) {
+            check += banCo[a][b];
 //             console.log(banCo[i][j]);
-        if (check.lastIndexOf("00000") !== -1) {
-            alert(" O Win");
-            reload()
-        }
-        if (check.lastIndexOf("XXXXX") !== -1) {
-            alert(" X Win");
-            reload()
+            if (check.lastIndexOf("00000") !== -1) {
+                alert("O win");
+            }
+            if (check.lastIndexOf("XXXXX") !== -1) {
+                alert("X win");
+            }
         }
     }
 }
-function reload() {
-      
-}
 
 
-//}
-// Bai tap:
-// 1. Chặn sửa các ô đã có giá trị
-// 2. Xác định phe thắng
-// 3. Hien thi luot choi
-// 3. Mở rộng với bàn cờ có kích thước bất kỳ
-// 4. Sửa lại style cho đẹp
+
