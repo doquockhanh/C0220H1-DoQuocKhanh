@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [183795823];
+    let a = array.toString();
+    const result = [a[0]];
+    for ( let i= 1 ; i <= array.length; i++){
+        if (a[i-1] % 2 === 0 && a[i] % 2 ===0){
+            result.push('-', a[i])
+        }
+        else{
+            result.push(a[i]);
+        }
+    }
+alert(result.join(" "));
+</script>
+</body>
+</html>

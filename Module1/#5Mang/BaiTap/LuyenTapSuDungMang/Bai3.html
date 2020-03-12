@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [1,2,3,4,5,12,6,7,8,9,10,11];
+    let max = array[0];
+    let tb = 0;
+    for (let i=0;i<array.length;i++){
+        tb += array[i]/array.length;
+        if (array[i] > max){
+            max = array[i];
+        }
+    }
+    console.log("so lon nhat la "+max+"\n" +"gia tri trung binh "+tb);
+</script>
+</body>
+</html>
