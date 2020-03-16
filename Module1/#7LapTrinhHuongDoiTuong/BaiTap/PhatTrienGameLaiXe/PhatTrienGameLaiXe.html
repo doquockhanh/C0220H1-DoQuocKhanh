@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body onload="docReady()" onkeydown="moveSelection(event);">
+<img id="myImg4" src="xe3.jpg" height="0" width="0"/>
+<img id="myImg3" src="xe2.jpg" height="0" width="0"/>
+<img id="myImg1" src="xe.jpg" width="0" height="0">
+<img id="myImg2" src="xe1.jpg" height="0" width="0"/>
+<canvas id="myCanvas()" style="width: 1400px;height: 670px; background: darkseagreen "></canvas>
+<script>
+    let x = 140;
+    let y = 100;
+    let direction = 2;
+    let canvas = document.getElementById("myCanvas()");
+    let ctx = canvas.getContext("2d");
+    let img1 = document.getElementById("myImg3");
+    let img2 = document.getElementById("myImg2");
+    let img3 = document.getElementById("myImg1");
+    let img4 = document.getElementById("myImg4");
+    window.onload = animate;
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        if (direction === 0) {
+            ctx.drawImage(img1, x, y, 10, 20);
+            y-=4;
+            if (y > 1) requestAnimationFrame(animate);
+        }else if (direction === 3){
+            ctx.drawImage(img3, x, y, 10, 20);
+            y+=4;
+            if (y < canvas.height - 20) requestAnimationFrame(animate);
+        }else if (direction === 1){
+            ctx.drawImage(img4, x, y, 20, 10);
+            x-=4;
+            if (x > 1) requestAnimationFrame(animate);
+        }else {
+            ctx.drawImage(img2, x, y, 20, 10);
+            x+=4;
+            if (x < canvas.width - 20) requestAnimationFrame(animate);
+        }
+    }
+
+    function leftArrowPressed() {
+        direction = 1;
+    }
+
+    function rightArrowPressed() {
+        direction = 2;
+    }
+
+    function upArrowPressed() {
+        direction = 0;
+    }
+
+    function downArrowPressed() {
+        direction = 3;
+    }
+
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftArrowPressed();
+                break;
+            case 39:
+                rightArrowPressed();
+                break;
+            case 38:
+                upArrowPressed();
+                break;
+            case 40:
+                downArrowPressed();
+                break;
+        }
+    }
+
+    function docReady() {
+        window.onkeydown = moveSelection
+    }
+</script>
+</body>
+</html>

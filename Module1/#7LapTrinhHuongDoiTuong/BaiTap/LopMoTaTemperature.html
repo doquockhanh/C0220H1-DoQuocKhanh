@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Temperature = function (C) {
+        this.doC = C;
+        this.doF = function () {
+            return this.doC + 34;
+        };
+        this.doK = function () {
+            return this.doC + 273
+        }
+    };
+    let a = prompt("nhap nhiet do (C)")*1;
+    let nhietDo = new Temperature(a);
+    let F = nhietDo.doF();
+    let K = nhietDo.doK();
+    alert(a + " do C tuong uong voi " + F +" do F va " + K +" do K")
+</script>
+</body>
+</html>

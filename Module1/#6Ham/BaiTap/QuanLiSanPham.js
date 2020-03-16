@@ -1,4 +1,6 @@
 var listProduct = [];
+let flag = true;
+let editIndex;
 
 function addProduct() {
     let product = [];
@@ -8,8 +10,12 @@ function addProduct() {
     product.push(productName);
     product.push(amount);
     product.push(price);
-    listProduct.push(product);
-    console.log(listProduct);
+    if (flag === true) {
+        listProduct.push(product);
+    } else {
+        listProduct[editIndex] = product;
+    }
+    flag = true
     drawProducts();
 }
 
@@ -35,6 +41,7 @@ function drawProducts() {
             "<td>" + product[1] + "</td>" +
             "<td>" + product[2] + "</td>" +
             "<td>" + product[1] * product[2] + "</td>" +
+            "<td><button onclick='editProduct(" + i + ")'>Edit</button></td>" +
             "<td><button onclick='deleteProduct(" + i + ")'>Delete</button></td>" + "</br>";
     }
 }
@@ -42,4 +49,12 @@ function drawProducts() {
 function deleteProduct(index) {
     listProduct.splice(index, 1);
     drawProducts();
+}
+
+function editProduct(index) {
+    flag = false;
+    editIndex = index;
+    document.getElementById("product").value = listProduct[editIndex][0];
+    document.getElementById("amount").value = listProduct[editIndex][1];
+    document.getElementById("price").value = listProduct[editIndex][2];
 }

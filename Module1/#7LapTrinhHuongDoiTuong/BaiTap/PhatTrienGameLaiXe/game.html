@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body onkeydown="onKeyPressed(event);">
+<canvas id="gameCanvas" width="250" height="350" style="background: cornflowerblue"></canvas>
+<script>
+    let canvas = document.getElementById("gameCanvas");
+    let context = canvas.getContext("2d");
+    window.onload = animate;
+
+
+    //ve ra doi tuong car va rock
+    function animate() {
+        game.update();
+
+        context.beginPath();
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        context.fillStyle = "red";
+        context.fillRect(game.car.x, game.car.y, game.car.width, game.car.height);
+        context.rect(game.car.x, game.car.y, game.car.width, game.car.height);
+
+        game.rocks.forEach(function (rock) {
+            context.rect(rock.x, rock.y, rock.width, rock.height);
+        });
+
+        context.font = "10px Arial";
+        context.fillStyle = "black";
+        context.fillText("score : " + score, 200, 10, 40);
+        context.fillText("hight score : " + hightScore, 120, 10, 70);
+        context.stroke();
+
+
+        if (game.status === GAME_STATUS_OVER){
+            context.font = "30px Arial";
+            context.fillStyle = "black";
+            context.fillText("Enter to Play!", 50,180,150);
+        }
+
+        requestAnimationFrame(animate)
+    }
+
+
+    function onKeyPressed(event) {
+        switch (event.keyCode) {
+            case 37:
+                game.onLeftArrowPressed();
+                break;
+            case 39:
+                game.onRightArrowPressed();
+                break;
+            case 13:
+                game.onEnterButtonPressed();
+                break;
+        }
+    }
+</script>
+<script src="game.js"></script>
+</body>
+</html>

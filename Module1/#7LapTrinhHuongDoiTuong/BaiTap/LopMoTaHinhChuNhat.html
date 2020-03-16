@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100"></canvas>
+<script>
+    let Rectangle = function (chieuDai, chieuRong) {
+        this.length = chieuDai;
+        this.width = chieuRong;
+        this.getLength = function () {
+             return this.length;
+        };
+        this.getWidth = function () {
+            return this.width;
+        };
+        this.getCircuit = function () {
+            return (this.length + this.width) * 2;
+        };
+        this.getArea = function () {
+            return this.width * this.length;
+        };
+    };
+    let a = prompt("nhap chieu dai hinh chu nhat") * 1;
+    let b = prompt("nhap chieu rong hinh chu nhat") * 1;
+    let HCN = new Rectangle(a, b);
+    let CD = HCN.getLength();
+    let CR = HCN.getWidth();
+    let chuVi = HCN.getCircuit();
+    let dienTich = HCN.getArea();
+    alert("chu vi HCN : " + chuVi + "\n" + "dien tich HCN : " + dienTich);
+
+    function createCircle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        ctx.fillStyle = "#FF0123";
+        ctx.fillRect(0,0,CD,CR);
+
+    }
+    createCircle();
+</script>
+</body>
+</html>
