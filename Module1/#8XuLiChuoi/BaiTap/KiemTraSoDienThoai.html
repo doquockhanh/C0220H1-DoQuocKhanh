@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkValidPhoneNumber(phonenumber) {
+        let regexp = /^[(][0-9]{2}[)][-][(][0-9]{10}[)]$/;
+        if (regexp.test(phonenumber)) {
+            return true;
+        } else {
+            return false
+        }
+    }
+    let a = prompt("nhap so dien thoai");
+    if (checkValidPhoneNumber(a)){
+        alert("so dien thoai hop le")
+    }else {
+        alert("so dien thoai khong hop le")
+    }
+</script>
+</body>
+</html>

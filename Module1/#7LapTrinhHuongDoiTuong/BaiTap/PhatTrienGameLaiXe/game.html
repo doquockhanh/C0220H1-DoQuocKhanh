@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <img id="car" src="xe2.jpg" height="0" width="0"/>
+<body onkeydown="onKeyPressed(event);" onkeyup="onKeyUp(event);" style="background: black">
+<canvas id="gameCanvas" width="250" height="350" style="background: darkseagreen"></canvas>
 
-</head>
-<body onkeydown="onKeyPressed(event);">
-<canvas id="gameCanvas" width="250" height="350" style="background: cornflowerblue"></canvas>
 <script>
     let canvas = document.getElementById("gameCanvas");
     let context = canvas.getContext("2d");
+    let car = document.getElementById("car");
     window.onload = animate;
 
 
@@ -20,7 +21,8 @@
         context.beginPath();
         context.clearRect(0, 0, canvas.width, canvas.height);
 
-        context.fillStyle = "red";
+        //ve ra xe
+        context.fillStyle = "darkred";
         context.fillRect(game.car.x, game.car.y, game.car.width, game.car.height);
         context.rect(game.car.x, game.car.y, game.car.width, game.car.height);
 
@@ -35,15 +37,14 @@
         context.stroke();
 
 
-        if (game.status === GAME_STATUS_OVER){
+        if (game.status === GAME_STATUS_OVER) {
             context.font = "30px Arial";
             context.fillStyle = "black";
-            context.fillText("Enter to Play!", 50,180,150);
+            context.fillText("Enter to Play!", 50, 180, 150);
         }
 
         requestAnimationFrame(animate)
     }
-
 
     function onKeyPressed(event) {
         switch (event.keyCode) {
@@ -55,6 +56,17 @@
                 break;
             case 13:
                 game.onEnterButtonPressed();
+                break;
+        }
+    }
+
+    function onKeyUp(event) {
+        switch (event.keyCode) {
+            case 37:
+                game.onLeftArrowUp();
+                break;
+            case 39:
+                game.onRightArrowUp();
                 break;
         }
     }

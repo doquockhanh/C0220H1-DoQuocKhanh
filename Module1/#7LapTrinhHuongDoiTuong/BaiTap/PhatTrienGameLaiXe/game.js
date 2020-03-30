@@ -9,21 +9,23 @@ class Car {
         this.y = 300;
         this.width = 10;
         this.height = 20;
-        this.direction = 1;
+        this.direction = null;
 
         this.update = function () {
             // Khong che toa do
             if (this.direction === MOVE_LEFT) {
                 if (this.x > 1) {
                     this.x -= 2;
+                    this.width = 8.5;
                 }
             } else if (this.direction === MOVE_RIGHT) {
                 if (this.x < 240) {
                     this.x += 2;
+                    this.width = 8.5;
                 }
+            }else if (this.direction === null){
+                this.width = 10;
             }
-            //console.log("Toa do car: " + this.x + ":" + this.y);
-
         }
     }
 }
@@ -32,8 +34,8 @@ class Rock {
     constructor(x, speed) {
         this.x = x;
         this.y = (Math.random() * 100) - 150;
-        this.width = Math.random()*10 +5;
-        this.height = Math.random()*10 +5;
+        this.width = Math.random() * 10 + 5;
+        this.height = Math.random() * 10 + 5;
         this.speed = speed;
         //  Cap nhat lai vi tri cua rock khi vuot qua man hinh
         this.update = function () {
@@ -89,7 +91,7 @@ class Game {
         //check lose
         this.check = function () {
             for (let i = 0; i < this.rocks.length; i++) {
-                if (this.rocks[i].y >= (300- this.rocks[i].height)  && this.rocks[i].y <= 320) {
+                if (this.rocks[i].y >= (300 - this.rocks[i].height) && this.rocks[i].y <= 320) {
                     if ((this.rocks[i].x + this.rocks[i].width) >= this.car.x - 1 && this.rocks[i].x <= (this.car.x + this.car.width)) {
                         this.status = GAME_STATUS_OVER;
                     }
@@ -103,6 +105,14 @@ class Game {
 
         this.onRightArrowPressed = function () {
             this.car.direction = MOVE_RIGHT;
+        };
+
+        this.onLeftArrowUp = function () {
+            this.car.direction = null;
+        };
+
+        this.onRightArrowUp = function () {
+            this.car.direction = null;
         };
 
         this.onEnterButtonPressed = function () {

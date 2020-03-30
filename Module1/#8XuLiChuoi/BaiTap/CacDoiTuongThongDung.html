@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //lamviecvoidate
+    let a = new Date();
+    let b = new Date(2001,2,9,12);
+    console.log("toi da song " + parseInt((a - b) / 1000) + " giay");
+    console.log("toi da song " + parseInt((a - b) / 60000) + " phut");
+    console.log("toi da song " + parseInt((a - b) / 3600000) + " gio");
+    console.log("toi da song " + parseInt((a - b) / (3600000 * 24)) + " ngay");
+    console.log("toi da song " + parseInt((a - b) / (3600000 * 24 * 30)) + " thang");
+    console.log("toi da song " + parseInt((a - b) / (3600000 * 24 * 30 * 12)) + " nam");
+</script>
+<script>
+    //lamviecvoimath
+    console.log("ran dom 0 - 10   = "+parseInt(Math.random() * 10));
+    console.log("ran dom 0 - 400   = "+parseInt(Math.random() ** 400));
+    console.log("ran dom 50 - 100   = "+parseInt(Math.random() * 50 + 50));
+    console.log("gia tri nho nhat " +Math.min(5, 7, 2, 9));
+    console.log("can bac 2 53 " + Math.sqrt(53));
+    console.log("S hinh tron ban kinh 5 : " + Math.PI * 5 * 5)
+</script>
+<script>
+    //lamviecvoistring
+    let c = "Tôi yêu ngôn ngữ lập trình Javascript";
+    let dem = 0;
+    let dem2 = 0;
+    for (let i = 0;i<c.length;i++){
+        if (c[i] === "a" ){
+            dem += 1;
+        }
+        if (c[i] !== " "){
+            dem2 +=1;
+        }
+    }
+    console.log("so ki tu a trong chuoi la : " + dem);
+    console.log("so ki tu trong chuoi la : " + dem2);
+    console.log(c.split(c.length));
+    console.log(c.replace("Javascript", "Typescript"));
+
+
+</script>
+</body>
+</html>

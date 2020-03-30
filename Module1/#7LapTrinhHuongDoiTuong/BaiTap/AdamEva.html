@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor() {
+            this.weight = 10
+        }
+    }
+
+    class Human {
+        constructor(name, sex, weight, say) {
+            this.name = name;
+            this.sex = sex;
+            this.weight = weight;
+            this.say = say;
+            this.peopleSay = function () {
+                console.log(this.say)
+            };
+            this.peopleEat = function () {
+
+            }
+            this.peopleScale = function () {
+
+            }
+        }
+    }
+
+    let apple = new Apple();
+    let human1 = new Human();
+    let human2 = new Human();
+</script>
+</body>
+</html>

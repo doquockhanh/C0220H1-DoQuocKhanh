@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkValidUserName(name) {
+        let regexp = /^[_a-z0-9]{6,15}$/;
+        if (regexp.test(name)) {
+            return true;
+        } else {
+            return false
+        }
+    }
+    let a = prompt("nhap ten tai khoan");
+    if (checkValidUserName(a)){
+        alert("tai khoan hop le")
+    }else {
+        alert("tai khoan khong hop le")
+    }
+</script>
+</body>
+</html>
