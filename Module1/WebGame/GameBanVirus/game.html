@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head >
+<body onload="drawGame()" onkeydown="onKeyPressed(event);" onkeyup="onKeyUp(event)" style="background: black">
+<canvas id="gameCanvas" width="600" height="400" style="background: darkseagreen"></canvas>
+<script>
+    let canvas = document.getElementById("gameCanvas");
+    let conText = canvas.getContext("2d");
+    let corona = new Image();
+    corona.src = "corona.png";
+    let backGround = new Image();
+    backGround.src = "background.PNG";
+    let vacXine = new Image();
+    vacXine.src = "vacxine1.PNG";
+
+    function drawGame() {
+        game.update();
+        game.checkLose();
+        conText.beginPath();
+        conText.clearRect(0, 0, canvas.width, canvas.height);
+        conText.drawImage(backGround, 0, 0, 600, 400);
+        let grd = conText.createLinearGradient(game.tank.x, game.tank.y - 7, game.tank.x , game.tank.y + 10);
+        grd.addColorStop(0, "yellow");
+        grd.addColorStop(1, "black");
+        conText.fillStyle = grd;
+        conText.fillRect(game.tank.x, game.tank.y, game.tank.width, game.tank.height);
+
+        game.bulletsRight.forEach(function (bullet) {
+            conText.drawImage(vacXine, bullet.x, bullet.y, bullet.width, bullet.height * 5);
+        });
+        game.bulletsLeft.forEach(function (bullet) {
+            conText.drawImage(vacXine, bullet.x, bullet.y, bullet.width, bullet.height * 5);
+        });
+        game.bulletsMid.forEach(function (bullet) {
+            conText.drawImage(vacXine, bullet.x, bullet.y, bullet.width, bullet.height * 5);
+        });
+
+        game.planes.forEach(function (plane) {
+            conText.fillStyle = "grey";
+            conText.drawImage(corona, plane.x, plane.y, plane.width + 10, plane.height + 10);
+        });
+        conText.font = "10px Arial";
+        conText.fillStyle = "yellow";
+        conText.font = "13px Arial";
+        conText.fillText("score : " + score, 500, 20, 70);
+        conText.fillText("hight score : " + hightScore, 380, 20, 120);
+        conText.stroke();
+
+        if (game.status === GAME_OVER) {
+            conText.fillStyle = "yellow";
+            conText.font = "30px Arial";
+            conText.fillText("Over! Enter to Play!", 200, 200, 200);
+        }
+        requestAnimationFrame(drawGame);
+    }
+
+    function onKeyPressed(event) {
+        switch (event.keyCode) {
+            case 37:
+                game.onLeftArrowPressed();
+                break;
+            case 39:
+                game.onRightArrowPressed();
+                break;
+            case 32:
+                game.onSpaceButtonPressed();
+                break;
+            case 13:
+                game.onEnterButtonPressed();
+                break;
+        }
+    }
+
+    function onKeyUp(event) {
+        switch (event.keyCode) {
+            case 37:
+                game.onLeftArrowUp();
+                break;
+            case 39:
+                game.onRightArrowUp();
+                break;
+        }
+    }
+
+</script>
+<script src="game.js"></script>
+</body>
+</html>

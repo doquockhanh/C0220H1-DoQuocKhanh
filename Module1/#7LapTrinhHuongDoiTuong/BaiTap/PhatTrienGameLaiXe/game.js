@@ -49,7 +49,7 @@ class Rock {
                     hightScore = score;
                 }
             }
-            if (this.speed - speed < 3) {
+            if (this.speed - speed < 5) {
                 this.speed += 0.0005;
             }
         }
@@ -108,11 +108,15 @@ class Game {
         };
 
         this.onLeftArrowUp = function () {
-            this.car.direction = null;
+            if(this.car.direction === MOVE_LEFT) {
+                this.car.direction = null;
+            }
         };
 
         this.onRightArrowUp = function () {
-            this.car.direction = null;
+            if(this.car.direction === MOVE_RIGHT) {
+                this.car.direction = null;
+            }
         };
 
         this.onEnterButtonPressed = function () {

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tank Battle</title>
+</head>
+<body onkeydown="handleKeyDown(event);" onload="drawGame();" onkeyup="handleKeyUp(event)">
+<canvas id="canvas" style="background: darkseagreen ; display: block" width="1490" height="700"></canvas>
+<script src="game.js"></script>
+<script>
+    let game = new Game();
+    let canvas = document.getElementById("canvas");
+    let context = canvas.getContext("2d");
+    background = new Image();
+    background.src = "background.jpg";
+
+    function drawGame() {
+        game.update();
+        game.draw(context);
+        requestAnimationFrame(drawGame);
+    }
+
+    function check() {
+        if (flag3 === true) {
+            game.checkCollision();
+            requestAnimationFrame(check);
+        }
+    }
+
+    function handleKeyDown(event) {
+        game.onKeyPress(event.keyCode);
+    }
+
+    function handleKeyUp(event) {
+        game.onKeyUp(event.keyCode);
+    }
+</script>
+</body>
+</html>

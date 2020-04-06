@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<b>Họ Tên</b>
+<input id="name" type="text"/></br></br>
+<b>CMND</b>
+<input id="cmnd"/></br></br>
+<b>Ngày Sinh</b>
+<input id="birthday"></br></br>
+<b>Email</b>
+<input id="email"/></br></br>
+<b>Địa Chỉ</b>
+<input id="address"/></br></br>
+<b>Loại Dịch Vụ</b>
+<select id="typeservice">
+    <option value="villa">Villa</option>
+    <option value="house">House</option>
+    <option value="room">Room</option>
+</select></br></br>
+<b>Loại Phòng</b>
+<select id="typeroom">
+    <option value="vip">Vip</option>
+    <option value="bussiness">Bussiness</option>
+    <option value="nomal">Nomal</option>
+</select></br></br>
+<b>Loại Customer</b>
+<select id="typecustomer">
+    <option value="member">Member</option>
+    <option value="sliver">Sliver</option>
+    <option value="gold">Gold</option>
+    <option value="plastinum">Plastinum</option>
+    <option value="diamond">Diamond</option>
+</select>
+<b>Giảm Giá</b>
+<input id="discount" value="10%"/></br></br>
+<b>Số Lượng Đi Kèm</b>
+<input id="quantityincluded"/></br></br>
+<b>Số Ngày Thuê</b>
+<input id="rentdays"/></br></br>
+<button onclick="cusInfo()">OK</button>
+<div>
+    <table id="dataList" style="border: black"></table>
+</div>
+
+<script>
+
+    let listCustomer = [];
+    let isAdding = true;
+    let editIndex;
+
+    function cusInfo() {
+        let customer = [];
+        let name = document.getElementById("name").value;
+        let cmnd = document.getElementById("cmnd").value;
+        let birthDay = document.getElementById("birthday").value;
+        let email = document.getElementById("email").value;
+        let address = document.getElementById("address").value;
+        let typeService = document.getElementById("typeservice").value;
+        let typeRoom = document.getElementById("typeroom").value;
+        let typeCustomer = document.getElementById("typecustomer").value;
+        let disCount = document.getElementById("discount").value;
+        let quantityIncluded = document.getElementById("quantityincluded").value;
+        let rentDay = document.getElementById("rentdays").value;
+        let total = 0;
+        if (typeService === "villa") {
+            total = 500 * rentDay * (1 - 1 / 10);
+        } else if (typeService === "house") {
+            total = 300 * rentDay * (1 - 1 / 10);
+        } else {
+            total = 100 * rentDay * (1 - 1 / 10);
+        }
+        if (typeCustomer === "diamond") {
+            total -= 15;
+        } else if (typeCustomer === "platinum") {
+            total -= 10;
+        } else if (typeCustomer === "gold") {
+            total -= 5;
+        } else if (typeCustomer === "sliver") {
+            total -= 2;
+        } else {
+            total += 0;
+        }
+        if (rentDay > 7) {
+            total -= 30;
+        } else if (rentDay >= 2 && rentDay <= 4) {
+            total -= 20;
+        } else if (rentDay >= 5 && rentDay <= 7) {
+            total -= 10;
+        }
+        customer.push(name);
+        customer.push(cmnd);
+        customer.push(birthDay);
+        customer.push(email);
+        customer.push(address);
+        customer.push(typeService);
+        customer.push(typeRoom);
+        customer.push(typeCustomer);
+        customer.push(disCount);
+        customer.push(quantityIncluded);
+        customer.push(rentDay);
+        customer.push(total);
+
+        if (isAdding === true) {
+            listCustomer.push(customer);
+        } else {
+            listCustomer[editIndex] = customer;
+        }
+
+        isAdding = true;
+        cusData();
+    }
+
+    function cusData() {
+        let dataListTag = document.getElementById("dataList");
+
+        dataListTag.innerHTML = "<thead>\n" +
+            "        <tr>\n" +
+            "            <th>STT</th>\n" +
+            "            <th>Tên</th>\n" +
+            "            <th>CMND</th>\n" +
+            "            <th>Ngay sinh</th>\n" +
+            "            <th>Email</th>\n" +
+            "            <th>Địa chỉ</th>\n" +
+            "            <th>Loại dịch vụ</th>\n" +
+            "            <th>Loại phòng</th>\n" +
+            "            <th>Loại khách hàng</th>\n" +
+            "            <th>Giảm giá</th>\n" +
+            "            <th>Số lượng đi kèm</th>\n" +
+            "            <th>Ngày thuê</th>\n" +
+            "            <th>Tổng thanh toán</th>\n" +
+            "        </tr>\n" +
+            "        </thead>" + "<br>";
+        for (let i = 0; i < listCustomer.length; i++) {
+            let customer = listCustomer[i];
+            dataListTag.innerHTML +=
+                "<table>" +
+                "<tr>" +
+                "<td>" + (i + 1) + "</td>" +
+                "<td>" + customer[0] + "</td>" +
+                "<td>" + customer[1] + "</td>" +
+                "<td>" + customer[2] + "</td>" +
+                "<td>" + customer[3] + "</td>" +
+                "<td>" + customer[4] + "</td>" +
+                "<td>" + customer[5] + "</td>" +
+                "<td>" + customer[6] + "</td>" +
+                "<td>" + customer[7] + "</td>" +
+                "<td>" + customer[8] + "</td>" +
+                "<td>" + customer[9] + "</td>" +
+                "<td>" + customer[10] + "</td>" +
+                "<td>" + customer[11] + "</td>" +
+                "<td><button onclick='editCusData(" + i + ")'>Edit</button></td>" +
+                "<td><button onclick='delCusData(" + i + ")'>Delete</button></td>" + "</table>" + "</br>";
+        }
+    }
+
+    function delCusData(index) {
+        listCustomer.splice(index, 1);
+        cusData();
+    }
+
+    function editCusData(index) {
+        isAdding = false;
+        editIndex = index;
+        document.getElementById("name").value = listCustomer[editIndex][0];
+        document.getElementById("cmnd").value = listCustomer[editIndex][1];
+        document.getElementById("birthday").value = listCustomer[editIndex][2];
+        document.getElementById("email").value = listCustomer[editIndex][3];
+        document.getElementById("address").value = listCustomer[editIndex][4];
+        document.getElementById("typeservice").value = listCustomer[editIndex][5];
+        document.getElementById("typeroom").value = listCustomer[editIndex][6];
+        document.getElementById("typecustomer").value = listCustomer[editIndex][7];
+        document.getElementById("discount").value = listCustomer[editIndex][8];
+        document.getElementById("quantityincluded").value = listCustomer[editIndex][9];
+        document.getElementById("rentdays").value = listCustomer[editIndex][10];
+    }</script>
+</body>
+</html>

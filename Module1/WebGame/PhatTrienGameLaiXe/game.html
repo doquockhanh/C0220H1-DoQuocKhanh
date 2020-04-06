@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<body onkeydown="onKeyPressed(event);" onkeyup="onKeyUp(event);" style="background: black">
+<canvas id="gameCanvas" width="250" height="350" style="background: darkseagreen"></canvas>
+
+<script>
+    let canvas = document.getElementById("gameCanvas");
+    let context = canvas.getContext("2d");
+    let background = new Image();
+    background.src = "background.png";
+    window.onload = animate;
+
+
+    function animate() {
+        game.update();
+        context.beginPath();
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(background, 0, 0, 250, 350);
+
+        //ve ra xe
+        context.fillStyle = "darkred";
+        context.fillRect(game.car.x, game.car.y, game.car.width, game.car.height);
+        context.rect(game.car.x, game.car.y, game.car.width, game.car.height);
+
+        game.rocks.forEach(function (rock) {
+            context.fillStyle = "black";
+            context.fillRect(rock.x, rock.y, rock.width, rock.height);
+            context.stroke();
+        });
+
+        context.font = "10px Arial";
+        context.fillStyle = "black";
+        context.fillText("score : " + score, 200, 10, 40);
+        context.fillText("hight score : " + hightScore, 120, 10, 70);
+        context.stroke();
+
+
+        if (game.status === GAME_STATUS_OVER) {
+            context.font = "30px Arial";
+            context.fillStyle = "black";
+            context.fillText("Enter to Play!", 50, 180, 150);
+        }
+
+        requestAnimationFrame(animate)
+    }
+
+    function onKeyPressed(event) {
+        switch (event.keyCode) {
+            case 37:
+                game.onLeftArrowPressed();
+                break;
+            case 39:
+                game.onRightArrowPressed();
+                break;
+            case 13:
+                game.onEnterButtonPressed();
+                break;
+        }
+    }
+
+    function onKeyUp(event) {
+        switch (event.keyCode) {
+            case 37:
+                game.onLeftArrowUp();
+                break;
+            case 39:
+                game.onRightArrowUp();
+                break;
+        }
+    }
+</script>
+<script src="game.js"></script>
+</body>
+</html>

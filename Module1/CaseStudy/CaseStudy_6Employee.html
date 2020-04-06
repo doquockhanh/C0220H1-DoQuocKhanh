@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<a href="CaseStudy_6.html" target="_blank">QUẢN LÝ KHÁCH HÀNG</a></br></br>
+<b>Họ Tên</b>
+<input id="name" type="text"/></br></br>
+<b>CMND</b>
+<input onchange="checkValidIDCard()" id="cmnd"/></br></br>
+<b>Ngày Sinh</b>
+<input onchange="checkValidBirthday()" id="birthday"></br></br>
+<b>Email</b>
+<input onchange="checkValidEmail()" id="email"/></br></br>
+<b>Trình độ</b>
+<input id="literacy"/></br></br>
+<b>Vị Trí</b>
+<select id="position">
+    <option value="Sale - Marketing">Sale - Marketing</option>
+    <option value="Hành chính">Hành chính</option>
+    <option value="Quản Lí">Quản Lí</option>
+    <option value="Phục vụ">Phục vụ</option>
+</select>
+<b>Lương</b>
+<input id="salary"/></br></br>
+<button onclick="employeeManages.addNewEmployee()">OK</button>
+<div>
+    <table id="dataList"></table>
+</div>
+
+<script>
+    let listEmployee = [];
+    let dataListTag = document.getElementById("dataList");
+    dataListTag.innerHTML = "<thead>\n" +
+        "        <tr>\n" +
+        "            <th>STT</th>\n" +
+        "            <th>Tên</th>\n" +
+        "            <th>CMND</th>\n" +
+        "            <th>Ngay sinh</th>\n" +
+        "            <th>Email</th>\n" +
+        "            <th>trình độ học vấn</th>\n" +
+        "            <th>vị trí</th>\n" +
+        "            <th>Lương và trợ cấp</th>\n" +
+        "        </tr>\n" +
+        "        </thead>";
+    let isAdding = true;
+    let editIndex;
+
+    function checkValidEmail() {
+        let inputEmail = document.getElementById("email").value;
+        let regexp = /^[.A-Za-z0-9]+[.A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+        if (regexp.test(inputEmail) === false) {
+            alert("email khong hop le");
+        } else {
+            return true;
+        }
+    }
+
+    function checkValidIDCard() {
+        let inputIDCard = document.getElementById("cmnd").value;
+        let regexp = /^[0-9]{8}$/;
+        if (regexp.test(inputIDCard) === false) {
+            alert("CMND khong hop le");
+        } else {
+            return true
+        }
+    }
+
+    function checkValidBirthday() {
+        let inputBirthday = document.getElementById("birthday").value;
+        let regexp = /^[0-9]{2}[/][0-9]{2}[/][0-9]{4}$/;
+        if (regexp.test(inputBirthday) === false) {
+            alert("ngay sinh khong hop le (DD/MM/YYYY)");
+        } else {
+            return true;
+        }
+    }
+
+    class EmployeeManages {
+        constructor() {
+            this.addNewEmployee = function () {
+                if (checkValidBirthday() && checkValidIDCard() && checkValidEmail()) {
+                    let employee = [
+                        document.getElementById("name").value,
+                        document.getElementById("cmnd").value,
+                        document.getElementById("birthday").value,
+                        document.getElementById("email").value,
+                        document.getElementById("literacy").value,
+                        document.getElementById("position").value,
+                        document.getElementById("salary").value];
+                    if (isAdding === true) {
+                        listEmployee.push(employee);
+                    } else {
+                        listEmployee[editIndex] = employee;
+                        isAdding = true;
+                    }
+
+                    if (employee[5] === "Sale - Marketing"){
+                        employee[6] = employee[6]*1 + 200;
+                    }else if(employee[5] === "Hành chính"){
+                        employee[6] = employee[6]*1 + 300;
+                    } else if(employee[5] === "Quản Lí"){
+                        employee[6] = employee[6]*1 + 500;
+                    }
+                    this.displayEmployeeInfo();
+                }else {
+                    alert("vui long nhap dung cac truong");
+                }
+            };
+
+            this.displayEmployeeInfo = function () {
+                let dataListTag = document.getElementById("dataList");
+                dataListTag.innerHTML = "<thead>\n" +
+                    "        <tr>\n" +
+                    "            <th>STT</th>\n" +
+                    "            <th>Tên</th>\n" +
+                    "            <th>CMND</th>\n" +
+                    "            <th>Ngay sinh</th>\n" +
+                    "            <th>Email</th>\n" +
+                    "            <th>trình độ học vấn</th>\n" +
+                    "            <th>vị trí</th>\n" +
+                    "            <th>Lương và trợ cấp</th>\n" +
+                    "        </tr>\n" +
+                    "        </thead>";
+                for (let i = 0; i < listEmployee.length; i++) {
+                    let employee = listEmployee[i];
+                    dataListTag.innerHTML += "<tr>" +
+                        "<td>" + (i + 1) + "</td>" +
+                        "<td>" + employee[0] + "</td>" +
+                        "<td>" + employee[1] + "</td>" +
+                        "<td>" + employee[2] + "</td>" +
+                        "<td>" + employee[3] + "</td>" +
+                        "<td>" + employee[4] + "</td>" +
+                        "<td>" + employee[5] + "</td>" +
+                        "<td>" + employee[6] + "</td>" +
+                        "<td><button onclick='employeeManages.editEmployeeData(" + i + ")'>Edit</button></td>" +
+                        "<td><button onclick='employeeManages.deleteEmployeeData(" + i + ")'>Delete</button></td>" + "</br>";
+                }
+            };
+
+            this.deleteEmployeeData = function (index) {
+                listEmployee.splice(index, 1);
+                employeeManages.displayEmployeeInfo();
+            };
+
+            this.editEmployeeData = function (index) {
+                isAdding = false;
+                editIndex = index;
+                document.getElementById("name").value = listEmployee[editIndex][0];
+                document.getElementById("cmnd").value = listEmployee[editIndex][1];
+                document.getElementById("birthday").value = listEmployee[editIndex][2];
+                document.getElementById("email").value = listEmployee[editIndex][3];
+                document.getElementById("literacy").value = listEmployee[editIndex][4];
+                document.getElementById("position").value = listEmployee[editIndex][5];
+                document.getElementById("salary").value = listEmployee[editIndex][6];
+            }
+        }
+    }
+
+    let employeeManages = new EmployeeManages();
+
+</script>
+</body>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<b>Họ Tên</b>
+<input id="name" type="text"/></br></br>
+<b>CMND</b>
+<input id="cmnd"/></br></br>
+<b>Ngày Sinh</b>
+<input id="birthday"></br></br>
+<b>Email</b>
+<input id="email"/></br></br>
+<b>Địa Chỉ</b>
+<input id="address"/></br></br>
+<b>Loại Dịch Vụ</b>
+<select id="typeservice">
+    <option value="villa">Villa</option>
+    <option value="house">House</option>
+    <option value="room">Room</option>
+</select></br></br>
+<b>Loại Phòng</b>
+<select id="typeroom">
+    <option value="vip">Vip</option>
+    <option value="bussiness">Bussiness</option>
+    <option value="nomal">Nomal</option>
+</select></br></br>
+<b>Loại Customer</b>
+<select id="typecustomer">
+    <option value="member">Member</option>
+    <option value="sliver">Sliver</option>
+    <option value="gold">Gold</option>
+    <option value="plastinum">Plastinum</option>
+    <option value="diamond">Diamond</option>
+</select>
+<b>Giảm Giá</b>
+<input id="discount" value="10"/></br></br>
+<b>Số Lượng Đi Kèm</b>
+<input id="quantityincluded"/></br></br>
+<b>Số Ngày Thuê</b>
+<input id="rentdays"/></br></br>
+<button onclick="cusInfo()">OK</button>
+<div>
+    <table id="dataList">
+
+    </table>
+</div>
+
+<script>
+    function cusInfo() {
+       // let customer = [];
+        let name = document.getElementById("name").value;
+        let cmnd = document.getElementById("cmnd").value;
+        let birthDay = document.getElementById("birthday").value;
+        let email = document.getElementById("email").value;
+        let address = document.getElementById("address").value;
+        let typeService = document.getElementById("typeservice").value;
+        let typeRoom = document.getElementById("typeroom").value;
+        let typeCustomer = document.getElementById("typecustomer").value;
+        let disCount = document.getElementById("discount").value;
+        let quantityIncluded = document.getElementById("quantityincluded").value;
+        let rentDay = document.getElementById("rentdays").value;
+        let total = 0;
+
+        if(typeService === "villa"){
+             total = rentDay * 500 * (1 - disCount*1/100);
+        }else if(typeService === "house"){
+            total = rentDay * 300 * (1 - disCount/100);
+        }else{
+            total = rentDay * 100 * (1 - disCount/100);
+        }
+
+        alert("Tên khách hàng : " + name + "\n" +
+            "CMND : " + cmnd + "\n" +
+            "Ngày sinh : " + birthDay + "\n" +
+            "Email : " + email + "\n" +
+            "Địa chỉ: " + address + "\n" +
+            "Loại dịch vụ : " + typeService + "\n" +
+            "Loại Phòng thuê : " + typeRoom + "\n" +
+            "Loại khách hàng : " + typeCustomer + "\n" +
+            "Giảm giá : " + disCount + "\n" +
+            "Số lượng đi kèm : " + quantityIncluded + "\n" +
+            "Ngày thuê : " + rentDay + "\n" +
+            "Tổng tiền : " + total + "\n"
+        )
+    }
+</script>
+</body>
