@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c84a708f-cc1b-4ce7-99cf-f2fb1590cdc7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/src/DocSoNgauNhien3ChuSo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/src/HelloWorld.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/DemSoLanXuatHienCuaTuTrongChuoi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/GiaTriNhoNhatMang1Chieu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/GopMang.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/SuDungIllegalTriangleException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/TaoMapGameMinesweeper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/ThemPhanTuVaoMang.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/TimGiaTriLonNhat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/TinhTongCuaCotBatKyTrongMang2Chieu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/XoaPhanTuTrongMang.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#3LopVaDoiTuongTrongJava/src/BaiTap/PhuongTrinhBacHai.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#3LopVaDoiTuongTrongJava/src/BaiTap/XayDungLopFan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#3LopVaDoiTuongTrongJava/src/BaiTap/XayDungLopStopWatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CodeGym-C0220H1_Đỗ_Quốc_Khánh_27.02.2020.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../CodeGym-C0220H1_Đỗ_Quốc_Khánh_27.02.2020.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/.idea/#1NgonNguLapTrinhJava.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/BMApp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/src/controller/ControllerUltility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/src/controller/DataController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/src/controller/ppp/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/src/model/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/src/model/BookReaderManagement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/src/model/Reader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/src/view/View.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/out/production/BaiTap/SoNguyenTo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/out/production/BaiTap/SoNguyenTo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/out/production/BaiTap/SoNguyenToDauTien.class" beforeDir="false" afterPath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/out/production/BaiTap/SoNguyenToDauTien.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/ThucHanh/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/ThucHanh/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/ThucHanh/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/ThucHanh/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/ThucHanh/ThucHanh.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/ThucHanh/out/production/ThucHanh/none.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/ThucHanh/src/none.java" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\CODEGYM\Module2\#4KeThua\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1aOWlmRoESV9slo3LdGjwap3mwv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c84a708f-cc1b-4ce7-99cf-f2fb1590cdc7" name="Default Changelist" comment="" />
+      <created>1586607274006</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586607274006</updated>
+      <workItem from="1586607276501" duration="155000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4faff6c0-4d66-42c1-828e-e753123f6139" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/.idea/#1NgonNguLapTrinhJava.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BMApp/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BMApp/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BMApp/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BMApp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BMApp/BMApp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BMApp/src/controller/ControllerUltility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BMApp/src/controller/DataController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BMApp/src/controller/ppp/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BMApp/src/model/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BMApp/src/model/BookReaderManagement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BMApp/src/model/Reader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BMApp/src/view/View.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BaiTap/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BaiTap/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BaiTap/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BaiTap/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BaiTap/BaiTap.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BaiTap/out/production/BaiTap/SoNguyenTo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BaiTap/out/production/BaiTap/SoNguyenToDauTien.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BaiTap/src/SoNguyenTo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/BaiTap/src/SoNguyenToDauTien.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/ThucHanh/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/ThucHanh/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/ThucHanh/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/ThucHanh/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/ThucHanh/ThucHanh.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/ThucHanh/out/production/ThucHanh/none.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1NgonNguLapTrinhJava/ThucHanh/src/none.java" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\CODEGYM\Module2\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/.gitignore" />
+        <option value="$PROJECT_DIR$/.idea/Module2.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1aCEQ6go2MtFNwX7B0a2jjjyqg8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4faff6c0-4d66-42c1-828e-e753123f6139" name="Default Changelist" comment="" />
+      <created>1586231155640</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586231155640</updated>
+      <workItem from="1586231156936" duration="446000" />
+      <workItem from="1586231636696" duration="166000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
