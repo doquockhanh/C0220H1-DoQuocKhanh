@@ -2,47 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c84a708f-cc1b-4ce7-99cf-f2fb1590cdc7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/src/DocSoNgauNhien3ChuSo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/src/HelloWorld.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/DemSoLanXuatHienCuaTuTrongChuoi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/GiaTriNhoNhatMang1Chieu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/GopMang.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/SuDungIllegalTriangleException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/TaoMapGameMinesweeper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/ThemPhanTuVaoMang.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/TimGiaTriLonNhat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/TinhTongCuaCotBatKyTrongMang2Chieu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#2MangVaPhuongThucTrongJava/BaiTap/src/XoaPhanTuTrongMang.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#3LopVaDoiTuongTrongJava/src/BaiTap/PhuongTrinhBacHai.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#3LopVaDoiTuongTrongJava/src/BaiTap/XayDungLopFan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../#3LopVaDoiTuongTrongJava/src/BaiTap/XayDungLopStopWatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CodeGym-C0220H1_Đỗ_Quốc_Khánh_27.02.2020.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../CodeGym-C0220H1_Đỗ_Quốc_Khánh_27.02.2020.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/.idea/#1NgonNguLapTrinhJava.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/BMApp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/src/controller/ControllerUltility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/src/controller/DataController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/src/controller/ppp/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/src/model/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/src/model/BookReaderManagement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/src/model/Reader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BMApp/src/view/View.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/out/production/BaiTap/SoNguyenTo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/out/production/BaiTap/SoNguyenTo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/out/production/BaiTap/SoNguyenToDauTien.class" beforeDir="false" afterPath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/BaiTap/out/production/BaiTap/SoNguyenToDauTien.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/ThucHanh/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/ThucHanh/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/ThucHanh/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/ThucHanh/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/ThucHanh/ThucHanh.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/ThucHanh/out/production/ThucHanh/none.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../#1NgonNguLapTrinhJava/ThucHanh/src/none.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap/src/LopPointVaMoveablePoint/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap/src/LopPointVaMoveablePoint/MovablePoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap/src/LopPointVaMoveablePoint/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#5AdvancedObjectOrientedDesign/BaiTap/src/thuchanh/Chicken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#5AdvancedObjectOrientedDesign/BaiTap/src/thuchanh/Edible.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#5AdvancedObjectOrientedDesign/BaiTap/src/thuchanh/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#5AdvancedObjectOrientedDesign/BaiTap/src/thuchanh/Tiger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#5AdvancedObjectOrientedDesign/BaiTap/src/thuchanh/animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaiTap/out/production/BaiTap/LopTriAngle/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/BaiTap/out/production/BaiTap/LopTriAngle/Shape.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,6 +41,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/BaiTap" />
     <property name="settings.editor.selected.configurable" value="preferences.customizations" />
   </component>
   <component name="RunDashboard">
@@ -97,6 +67,8 @@
       <option name="presentableId" value="Default" />
       <updated>1586607274006</updated>
       <workItem from="1586607276501" duration="155000" />
+      <workItem from="1586914919082" duration="41000" />
+      <workItem from="1586939431954" duration="10000" />
     </task>
     <servers />
   </component>
@@ -108,7 +80,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
