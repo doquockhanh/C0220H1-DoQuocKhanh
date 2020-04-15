@@ -1,8 +1,8 @@
 package LopPointVaMoveablePoint;
 
 public class Point {
-    private float x = 0.0f;
-    private float y = 0.0f;
+    public float x = 0.0f;
+    public float y = 0.0f;
 
     public Point() {
     }

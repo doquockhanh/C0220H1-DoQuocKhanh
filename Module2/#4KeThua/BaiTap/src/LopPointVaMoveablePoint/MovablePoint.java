@@ -53,4 +53,10 @@ public class MovablePoint extends Point {
                 ", ySpeed=" + ySpeed +
                 '}';
     }
+
+    public String move(){
+        x += xSpeed;
+        y += ySpeed;
+        return "vi tri hien tai :\nx = " + x + "\ny = " + y;
+    }
 }
