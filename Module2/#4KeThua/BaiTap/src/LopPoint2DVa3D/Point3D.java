@@ -33,7 +33,7 @@ public class Point3D extends Point2D {
         return "Point3D{" +
                 "x=" + getX() +
                 ", y=" + getY() +
-                "z=" + z +
+                ", z=" + z +
                 '}';
     }
 }
