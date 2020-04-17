@@ -1,7 +1,14 @@
 package TrienkhaiInterfaceResizeable;
 
-public class Square extends Rectangle implements Resizeable{
+import TrienKhaiInterfaceColorable.Colorable;
+
+public class Square extends Rectangle implements Colorable , Resizeable {
     public Square() {
+    }
+
+    @Override
+    public void howToColor() {
+        System.out.println("Color all four side");
     }
 
     @Override
