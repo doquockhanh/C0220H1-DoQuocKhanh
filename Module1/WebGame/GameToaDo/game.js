@@ -105,7 +105,7 @@ class Character {
             }
             flag5 = true;
 
-            if (this.x + this.width > 595 && this.x < 675) {
+            if (this.x + this.width > 600 && this.x < 675) {
                 this.x = 670;
             } else {
                 if (this.x > 0) {
@@ -119,7 +119,7 @@ class Character {
             }
             flag5 = false;
 
-            if (this.x + this.width > 595 && this.x < 675) {
+            if (this.x + this.width > 600 && this.x < 675) {
                 this.x = 585;
             } else {
                 if (this.x < 1490 - this.width) {

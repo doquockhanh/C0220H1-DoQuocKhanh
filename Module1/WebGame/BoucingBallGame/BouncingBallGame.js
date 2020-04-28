@@ -62,7 +62,7 @@ class Ball {
 class Rock {
     constructor() {
         this.x = Math.random() * 470 + 15;
-        this.y = Math.random() * 300 + 15;
+        this.y = Math.random() * 350 + 30;
         this.width = 5;
         this.height = 10;
         this.status = null;
