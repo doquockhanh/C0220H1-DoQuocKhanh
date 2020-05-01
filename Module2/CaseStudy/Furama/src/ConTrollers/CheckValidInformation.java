@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 
 public class CheckValidInformation {
 
+    //chuan hoa 1 chuoi bat ki nhap vao
     public String formatStringInput(String string) {
         String stringAfterFormat = "";
         boolean a = false;
@@ -89,7 +90,7 @@ public class CheckValidInformation {
     }
 
     public boolean checkIDCustomer(String idCustomer) {
-        String idCustomerPattern = "^[0-9]{9}$";
+        String idCustomerPattern = "^[0-9]{9}$" + "^[0]&";
         return Pattern.matches(idCustomerPattern, idCustomer);
     }
 

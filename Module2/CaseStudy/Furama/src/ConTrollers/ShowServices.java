@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Scanner;
-import java.util.TreeSet;
 
 public class ShowServices {
     public ShowServices() {
@@ -86,6 +85,8 @@ public class ShowServices {
                     System.exit(0);
                     break;
                 case 4:
+                    // day la phan su dung tree set
+
 //                    FileInputStream fileInputStream = new FileInputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Villa.csv");
 //                    DataInputStream dataInputStream = new DataInputStream(fileInputStream);
 //                    TreeSet<String> listService = new TreeSet<>();

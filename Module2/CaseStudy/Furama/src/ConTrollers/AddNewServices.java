@@ -39,34 +39,66 @@ public class AddNewServices {
                 case 1:
                     type = "villa";
 
-                    while (checkValidInformation.checkServiceID(serviceID, type) == false
-                            || checkValidInformation.checkMoreService(moreStandard) == false
-                            || checkValidInformation.checkMaxPeople(maxPeople) == false
-                            || checkValidInformation.checkRentPrice(rentPrice) == false
-                            || checkValidInformation.checkPoolArea(poolArea) == false
-                            || checkValidInformation.checkNumberOfFloor(numberOfFloor) == false
-                    ) {
-                        System.out.println("vui long nhap dung theo huong dan");
-                        System.out.println();
+                    System.out.println("vui long nhap theo huong dan");
+                    System.out.println();
+
+                    while (true) {
                         System.out.println("ma dich vu (SVVL-xxxx) : ");
                         serviceID = scanner.next();
-                        System.out.println("ten dich vu : ");
-                        nameService = scanner.next();
+                        if (checkValidInformation.checkServiceID(serviceID, type) == false) {
+                            System.out.println("nhap sai! moi nhap lai");
+                        } else break;
+                    }
+
+                    System.out.println("ten dich vu : ");
+                    nameService = scanner.next();
+
+                    while (true) {
                         System.out.println("so nguoi toi da (0 < x < 20) : ");
                         maxPeople = scanner.next();
-                        System.out.println("kieu thue : ");
-                        rentType = scanner.next();
+                        if (checkValidInformation.checkMaxPeople(maxPeople) == false) {
+                            System.out.println("nhap sai! moi nhap lai");
+                        } else break;
+                    }
+
+                    System.out.println("kieu thue : ");
+                    rentType = scanner.next();
+
+                    while (true) {
                         System.out.println("gia thue ( >0) : ");
                         rentPrice = scanner.next();
-                        System.out.println("tieu chuan phong : ");
-                        roomStandard = scanner.next();
+                        if (checkValidInformation.checkRentPrice(rentPrice) == false) {
+                            System.out.println("nhap sai! moi nhap lai");
+                        } else break;
+                    }
+
+                    System.out.println("tieu chuan phong : ");
+                    roomStandard = scanner.next();
+
+                    while (true) {
                         System.out.println("dich vu khac (massage, karaoke, food, drink, car): ");
                         moreStandard = scanner.next();
+                        if (checkValidInformation.checkMoreService(moreStandard) == false) {
+                            System.out.println("nhap sai! moi nhap lai");
+                        } else break;
+                    }
+
+                    while (true) {
                         System.out.println("so tang ( > 0): ");
                         numberOfFloor = scanner.next();
+                        if (checkValidInformation.checkNumberOfFloor(numberOfFloor) == false) {
+                            System.out.println("nhap sai! moi nhap lai");
+                        } else break;
+                    }
+
+                    while (true) {
                         System.out.println("dien tich ho boi ( > 30) : ");
                         poolArea = scanner.next();
+                        if (checkValidInformation.checkRentPrice(rentPrice) == false) {
+                            System.out.println("nhap sai! moi nhap lai");
+                        } else break;
                     }
+
                     Villa villa = new Villa(serviceID, checkValidInformation.formatStringInput(nameService), maxPeople, checkValidInformation.formatStringInput(rentType),
                             rentPrice, checkValidInformation.formatStringInput(roomStandard), moreStandard, numberOfFloor, poolArea);
 
@@ -104,30 +136,58 @@ public class AddNewServices {
                 case 2:
                     type = "house";
 
-                    while (checkValidInformation.checkServiceID(serviceID, type) == false
-                            || checkValidInformation.checkMaxPeople(maxPeople) == false
-                            || checkValidInformation.checkRentPrice(rentPrice) == false
-                            || checkValidInformation.checkPoolArea(poolArea) == false
-                    ) {
-                        System.out.println("vui long nhap dung theo huong dan");
-                        System.out.println();
+                    System.out.println("vui long nhap theo huong dan");
+                    System.out.println();
+
+                    while (true) {
                         System.out.println("ma dich vu (SVHO-xxxx) : ");
                         serviceID = scanner.next();
-                        System.out.println("ten dich vu : ");
-                        nameService = scanner.next();
-                        System.out.println("so nguoi toi da (0 < x < 20): ");
+                        if (checkValidInformation.checkServiceID(serviceID, type) == false) {
+                            System.out.println("nhap sai! vui long nhap lai");
+                        } else break;
+                    }
+
+                    System.out.println("ten dich vu : ");
+                    nameService = scanner.next();
+
+                    while (true) {
+                        System.out.println("so nguoi toi da (0 < x < 20) : ");
                         maxPeople = scanner.next();
-                        System.out.println("kieu thue : ");
-                        rentType = scanner.next();
+                        if (checkValidInformation.checkMaxPeople(maxPeople) == false) {
+                            System.out.println("nhap sai! moi nhap lai");
+                        } else break;
+                    }
+
+                    System.out.println("kieu thue : ");
+                    rentType = scanner.next();
+
+                    while (true) {
                         System.out.println("gia thue ( >0) : ");
                         rentPrice = scanner.next();
-                        System.out.println("tieu chuan phong : ");
-                        roomStandard = scanner.next();
+                        if (checkValidInformation.checkRentPrice(rentPrice) == false) {
+                            System.out.println("nhap sai! moi nhap lai");
+                        } else break;
+                    }
+
+                    System.out.println("tieu chuan phong : ");
+                    roomStandard = scanner.next();
+
+                    while (true) {
                         System.out.println("dich vu khac (massage, karaoke, food, drink, car) : ");
                         moreStandard = scanner.next();
+                        if (checkValidInformation.checkMoreService(moreStandard) == false) {
+                            System.out.println("nhap sai! vui long nhap lai");
+                        } else break;
+                    }
+
+                    while (true) {
                         System.out.println("dien tich ho boi ( > 30) : ");
                         poolArea = scanner.next();
+                        if (checkValidInformation.checkPoolArea(poolArea) == false) {
+                            System.out.println("nhap sai! moi nhap lai");
+                        } else break;
                     }
+
                     House house = new House(serviceID, checkValidInformation.formatStringInput(nameService), maxPeople, checkValidInformation.formatStringInput(rentType),
                             rentPrice, checkValidInformation.formatStringInput(roomStandard), moreStandard, poolArea);
                     try {
@@ -161,58 +221,73 @@ public class AddNewServices {
                 case 3:
                     type = "room";
 
-                    while (checkValidInformation.checkServiceID(serviceID, type) == false
-                            || checkValidInformation.checkMaxPeople(maxPeople) == false
-                            || checkValidInformation.checkRentPrice(rentPrice) == false
-                    ) {
-                        System.out.println("vui long nhap dung theo huong dan");
-                        System.out.println();
+                    System.out.println("vui long nhap dung theo huong dan");
+                    System.out.println();
+
+                    while (true) {
                         System.out.println("ma dich vu (SVRO-xxxx) : ");
                         serviceID = scanner.next();
-                        System.out.println("ten dich vu : ");
-                        nameService = scanner.next();
+                        if (checkValidInformation.checkServiceID(serviceID, type) == false) {
+                            System.out.println("nhap sai! vui long nhap lai");
+                        } else break;
+                    }
+                    System.out.println("ten dich vu : ");
+                    nameService = scanner.next();
+
+                    while (true) {
                         System.out.println("so nguoi toi da : ");
                         maxPeople = scanner.next();
-                        System.out.println("kieu thue : ");
-                        rentType = scanner.next();
+                        if (checkValidInformation.checkMaxPeople(maxPeople) == false) {
+                            System.out.println("nhap sai! vui long nhap lai");
+                        } else break;
+                    }
+
+                    System.out.println("kieu thue : ");
+                    rentType = scanner.next();
+
+                    while (true) {
                         System.out.println("gia thue : ");
                         rentPrice = scanner.next();
-                        System.out.println("dich vu mien phi : ");
-                        freeService = scanner.next();
+                        if (checkValidInformation.checkRentPrice(rentPrice) == false) {
+                            System.out.println("nhap sai! vui long nhap lai");
+                        } else break;
                     }
-                    Room room = new Room(serviceID, checkValidInformation.formatStringInput(nameService), maxPeople, checkValidInformation.formatStringInput(rentType),
-                            rentPrice, checkValidInformation.formatStringInput(freeService));
-                    try {
-                        FileOutputStream fileOutputStream = new FileOutputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Room.csv", true);
-                        DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
 
-                        dataOutputStream.writeBytes(room.getServiceID());
-                        dataOutputStream.writeBytes(",");
-                        dataOutputStream.writeBytes(room.getNameService());
-                        dataOutputStream.writeBytes(",");
-                        dataOutputStream.writeBytes(room.getMaxPeople());
-                        dataOutputStream.writeBytes(",");
-                        dataOutputStream.writeBytes(room.getRentType());
-                        dataOutputStream.writeBytes(",");
-                        dataOutputStream.writeBytes(room.getRentPrice());
-                        dataOutputStream.writeBytes(",");
-                        dataOutputStream.writeBytes(room.getFreeService());
-                        dataOutputStream.writeBytes("\n");
+                    System.out.println("dich vu mien phi : ");
+                    freeService = scanner.next();
+            Room room = new Room(serviceID, checkValidInformation.formatStringInput(nameService), maxPeople, checkValidInformation.formatStringInput(rentType),
+                    rentPrice, checkValidInformation.formatStringInput(freeService));
+            try {
+                FileOutputStream fileOutputStream = new FileOutputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Room.csv", true);
+                DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
 
-                        fileOutputStream.close();
-                        dataOutputStream.close();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    System.out.println("them thanh cong !");
-                    break;
-                case 4:
-                    new MainController();
-                    break;
-                case 5:
-                    System.exit(0);
-                    break;
+                dataOutputStream.writeBytes(room.getServiceID());
+                dataOutputStream.writeBytes(",");
+                dataOutputStream.writeBytes(room.getNameService());
+                dataOutputStream.writeBytes(",");
+                dataOutputStream.writeBytes(room.getMaxPeople());
+                dataOutputStream.writeBytes(",");
+                dataOutputStream.writeBytes(room.getRentType());
+                dataOutputStream.writeBytes(",");
+                dataOutputStream.writeBytes(room.getRentPrice());
+                dataOutputStream.writeBytes(",");
+                dataOutputStream.writeBytes(room.getFreeService());
+                dataOutputStream.writeBytes("\n");
+
+                fileOutputStream.close();
+                dataOutputStream.close();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+            System.out.println("them thanh cong !");
+            break;
+            case 4:
+                new MainController();
+                break;
+            case 5:
+                System.exit(0);
+                break;
         }
     }
+}
 }

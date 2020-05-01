@@ -19,31 +19,54 @@ public class AddNewCustomer {
         String typeCus = "";
         String address = "";
         String nameService = "";
-        while (checkValidInformation.checkEmailCustomer(email) == false ||
-                checkValidInformation.checkBirthDayCustomer(birthday) == false ||
-                checkValidInformation.checkGenderCustomer(gender) == false ||
-                checkValidInformation.checkIDCustomer(Id) == false) {
-            System.out.println("vui long nhap dung theo huong dan");
-            System.out.println();
-            System.out.println("nhap ten khach hang");
-            nameCus = scanner.next();
+
+        System.out.println("vui long nhap dung theo huong dan");
+        System.out.println();
+        System.out.println("nhap ten khach hang");
+        nameCus = scanner.next();
+
+        while (true) {
             System.out.println("ngay sinh (dd/mm/yyyy)");
             birthday = scanner.next();
+            if (checkValidInformation.checkBirthDayCustomer(birthday)) break;
+            else System.out.println("nhap sai! vui long nhap lai");
+        }
+
+        while (true) {
             System.out.println("gioi tinh (male/female/unknow)");
             gender = scanner.next();
+            if (checkValidInformation.checkGenderCustomer(gender)) break;
+            else System.out.println("nhap sai! vui long nhap lai");
+        }
+
+        while (true) {
             System.out.println("Cmnd ( bao gom 9 chu so)");
             Id = scanner.next();
-            System.out.println("so dien thoai");
+            if (checkValidInformation.checkIDCustomer(Id)) break;
+            else System.out.println("nhap sai! vui long nhap lai");
+        }
+
+        while (true) {
+            System.out.println("so dien thoai ( bao gom 9 chu so)");
             phoneNumber = scanner.next();
+            if (checkValidInformation.checkIDCustomer(phoneNumber)) break;
+            else System.out.println("nhap sai! vui long nhap lai");
+        }
+
+        while (true) {
             System.out.println("email ( abc@abc.abc)");
             email = scanner.next();
-            System.out.println("loai khach hang");
-            typeCus = scanner.next();
-            System.out.println("dia chi");
-            address = scanner.next();
-            System.out.println("ten dich vu su dung");
-            nameService = scanner.next();
+            if (checkValidInformation.checkEmailCustomer(email)) break;
+            else System.out.println("nhap sai! vui long nhap lai");
         }
+
+        System.out.println("loai khach hang");
+        typeCus = scanner.next();
+        System.out.println("dia chi");
+        address = scanner.next();
+        System.out.println("ten dich vu su dung");
+        nameService = scanner.next();
+
 
         Customer customer = new Customer(
                 checkValidInformation.formatStringInput(nameCus), birthday,
