@@ -11,6 +11,7 @@
 <button onclick="status()">On/Off</button>
 
 <script>
+    let soLanBat = 0;
     let denBat = document.getElementById("den2");
     let denTat = document.getElementById("den1");
     let canvas = document.getElementById("canvas");
@@ -54,11 +55,14 @@
 
     function status() {
         switchLight.switchButton();
-
         if (lamp.status === true) {
             ctx.drawImage(denTat, 0, 0, 100, 150);
-        }else {
+        }else if(lamp.status === false && soLanBat < 10){
+            soLanBat++;
             ctx.drawImage(denBat, 0, 0, 100, 150);
+        }
+        if (soLanBat === 10){
+            alert("chay con me no den den roi bat cc")
         }
     }
 
