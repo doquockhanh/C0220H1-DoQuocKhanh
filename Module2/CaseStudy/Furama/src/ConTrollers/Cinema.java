@@ -7,6 +7,7 @@ public class Cinema {
     public static void main(String[] args) {
         Queue<String> customerReservation = new LinkedList<>();
         addCustomer(customerReservation,"khanh");
+        addCustomer(customerReservation, "huy");
         printTicket(customerReservation);
     }
 

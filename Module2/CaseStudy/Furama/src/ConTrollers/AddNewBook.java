@@ -47,13 +47,15 @@ public class AddNewBook {
 
         //chon dich vu
 
-        int a;
+
         do {
+            int index = 0;
+            String[] b = new String[100];
             System.out.println("1.\tBooking Villa\n" +
                     "2.\tBooking House\n" +
                     "3.\tBooking Room\n");
             System.out.println();
-            a = scanner.nextInt();
+            int a = scanner.nextInt();
             switch (a) {
                 case 1:
                     try {
@@ -62,10 +64,27 @@ public class AddNewBook {
 
                         String line = "";
                         while ((line = dataInputStream.readLine()) != null) {
-                            System.out.println(line);
+                            String[] c = line.split(",", 10);
+                            b[index] = c[0];
+                            index++;
+                            System.out.println(index + " " + line);
                         }
                         fileInputStream.close();
                         dataInputStream.close();
+                        try {
+                            System.out.println("chon dich vu muon dat");
+
+                            FileOutputStream fileOutputStream = new FileOutputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Booking.csv", true);
+                            DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
+
+                            dataOutputStream.writeBytes(listCustomer[idCusBooking - 1][1] + ",");
+                            dataOutputStream.writeBytes("Villa" + ",");
+                            dataOutputStream.writeBytes(b[scanner.nextInt() - 1]);
+                            dataOutputStream.writeBytes("\n");
+                            System.out.println("da them thanh cong !");
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                        }
 
                     } catch (IOException ex) {
                         ex.printStackTrace();
@@ -78,12 +97,28 @@ public class AddNewBook {
 
                         String line = "";
                         while ((line = dataInputStream.readLine()) != null) {
-                            System.out.println(line);
+                            String[] c = line.split(",", 10);
+                            b[index] = c[0];
+                            index++;
+                            System.out.println(index + " " + line);
                         }
 
                         fileInputStream.close();
                         dataInputStream.close();
+                        try {
+                            System.out.println("chon dich vu muon dat");
 
+                            FileOutputStream fileOutputStream = new FileOutputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Booking.csv", true);
+                            DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
+
+                            dataOutputStream.writeBytes(listCustomer[idCusBooking - 1][1] + ",");
+                            dataOutputStream.writeBytes("House" + ",");
+                            dataOutputStream.writeBytes(b[scanner.nextInt() - 1]);
+                            dataOutputStream.writeBytes("\n");
+                            System.out.println("da them thanh cong !");
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                        }
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
@@ -95,39 +130,36 @@ public class AddNewBook {
 
                         String line = "";
                         while ((line = dataInputStream.readLine()) != null) {
-                            System.out.println(line);
+                            String[] c = line.split(",", 10);
+                            b[index] = c[0];
+                            index++;
+                            System.out.println(index + " " + line);
                         }
 
                         fileInputStream.close();
                         dataInputStream.close();
+                        try {
+                            System.out.println("chon dich vu muon dat");
 
+                            FileOutputStream fileOutputStream = new FileOutputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Booking.csv", true);
+                            DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
+
+                            dataOutputStream.writeBytes(listCustomer[idCusBooking - 1][1] + ",");
+                            dataOutputStream.writeBytes("Room" + ",");
+                            dataOutputStream.writeBytes(b[scanner.nextInt() - 1]);
+                            dataOutputStream.writeBytes("\n");
+                            System.out.println("da them thanh cong !");
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                        }
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
                     break;
-                default:
-                    a = -1;
             }
-        } while (a == -1);
-
-
-        // ghi du lieu customer booking vao file
-        try {
-            FileOutputStream fileOutputStream = new FileOutputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Booking.csv", true);
-            DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
-
-            dataOutputStream.writeBytes(listCustomer[idCusBooking][1] + ",");
-            dataOutputStream.writeBytes(listCustomer[idCusBooking][2] + ",");
-            dataOutputStream.writeBytes(listCustomer[idCusBooking][3] + ",");
-            dataOutputStream.writeBytes(listCustomer[idCusBooking][4] + ",");
-            dataOutputStream.writeBytes(listCustomer[idCusBooking][5] + ",");
-            dataOutputStream.writeBytes(listCustomer[idCusBooking][6] + ",");
-            dataOutputStream.writeBytes(listCustomer[idCusBooking][7] + ",");
-            dataOutputStream.writeBytes(listCustomer[idCusBooking][9] + ",");
-            dataOutputStream.writeBytes(listCustomer[idCusBooking][10]);
-            dataOutputStream.writeBytes("\n");
-        }catch (IOException ex){
-            ex.printStackTrace();
-        }
+            if (a == 1 || a == 2 || a == 3) {
+                break;
+            }
+        } while (true);
     }
 }
