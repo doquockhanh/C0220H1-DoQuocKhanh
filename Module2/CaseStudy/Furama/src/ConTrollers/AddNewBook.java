@@ -9,7 +9,7 @@ public class AddNewBook {
         int count = 0;
         String[][] listCustomer = new String[10][10];
         try {
-            FileInputStream fileInputStream = new FileInputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Customer.csv");
+            FileInputStream fileInputStream = new FileInputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Customer.csv");
             DataInputStream dataInputStream = new DataInputStream(fileInputStream);
 
             String line = "";
@@ -57,7 +57,7 @@ public class AddNewBook {
             switch (a) {
                 case 1:
                     try {
-                        FileInputStream fileInputStream = new FileInputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Villa.csv");
+                        FileInputStream fileInputStream = new FileInputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Villa.csv");
                         DataInputStream dataInputStream = new DataInputStream(fileInputStream);
 
                         String line = "";
@@ -73,7 +73,7 @@ public class AddNewBook {
                     break;
                 case 2:
                     try {
-                        FileInputStream fileInputStream = new FileInputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\House.csv");
+                        FileInputStream fileInputStream = new FileInputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\House.csv");
                         DataInputStream dataInputStream = new DataInputStream(fileInputStream);
 
                         String line = "";
@@ -90,7 +90,7 @@ public class AddNewBook {
                     break;
                 case 3:
                     try {
-                        FileInputStream fileInputStream = new FileInputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Room.csv");
+                        FileInputStream fileInputStream = new FileInputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Room.csv");
                         DataInputStream dataInputStream = new DataInputStream(fileInputStream);
 
                         String line = "";
@@ -113,7 +113,7 @@ public class AddNewBook {
 
         // ghi du lieu customer booking vao file
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Booking.csv", true);
+            FileOutputStream fileOutputStream = new FileOutputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Booking.csv", true);
             DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
 
             dataOutputStream.writeBytes(listCustomer[idCusBooking][1] + ",");

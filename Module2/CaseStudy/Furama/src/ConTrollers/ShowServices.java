@@ -28,7 +28,7 @@ public class ShowServices {
                 case 1:
                     try {
 
-                        FileInputStream fileInputStream = new FileInputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Villa.csv");
+                        FileInputStream fileInputStream = new FileInputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Villa.csv");
                         DataInputStream dataInputStream = new DataInputStream(fileInputStream);
 
                         String line = "";
@@ -46,7 +46,7 @@ public class ShowServices {
                 case 2:
                     try {
 
-                        FileInputStream fileInputStream = new FileInputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\House.txt");
+                        FileInputStream fileInputStream = new FileInputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\House.txt");
                         DataInputStream dataInputStream = new DataInputStream(fileInputStream);
 
                         String line = "";
@@ -63,7 +63,7 @@ public class ShowServices {
                     break;
                 case 3:
                     try {
-                        FileInputStream fileInputStream = new FileInputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Room.csv");
+                        FileInputStream fileInputStream = new FileInputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Room.csv");
                         DataInputStream dataInputStream = new DataInputStream(fileInputStream);
 
                         String line = "";
@@ -100,7 +100,7 @@ public class ShowServices {
                     try {
                         String[] listService = new String[100];
                         String[] nameService = new String[100];
-                        FileInputStream fileInputStream = new FileInputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Villa.csv");
+                        FileInputStream fileInputStream = new FileInputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Villa.csv");
                         DataInputStream dataInputStream = new DataInputStream(fileInputStream);
                         String line = "";
                         while ((line = dataInputStream.readLine()) != null) {
@@ -130,7 +130,7 @@ public class ShowServices {
                             }
                         }
                         int i = 0;
-                        System.out.println("danh sach ten cac villa khong trung nhau");
+                        System.out.println("danh sach cac villa khong trung nhau");
                         System.out.println();
                         while (listService[i] != null) {
                             System.out.print(listService[i] + "\n");
@@ -146,7 +146,7 @@ public class ShowServices {
                     try {
                         String[] nameService = new String[100];
                         String[] listService = new String[100];
-                        FileInputStream fileInputStream = new FileInputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\House.csv");
+                        FileInputStream fileInputStream = new FileInputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\House.csv");
                         DataInputStream dataInputStream = new DataInputStream(fileInputStream);
                         String line = "";
                         while ((line = dataInputStream.readLine()) != null) {
@@ -176,7 +176,7 @@ public class ShowServices {
                             }
                         }
                         int i = 0;
-                        System.out.println("danh sach ten cac house khong trung nhau");
+                        System.out.println("danh sach cac house khong trung nhau");
                         System.out.println();
                         while (listService[i] != null) {
                             System.out.print(listService[i] + " | ");
@@ -192,7 +192,7 @@ public class ShowServices {
                     try {
                         String[] nameService = new String[100];
                         String[] listService = new String[100];
-                        FileInputStream fileInputStream = new FileInputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Room.csv");
+                        FileInputStream fileInputStream = new FileInputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Room.csv");
                         DataInputStream dataInputStream = new DataInputStream(fileInputStream);
                         String line = "";
                         while ((line = dataInputStream.readLine()) != null) {
@@ -222,7 +222,7 @@ public class ShowServices {
                             }
                         }
                         int i = 0;
-                        System.out.println("danh sach ten cac room khong trung nhau");
+                        System.out.println("danh sach cac room khong trung nhau");
                         System.out.println();
                         while (listService[i] != null) {
                             System.out.print(listService[i] + " | ");

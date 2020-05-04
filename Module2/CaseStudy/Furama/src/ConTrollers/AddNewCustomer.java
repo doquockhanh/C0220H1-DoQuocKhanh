@@ -75,7 +75,7 @@ public class AddNewCustomer {
         );
 
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Customer.csv", true);
+            FileOutputStream fileOutputStream = new FileOutputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Customer.csv", true);
             DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
 
             dataOutputStream.writeBytes(customer.getName());

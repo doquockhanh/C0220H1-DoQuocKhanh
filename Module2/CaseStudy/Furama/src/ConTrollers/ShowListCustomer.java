@@ -8,7 +8,7 @@ public class ShowListCustomer {
     public ShowListCustomer(){
         int count = 0;
         try{
-            FileInputStream fileInputStream = new FileInputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Customer.csv");
+            FileInputStream fileInputStream = new FileInputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Customer.csv");
             DataInputStream dataInputStream = new DataInputStream(fileInputStream);
 
             String line = "";

@@ -8,7 +8,8 @@ import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.util.Scanner;
 
-public class AddNewServices {
+public class
+AddNewServices {
     public AddNewServices() {
         String type;
         String serviceID = "";
@@ -104,7 +105,7 @@ public class AddNewServices {
 
 
                     try {
-                        FileOutputStream fileOutputStream = new FileOutputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Villa.csv", true);
+                        FileOutputStream fileOutputStream = new FileOutputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Villa.csv", true);
                         DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
 
                         dataOutputStream.writeBytes(villa.getServiceID());
@@ -191,7 +192,7 @@ public class AddNewServices {
                     House house = new House(serviceID, checkValidInformation.formatStringInput(nameService), maxPeople, checkValidInformation.formatStringInput(rentType),
                             rentPrice, checkValidInformation.formatStringInput(roomStandard), moreStandard, poolArea);
                     try {
-                        FileOutputStream fileOutputStream = new FileOutputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\House.csv", true);
+                        FileOutputStream fileOutputStream = new FileOutputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\House.csv", true);
                         DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
 
                         dataOutputStream.writeBytes(house.getServiceID());
@@ -258,7 +259,7 @@ public class AddNewServices {
             Room room = new Room(serviceID, checkValidInformation.formatStringInput(nameService), maxPeople, checkValidInformation.formatStringInput(rentType),
                     rentPrice, checkValidInformation.formatStringInput(freeService));
             try {
-                FileOutputStream fileOutputStream = new FileOutputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Room.csv", true);
+                FileOutputStream fileOutputStream = new FileOutputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Room.csv", true);
                 DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
 
                 dataOutputStream.writeBytes(room.getServiceID());

@@ -12,7 +12,7 @@ public class ShowAllEmployee {
     public ShowAllEmployee() {
         Map<Integer, Employee> map = new HashMap<>();
         try {
-            FileInputStream fileInputStream = new FileInputStream("D:\\luu file chay thu\\Case study\\CaseStudyModul2\\Furama\\src\\ConTrollers\\data\\Employee.csv");
+            FileInputStream fileInputStream = new FileInputStream("D:\\CODEGYM\\Module2\\CaseStudy\\Furama\\src\\ConTrollers\\Data\\Employee.csv");
             DataInputStream dataInputStream = new DataInputStream(fileInputStream);
 
             String line = "";
