@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SimpleLogin:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/SimpleLogin_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="SimpleLogin/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SimpleLogin" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
