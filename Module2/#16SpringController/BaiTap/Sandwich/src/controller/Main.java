@@ -12,8 +12,7 @@ import java.util.Arrays;
 public class Main {
 
     @GetMapping("save")
-    public String save(Model model, @RequestParam String[] Condiments) {
-        model.addAttribute("items", Arrays.toString(Condiments));
+    public String save() {
         return "home";
     }
 }

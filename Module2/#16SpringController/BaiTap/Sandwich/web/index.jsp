@@ -14,14 +14,8 @@
   <body>
   <h2>Sandwich Condiments</h2>
   <br>
-  <form action="save", method="get">
-    <input type="checkbox" name="Condiments" value="lettuce"> Lettuce <br>
-    <input type="checkbox" name="Condiments" value="tomato"> Tomato <br>
-    <input type="checkbox" name="Condiments" value="mustard"> Mustard <br>
-    <input type="checkbox" name="Condiments" value="sprouts"> Sprouts <br>
-    <hr>
-    <button>save</button>
-  </form>
-
+  <a href="/save">
+    <img src="*/kk.png" alt="HTML tutorial" style="width:100px;height:100px;border:0">
+  </a>
   </body>
 </html>
