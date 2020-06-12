@@ -19,8 +19,5 @@
     </c:otherwise>
 </c:choose>
 
-<script>
-    alert("" + typeof ${word})
-</script>
 </body>
 </html>

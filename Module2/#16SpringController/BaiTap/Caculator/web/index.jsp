@@ -15,7 +15,7 @@
   <body>
   <form action="/calculate">
     <input type="text" name="firstNum" placeholder="number">
-    <input type="text" name="secondNum" placeholder="number"><br>
+    <input type="text" name="secondNum" placeholder="number"><br><br>
     <input type="submit" name="operator" value="add">
     <input type="submit" name="operator" value="sub">
     <input type="submit" name="operator" value="mul">
