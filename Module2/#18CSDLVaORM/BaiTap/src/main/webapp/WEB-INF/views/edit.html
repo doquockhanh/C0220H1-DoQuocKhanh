@@ -5,11 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/editing" method="post">
-    <input th:value="${title}" type="text" name="title" placeholder="Title"><br><br>
-    <input th:value="${content}" name="content" placeholder="Content" style="background: aliceblue; width: 800px; height: 50px"><br><br>
+<form action="/editing" method="post" th:object="${blog}">
+    <input th:field="*{title}" type="text" name="title" placeholder="Title"><br><br>
+    <textarea th:field="*{content}" name="content" placeholder="Content" style="background: aliceblue; width: 500px; height: 300px"></textarea><br><br>
     <input type="submit" value="Update">
-    <input th:value="${id}" type="number" name="id" hidden>
+    <input th:field="*{id}" type="hidden" name="id">
 </form>
 </body>
 </html>

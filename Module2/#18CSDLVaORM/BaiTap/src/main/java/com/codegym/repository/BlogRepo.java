@@ -11,7 +11,7 @@ public interface BlogRepo {
 
     void deleteBlog(Integer id);
 
-    void editBlog(Integer id, String title, String content);
+    void editBlog(Blog blog);
 
-    void addBlog(String title, String content);
+    void addBlog(Blog blog);
 }

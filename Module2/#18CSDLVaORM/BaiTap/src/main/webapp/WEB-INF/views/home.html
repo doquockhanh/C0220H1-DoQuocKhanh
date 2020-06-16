@@ -14,18 +14,18 @@
         <td>Edit</td>
         <td>Delete</td>
     </tr>
-    <th:block th:each="blog: ${blogs}">
+    <th:block th:each="blog: ${blogs}" th:object="${blog}">
         <tr>
-            <td th:text="${blog.id}"></td>
-            <td th:text="${blog.title}"></td>
-            <td><a th:href="@{/view(id=${blog.id})}">View</a></td>
-            <td><a th:href="@{/edit(id=${blog.id})}">Edit</a></td>
-            <td><a th:href="@{/delete(id=${blog.id})}">Delete</a></td>
+            <td th:text="*{id}"></td>
+            <td th:text="*{title}"></td>
+            <td><a th:href="@{/view(id=*{id})}">View</a></td>
+            <td><a th:href="@{/edit(id=*{id})}">Edit</a></td>
+            <td><a th:href="@{/delete(id=*{id})}">Delete</a></td>
         </tr>
     </th:block>
 </table><br><br>
 <h3>create post</h3>
-<form action="/add" method="get">
+<form action="/add" method="get" >
     <input type="text" name="title" placeholder="Title"><br><br>
     <textarea name="content" placeholder="Content" style="background: aliceblue; width: 500px; height: 300px"></textarea><br><br>
     <input type="submit" value="Create">

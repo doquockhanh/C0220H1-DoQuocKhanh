@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -35,15 +36,13 @@ public class BlogController {
     @GetMapping("/edit")
     public String edit(Model model, @RequestParam Integer id){
         Blog blog = blogService.getByIdBlog(id);
-        model.addAttribute("id", blog.getId());
-        model.addAttribute("content", blog.getContent());
-        model.addAttribute("title", blog.getTitle());
+        model.addAttribute("blog", blog);
         return "edit";
     }
 
     @PostMapping("/editing")
-    public String editing(Model model, @RequestParam Integer id, @RequestParam String title, @RequestParam String content){
-        blogService.editBlog(id, title, content);
+    public String editing(Model model, @ModelAttribute Blog blog){
+        blogService.editBlog(blog);
         List<Blog> blogList = blogService.getAllBlog();
         model.addAttribute("blogs", blogList);
         return "home";
@@ -52,14 +51,13 @@ public class BlogController {
     @GetMapping("/view")
     public String view(Model model, @RequestParam Integer id){
         Blog blog = blogService.getByIdBlog(id);
-        model.addAttribute("content", blog.getContent());
-        model.addAttribute("title", blog.getTitle());
+        model.addAttribute("blog", blog);
         return "view";
     }
 
     @GetMapping("/add")
-    public String add(Model model, @RequestParam String title, @RequestParam String content){
-        blogService.addBlog(title, content);
+    public String add(Model model, @ModelAttribute Blog blog){
+        blogService.addBlog(blog);
         List<Blog> blogList = blogService.getAllBlog();
         model.addAttribute("blogs", blogList);
         return "home";

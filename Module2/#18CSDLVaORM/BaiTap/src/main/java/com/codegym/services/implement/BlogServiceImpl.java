@@ -32,12 +32,12 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public void editBlog(Integer id, String title, String content) {
-         blogRepo.editBlog(id, title, content);
+    public void editBlog(Blog blog) {
+         blogRepo.editBlog(blog);
     }
 
     @Override
-    public void addBlog(String title, String content) {
-        blogRepo.addBlog(title, content);
+    public void addBlog(Blog blog) {
+        blogRepo.addBlog(blog);
     }
 }

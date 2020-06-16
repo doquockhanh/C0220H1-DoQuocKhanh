@@ -38,14 +38,12 @@ public class BlogRepository implements BlogRepo {
     }
 
     @Override
-    public void editBlog(Integer id, String title, String content) {
-        Blog blog = new Blog(id, title, content);
+    public void editBlog(Blog blog) {
         entityManager.merge(blog);
     }
 
     @Override
-    public void addBlog(String title, String content) {
-         Blog blog = new Blog(title, content);
+    public void addBlog(Blog blog) {
          entityManager.persist(blog);
     }
 }
