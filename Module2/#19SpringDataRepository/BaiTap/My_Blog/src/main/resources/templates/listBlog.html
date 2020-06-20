@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>K.exe blogger</h1>
+
+<form th:action="@{/listBlog}" method="get">
+    <input type="text" name="keyword" />
+    <input type="submit" value="Search">
+</form><br><br>
+
+<table border="1px">
+    <tr>
+        <td>ID</td>
+        <td>Title</td>
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+    <th:block th:each="blog: ${blogs}" th:object="${blog}">
+        <tr>
+            <td th:text="*{id}"></td>
+            <td th:text="*{title}"></td>
+            <td><a th:href="@{/view(id=*{id})}">View</a></td>
+            <td><a th:href="@{/edit(id=*{id})}">Edit</a></td>
+            <td><a th:href="@{/delete(id=*{id})}">Delete</a></td>
+        </tr>
+    </th:block>
+</table><br><br>
+
+<a th:if="${blogs.hasPrevious()}" th:href="@{/(page=${blogs.getNumber()}, keyword=${keyword})}">Previous</a>
+<a th:if="${blogs.hasNext()}" th:href="@{/(page=${blogs.getNumber() + 2}, keyword=${keyword})}">Next</a>
+
+<br><br>
+<h3>create post</h3>
+<form action="/add" method="get" >
+    <input type="text" name="title" placeholder="Title"><br><br>
+    <input type="text" name="category" placeholder="Type of blog"><br><br>
+    <textarea name="content" placeholder="Content" style="background: aliceblue; width: 500px; height: 300px"></textarea><br><br>
+    <input type="submit" value="Create">
+</form>
+</body>
+</html>
