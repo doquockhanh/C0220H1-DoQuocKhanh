@@ -16,7 +16,7 @@
     <input th:field="*{email}" placeholder="Email Address"/><br><br>
     <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
 
-    <input type="number" th:field="*{old}" placeholder="Old" value="1"/><br><br>
+    <input type="number" th:field="*{old}" placeholder="Old"/><br><br>
     <p th:if="${#fields.hasErrors('old')}" th:errors="*{old}"></p>
     <input type="submit" value="register">
 </form>

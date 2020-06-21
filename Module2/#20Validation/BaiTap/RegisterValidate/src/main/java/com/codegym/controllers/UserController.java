@@ -21,12 +21,16 @@ public class UserController {
 
     @GetMapping("/")
     public String home(Model model) {
-        model.addAttribute("user", new User());
+        User user = new User();
+        user.setOld(17);
+        model.addAttribute("user",user);
         return "home";
     }
 
     @PostMapping("/register")
     public String register(Model model, @Valid @ModelAttribute User user, BindingResult bindingResult) {
+
+        new User().validate(user, bindingResult);
 
         if (bindingResult.hasFieldErrors()) {
             return "home";
