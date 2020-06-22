@@ -1,36 +1,50 @@
 package com.codegym.models;
 
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
 @Entity
-public class Customer {
-
+public class Customer implements Validator {
     @Id
-    private String id;
-
-    @Size(min = 5, max = 25)
+    private Integer id;
     private String userName;
-
-    @Size(min = 7, max = 25)
     private String passWord;
-
-    @Pattern(regexp="^[A-Za-z]{1,20}$")
     private String firstName;
-
-    @Pattern(regexp="^[A-Za-z]{1,20}$")
     private String lastName;
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        Customer customer = (Customer) target;
+        if(!customer.userName.matches("[a-zA-Z0-9]{5,25}")) {
+            errors.rejectValue("userName", "customer.userName");
+        }
+        if(!customer.passWord.matches("[a-zA-Z0-9]{7,25}")) {
+            errors.rejectValue("passWord", "customer.password");
+        }
+        if(!customer.firstName.matches("[a-zA-Z\\s]{1,20}")) {
+            errors.rejectValue("firstName", "customer.firstName");
+        }
+        if(!customer.lastName.matches("[a-zA-Z\\s]{1,20}")) {
+            errors.rejectValue("lastName", "customer.lastName");
+        }
+    }
 
     public Customer() {
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

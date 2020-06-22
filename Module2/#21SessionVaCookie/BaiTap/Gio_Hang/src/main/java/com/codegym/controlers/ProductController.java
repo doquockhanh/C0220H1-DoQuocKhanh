@@ -14,6 +14,11 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
+    @ModelAttribute("product")
+    public Product product(){
+        return new Product();
+    }
+
     @GetMapping("/")
     public String goHome(){
         return "redirect:/home";

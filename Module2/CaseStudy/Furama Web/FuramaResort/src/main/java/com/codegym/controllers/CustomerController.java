@@ -27,6 +27,8 @@ public class CustomerController {
     @PostMapping("/doRegister")
     public String doRegister(@Valid @ModelAttribute Customer customer, BindingResult bindingResult) {
 
+        new Customer().validate(customer, bindingResult);
+
         if (bindingResult.hasFieldErrors()) {
             return "register";
         }
