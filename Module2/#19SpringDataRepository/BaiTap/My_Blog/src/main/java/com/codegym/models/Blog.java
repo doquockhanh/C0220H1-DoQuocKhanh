@@ -12,7 +12,7 @@ public class Blog {
     private String content;
 
     @ManyToOne
-    @JoinColumn(name = "blog_category_id")
+    @JoinColumn(name = "category_id")
     private Category category;
 
     public Blog() {

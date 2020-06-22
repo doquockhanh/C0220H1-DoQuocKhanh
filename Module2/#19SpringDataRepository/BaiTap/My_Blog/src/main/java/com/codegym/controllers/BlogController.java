@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.jws.WebParam;
 import java.util.Optional;
 
 @Controller
@@ -28,13 +27,16 @@ public class BlogController {
     CategoryService categoryService;
 
     @GetMapping("/")
-    public String home(Model model, @RequestParam(value = "page", defaultValue = "1") String page, @RequestParam Optional<String> keyword){
+    public String home(Model model, @RequestParam(value = "page", defaultValue = "1") String page,
+                       @RequestParam Optional<String> keyword){
         try {
             Integer.parseInt(page);
         }
         catch (Exception e) {
 
         }
+
+        model.addAttribute("allCategory", categoryService.getAll());
 
         Pageable pageable = PageRequest.of(Integer.parseInt(page) - 1, 2);
         Page<Category> categories = null;
@@ -56,7 +58,10 @@ public class BlogController {
     }
 
     @GetMapping("/listBlog")
-    public String listBlog(Model model, @RequestParam(value = "page", defaultValue = "1") String page, @RequestParam Optional<String> keyword) {
+    public String listBlog(Model model, @RequestParam(value = "page", defaultValue = "1") String page,
+                           @RequestParam Optional<String> keyword,
+                           @RequestParam Integer id
+    ) {
 
         try {
             Integer.parseInt(page);
@@ -69,7 +74,7 @@ public class BlogController {
         Page<Blog> blogList = null;
 
         if(!keyword.isPresent()) {
-            blogList = blogService.getAllBlog(pageable);
+            blogList = blogService.findByCategory(id, pageable);
         }else {
             blogList = blogService.findByNameContaining(keyword.get(), pageable);
             model.addAttribute("keyword", keyword.get());
@@ -77,6 +82,25 @@ public class BlogController {
         model.addAttribute("blogs", blogList);
 
         return "listBlog";
+    }
+
+    @GetMapping("/editCategory")
+    public String editCategory(Model model, @RequestParam Integer id){
+        Category category = categoryService.getByIdCategory(id);
+        model.addAttribute("category", category);
+        return "editCategory";
+    }
+
+    @PostMapping("/editingCategory")
+    public String editingCategory(@ModelAttribute Category category){
+        categoryService.addCategory(category);
+        return "redirect:/";
+    }
+
+    @GetMapping("/deleteCategory")
+    public String deleteCategory(@RequestParam Integer id){
+        categoryService.deleteCategory(id);
+        return "redirect:/";
     }
 
     @GetMapping("/delete")

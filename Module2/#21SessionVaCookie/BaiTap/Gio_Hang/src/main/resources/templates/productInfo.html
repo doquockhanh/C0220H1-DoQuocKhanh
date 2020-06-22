@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<img th:src="${product.imageSource}" alt="gift picture">
+
+<br><br>* có 1 cái hình to bự <br>
+nhưng không hiển thị được<br><br>
+
+<form action="/addToCard" method="post" th:object="${product}">
+    <input type="submit" value="mua ngay">
+</form>
+
+</body>
+</html>

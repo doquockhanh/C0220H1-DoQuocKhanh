@@ -19,6 +19,8 @@ public class BlogServiceImpl implements BlogService {
         return blogRepo.findAll(pageable);
     }
 
+
+
     @Override
     public Blog getByIdBlog(Integer id) {
         return blogRepo.getOne(id);
@@ -42,5 +44,10 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Page<Blog> findByNameContaining(String keyword, Pageable pageable) {
         return blogRepo.findByTitleContaining(keyword, pageable);
+    }
+
+    @Override
+    public Page<Blog> findByCategory(Integer id, Pageable pageable) {
+        return blogRepo.findAllByCategory_Id(id, pageable);
     }
 }

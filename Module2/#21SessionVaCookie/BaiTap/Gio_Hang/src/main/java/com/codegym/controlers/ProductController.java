@@ -1,0 +1,53 @@
+package com.codegym.controlers;
+
+import com.codegym.models.Product;
+import com.codegym.services.ProductService;
+import com.sun.deploy.net.HttpResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+
+@Controller
+@SessionAttributes("product")
+public class ProductController {
+
+    @Autowired
+    ProductService productService;
+
+    @GetMapping("/")
+    public String goHome(){
+        return "redirect:/home";
+    }
+
+    @GetMapping("/home")
+    public String home(){
+        return "home";
+    }
+
+    @GetMapping("/productInfo")
+    public String productInfo(Model model, @RequestParam Integer id){
+        Product product = productService.getById(id);
+        model.addAttribute("product", product);
+        return "productInfo";
+    }
+
+    @PostMapping("/addToCard")
+    public String addProductToCard(@ModelAttribute("product") Product product,
+                                   HttpServletResponse response){
+        Cookie cookieProductId = new Cookie("cookieProductId", ""+ product.getId());
+        Cookie cookieProductName = new Cookie("cookieProductName",  product.getName());
+        Cookie cookieProductPrice = new Cookie("cookieProductPrice", product.getPrice());
+        Cookie cookieProductImage = new Cookie("cookieProductImage",  product.getImageSource());
+
+        response.addCookie(cookieProductId);
+        response.addCookie(cookieProductName);
+        response.addCookie(cookieProductPrice);
+        response.addCookie(cookieProductImage);
+
+        return "card";
+    }
+}
