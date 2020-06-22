@@ -17,7 +17,6 @@ public class Product{
 
     public Product() {
     }
-
     public Product(String name, String imageSource, String price) {
         this.name = name;
         this.imageSource = imageSource;

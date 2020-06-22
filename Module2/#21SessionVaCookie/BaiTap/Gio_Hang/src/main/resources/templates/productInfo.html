@@ -6,14 +6,10 @@
 </head>
 <body>
 
-<img th:src="${product.imageSource}" alt="gift picture">
-
-<br><br>* có 1 cái hình to bự <br>
-nhưng không hiển thị được<br><br>
+<img th:src="@{${product.imageSource}}" alt="gift picture" width="200" height="200">
 
 <form action="/addToCard" method="post" th:object="${product}">
     <input type="submit" value="mua ngay">
 </form>
-
 </body>
 </html>

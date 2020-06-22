@@ -2,14 +2,10 @@ package com.codegym.controlers;
 
 import com.codegym.models.Product;
 import com.codegym.services.ProductService;
-import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @SessionAttributes("product")
@@ -36,18 +32,12 @@ public class ProductController {
     }
 
     @PostMapping("/addToCard")
-    public String addProductToCard(@ModelAttribute("product") Product product,
-                                   HttpServletResponse response){
-        Cookie cookieProductId = new Cookie("cookieProductId", ""+ product.getId());
-        Cookie cookieProductName = new Cookie("cookieProductName",  product.getName());
-        Cookie cookieProductPrice = new Cookie("cookieProductPrice", product.getPrice());
-        Cookie cookieProductImage = new Cookie("cookieProductImage",  product.getImageSource());
+    public String addProductToCard(@ModelAttribute("product") Product product){
+        return "card";
+    }
 
-        response.addCookie(cookieProductId);
-        response.addCookie(cookieProductName);
-        response.addCookie(cookieProductPrice);
-        response.addCookie(cookieProductImage);
-
+    @GetMapping("/gotoCard")
+    public String gotoCard(){
         return "card";
     }
 }
