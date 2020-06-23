@@ -14,13 +14,24 @@ public class Product{
     private String name;
     private String imageSource;
     private String price;
+    private Integer amount;
 
-    public Product() {
-    }
-    public Product(String name, String imageSource, String price) {
+    public Product(String name, String imageSource, String price, Integer amount) {
         this.name = name;
         this.imageSource = imageSource;
         this.price = price;
+        this.amount = amount;
+    }
+
+    public Product() {
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
     }
 
     public Integer getId() {

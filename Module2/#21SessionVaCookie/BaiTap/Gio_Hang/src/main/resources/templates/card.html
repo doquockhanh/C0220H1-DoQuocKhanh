@@ -6,10 +6,13 @@
 </head>
 <body>
 
-<p th:text="${product.id}"></p>
-<p th:text="${product.name}"></p>
-<p th:text="${product.price}"></p>
-<img th:src="@{${product.imageSource}}" width="200" height="200">
+<th:block th:each="product : ${productList}" th:object="${product}">
+    <img th:src="*{imageSource}" width="200" height="200">
+    <p th:text="*{name}"></p>
+    <p th:text="*{id}"></p>
+    <p th:text="*{price}"></p>
+    <input type="number" th:field="*{amount}"><br>
+</th:block><br><br>
 
 <a th:href="@{/}">home</a>
 

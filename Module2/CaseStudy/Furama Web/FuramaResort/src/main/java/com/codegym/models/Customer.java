@@ -9,7 +9,7 @@ import javax.persistence.Id;
 @Entity
 public class Customer implements Validator {
     @Id
-    private Integer id;
+    private String id;
     private String userName;
     private String passWord;
     private String firstName;
@@ -40,11 +40,11 @@ public class Customer implements Validator {
     public Customer() {
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

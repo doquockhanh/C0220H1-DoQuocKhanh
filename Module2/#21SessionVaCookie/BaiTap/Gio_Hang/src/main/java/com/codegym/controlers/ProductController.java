@@ -7,16 +7,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
-@SessionAttributes("product")
+@SessionAttributes("productList")
 public class ProductController {
+
+    private static List<Product> productList = new ArrayList<>();
 
     @Autowired
     ProductService productService;
 
-    @ModelAttribute("product")
-    public Product product(){
-        return new Product();
+    @ModelAttribute("productList")
+    public List<Product> product(){
+        return productList;
     }
 
     @GetMapping("/")
@@ -34,15 +39,5 @@ public class ProductController {
         Product product = productService.getById(id);
         model.addAttribute("product", product);
         return "productInfo";
-    }
-
-    @PostMapping("/addToCard")
-    public String addProductToCard(@ModelAttribute("product") Product product){
-        return "card";
-    }
-
-    @GetMapping("/gotoCard")
-    public String gotoCard(){
-        return "card";
     }
 }

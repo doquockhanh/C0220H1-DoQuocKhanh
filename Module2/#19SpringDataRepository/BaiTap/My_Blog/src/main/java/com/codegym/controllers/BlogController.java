@@ -51,6 +51,7 @@ public class BlogController {
         return "home";
     }
 
+
     @GetMapping("/addCategory")
     public String addCategory(@ModelAttribute Category category){
         categoryService.addCategory(category);

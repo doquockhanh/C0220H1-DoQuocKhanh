@@ -12,18 +12,19 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
     CustomerRepository customerRepository;
 
-    @Override
-    public void saveCustomer(Customer customer) {
-        Integer idGene = generateRanDomId();
-        customer.setId(idGene);
-        customerRepository.save(customer);
+    private Integer idGene = 0;
+
+    private String geneIdForEachCustomer(){
+        idGene = (int) (Math.random()*8999 + 1000);
+        if(customerRepository.existsCustomerById("KH-" + (idGene))){
+            geneIdForEachCustomer();
+        }
+        return "KH-" + (idGene);
     }
 
-    private Integer generateRanDomId(){
-        Integer idGene = (int) (Math.random()*8999 + 1000);
-        if(customerRepository.existsById(idGene)){
-            generateRanDomId();
-        }
-        return idGene;
+    @Override
+    public void saveCustomer(Customer customer) {
+        customer.setId(geneIdForEachCustomer());
+        customerRepository.save(customer);
     }
 }
