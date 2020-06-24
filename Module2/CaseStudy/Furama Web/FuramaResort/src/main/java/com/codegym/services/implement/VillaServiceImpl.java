@@ -27,9 +27,8 @@ public class VillaServiceImpl implements VillaService {
         villaRepository.save(villa);
     }
 
-    private Integer idGene = 0;
-
     private String geneIdForEachVilla(){
+        Integer idGene = 0;
         idGene = (int) (Math.random()*8999 + 1000);
         if(villaRepository.existsVillaById("VL-" + (idGene))){
             geneIdForEachVilla();
