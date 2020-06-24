@@ -1,16 +1,26 @@
 package com.codegym.models.rentalService;
 
-public class FuramaService {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.MappedSuperclass;
 
-    private String name;
-    private String rentPrice;
+@MappedSuperclass
+public abstract class FuramaService {
+
+    protected String name;
+    protected String rentPrice;
+    protected Integer maxPeople;
+    protected String rentType;
 
     public FuramaService() {
     }
 
-    public FuramaService(String name, String rentPrice) {
+    public FuramaService(String name, String rentPrice, Integer maxPeople, String rentType) {
         this.name = name;
         this.rentPrice = rentPrice;
+        this.maxPeople = maxPeople;
+        this.rentType = rentType;
     }
 
     public String getName() {
@@ -27,5 +37,21 @@ public class FuramaService {
 
     public void setRentPrice(String rentPrice) {
         this.rentPrice = rentPrice;
+    }
+
+    public Integer getMaxPeople() {
+        return maxPeople;
+    }
+
+    public void setMaxPeople(Integer maxPeople) {
+        this.maxPeople = maxPeople;
+    }
+
+    public String getRentType() {
+        return rentType;
+    }
+
+    public void setRentType(String rentType) {
+        this.rentType = rentType;
     }
 }
