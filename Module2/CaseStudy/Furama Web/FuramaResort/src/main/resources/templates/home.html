@@ -7,7 +7,22 @@
 <body>
 <h1>furama resort</h1>
 
-<a th:href="@{/register}">sign up</a>
+<a th:href="@{/register}">sign up</a><br><br>
+
+<a th:href="@{/addVilla}">add new service</a><br><br>
+
+<table border="1px">
+    <th:block th:each="villa : ${allVilla}" th:object="${villa}">
+        <tr>
+            <td th:text="*{id}"></td>
+            <td th:text="*{name}"></td>
+        </tr>
+    </th:block>
+</table><br><br>
+
+<a th:if="${allVilla.hasPrevious()}" th:href="@{/home(page=${allVilla.getNumber()})}">Previous</a>
+<span th:text="${allVilla.number + 1}"></span>/<span th:text="${allVilla.totalPages}"></span>
+<a th:if="${allVilla.hasNext()}" th:href="@{/home(page=${allVilla.getNumber() + 2})}">Next</a>
 
 </body>
 </html>
