@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/addingVilla" method="post" accept-charset="UTF-8" th:object="${villa}">
+    <h3>add new Villa</h3>
+
+    <input th:field="*{name}" placeholder="name"><br><br>
+
+    <input th:field="*{roomStandard}" placeholder="roomStandard"><br><br>
+
+    <input th:field="*{rentType}" placeholder="rentType"><br><br>
+
+    <input th:field="*{rentPrice}" placeholder="rentPrice"><br><br>
+
+    <input th:field="*{pollArea}" placeholder="pollArea"><br><br>
+
+    <input th:field="*{numberOfFloor}" placeholder="numberOfFloor"><br><br>
+
+    <input th:field="*{maxPeople}" placeholder="maxPeople"><br><br>
+
+    <input th:field="*{imageSource}" placeholder="imageSource"><br><br>
+
+    <input type="submit" value="create">
+
+    <input th:field="*{id}" type="hidden">
+</form><br><br>
+
+<a href="/home">home</a>
+
+<p th:text="${message}"></p>
+
+</body>
+</html>
