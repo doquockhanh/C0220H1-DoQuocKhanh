@@ -37,9 +37,15 @@ public class Main {
         Page<Category> categoryPage = null;
 
         if (keyWord.isPresent()) {
-            categoryPage = categoryService.getAllCategoryPagingByKeyWord(keyWord.get(), pageable);
-            model.addAttribute("categories", categoryPage);
-            model.addAttribute("message", "result for keyword : " + keyWord.get());
+            if(!keyWord.get().equals("")) {
+                categoryPage = categoryService.getAllCategoryPagingByKeyWord(keyWord.get(), pageable);
+                model.addAttribute("categories", categoryPage);
+                model.addAttribute("keyWord", keyWord.get());
+                model.addAttribute("message", "result for keyword : " + keyWord.get());
+            }else {
+                categoryPage = categoryService.getAllCategoryPaging(pageable);
+                model.addAttribute("categories", categoryPage);
+            }
         } else {
             categoryPage = categoryService.getAllCategoryPaging(pageable);
             model.addAttribute("categories", categoryPage);

@@ -38,9 +38,9 @@
 
 <p th:text="${message}"></p>
 
-<a th:if="${posts.hasPrevious()}" th:href="@{/viewPost(page=${posts.getNumber()},id=*{id})}">previous</a>
+<a th:if="${posts.hasPrevious()}" th:href="@{/viewPost(page=${posts.getNumber()},id=*{id}, keyWord=${keyWord})}">previous</a>
 <span th:text="${posts.number + 1}"></span>/<span th:text="${posts.totalPages}"></span>
-<a th:if="${posts.hasNext()}" th:href="@{/viewPost(page=${posts.getNumber() + 2},id=*{id})}">next</a><br><br>
+<a th:if="${posts.hasNext()}" th:href="@{/viewPost(page=${posts.getNumber() + 2},id=*{id}, keyWord=${keyWord})}">next</a><br><br>
 
 <a th:href="@{/}">home</a>
 

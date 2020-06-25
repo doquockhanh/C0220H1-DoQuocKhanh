@@ -56,9 +56,15 @@ public class BlogController {
         Page<Blog> blogPage = null;
 
         if (keyWord.isPresent()) {
-            blogPage = blogService.getBlogByIdCategoryAndKeyWork(keyWord.get(), id, pageable);
-            model.addAttribute("posts", blogPage);
-            model.addAttribute("message", "result for keyword : " + keyWord.get());
+            if (!keyWord.get().equals("")) {
+                blogPage = blogService.getBlogByIdCategoryAndKeyWork(keyWord.get(), id, pageable);
+                model.addAttribute("posts", blogPage);
+                model.addAttribute("keyWord", keyWord.get());
+                model.addAttribute("message", "result for keyword : " + keyWord.get());
+            }else {
+                blogPage = blogService.getBlogByIdCategory(id, pageable);
+                model.addAttribute("posts", blogPage);
+            }
         } else {
             blogPage = blogService.getBlogByIdCategory(id, pageable);
             model.addAttribute("posts", blogPage);

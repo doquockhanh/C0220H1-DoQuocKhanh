@@ -37,9 +37,9 @@
 
 <p th:text="${message}"></p>
 
-<a th:if="${categories.hasPrevious()}" th:href="@{/home(page=${categories.getNumber()})}">previous</a>
+<a th:if="${categories.hasPrevious()}" th:href="@{/home(page=${categories.getNumber()}, keyWord=${keyWord})}">previous</a>
 <span th:text="${categories.number + 1}"></span>/<span th:text="${categories.totalPages}"></span>
-<a th:if="${categories.hasNext()}" th:href="@{/home(page=${categories.getNumber() + 2})}">next</a>
+<a th:if="${categories.hasNext()}" th:href="@{/home(page=${categories.getNumber() + 2}, keyWord=${keyWord})}">next</a>
 
 </body>
 </html>
