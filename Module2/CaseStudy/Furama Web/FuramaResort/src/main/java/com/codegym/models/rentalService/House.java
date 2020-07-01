@@ -7,37 +7,26 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Villa extends FuramaService {
+public class House extends FuramaService{
 
     @Id
     protected String id;
     private Integer numberOfFloor;
-    private Integer pollArea;
     private String roomStandard;
     private String imageSource;
 
-    @OneToOne(mappedBy = "villa")
+    @OneToOne(mappedBy = "house")
     private Contract contract;
 
-    public Villa() {
+    public House() {
     }
 
-    public Villa(String name, String rentPrice, Integer maxPeople, String rentType, String id,
-                 Integer numberOfFloor, Integer pollArea, String roomStandard, String imageSource) {
+    public House(String name, String rentPrice, Integer maxPeople, String rentType, String id, Integer numberOfFloor, String roomStandard, String imageSource) {
         super(name, rentPrice, maxPeople, rentType);
         this.id = id;
         this.numberOfFloor = numberOfFloor;
-        this.pollArea = pollArea;
         this.roomStandard = roomStandard;
         this.imageSource = imageSource;
-    }
-
-    public Integer getNumberOfFloor() {
-        return numberOfFloor;
-    }
-
-    public void setNumberOfFloor(Integer numberOfFloor) {
-        this.numberOfFloor = numberOfFloor;
     }
 
     public String getId() {
@@ -48,12 +37,12 @@ public class Villa extends FuramaService {
         this.id = id;
     }
 
-    public Integer getPollArea() {
-        return pollArea;
+    public Integer getNumberOfFloor() {
+        return numberOfFloor;
     }
 
-    public void setPollArea(Integer pollArea) {
-        this.pollArea = pollArea;
+    public void setNumberOfFloor(Integer numberOfFloor) {
+        this.numberOfFloor = numberOfFloor;
     }
 
     public String getRoomStandard() {

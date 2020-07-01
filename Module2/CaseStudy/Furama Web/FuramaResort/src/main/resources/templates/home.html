@@ -2,27 +2,74 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="floatLeft.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-<h1>furama resort</h1>
 
-<a th:href="@{/register}">sign up</a><br><br>
+<div class="fixed-left">
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+            <section class="nav-item dropdown active" style="margin-right: 25px ; margin-left: 200px">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Add Service
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" th:href="@{/addVilla}">Add new Villa</a>
+                    <a class="dropdown-item" th:href="@{/addHouse}">Add new House</a>
+                    <a class="dropdown-item" th:href="@{/addRoom}">Add new Room</a>
+                </div>
+            </section>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            admin
+        </button>
+    </nav>
+</div>
 
-<a th:href="@{/addVilla}">add new service</a><br><br>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-<table border="1px">
-    <th:block th:each="villa : ${allVilla}" th:object="${villa}">
-        <tr>
-            <td th:text="*{id}"></td>
-            <td th:text="*{name}"></td>
-        </tr>
-    </th:block>
-</table><br><br>
+    <a class="navbar-brand" th:href="@{/}" aria-label="Search" id="floatLeft" >FURAMA RESORT</a>
 
-<a th:if="${allVilla.hasPrevious()}" th:href="@{/home(page=${allVilla.getNumber()})}">Previous</a>
-<span th:text="${allVilla.number + 1}"></span>/<span th:text="${allVilla.totalPages}"></span>
-<a th:if="${allVilla.hasNext()}" th:href="@{/home(page=${allVilla.getNumber() + 2})}">Next</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
 
+            <li class="nav-item active" style="margin-right: 25px">
+                <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item" style="margin-right: 25px">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+
+            <li class="nav-item" style="margin-right: 25px">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+
+        <a th:href="@{/}" class="btn btn-secondary active" role="button" aria-pressed="true" style="margin-right: 50px" >login</a>
+
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 </body>
 </html>
