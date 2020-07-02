@@ -54,7 +54,7 @@ public class AccompaniedServiceController {
 
     @PostMapping("/editingAccompaniedService")
     public String editingAccompaniedService(@ModelAttribute AccompaniedService accompaniedService, Model model){
-        accompaniedService_service.saveAccompaniedService(accompaniedService);
+        accompaniedService_service.editAccompaniedService(accompaniedService);
         model.addAttribute("message", "saved your change!");
         return "redirect:/allAccompaniedService";
     }
