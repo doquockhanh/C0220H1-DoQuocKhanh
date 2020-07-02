@@ -8,7 +8,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
+@Transactional
 public class HouseServiceImpl implements HouseService {
 
     @Autowired
@@ -27,6 +30,11 @@ public class HouseServiceImpl implements HouseService {
     @Override
     public House getHouseById(String id) {
         return houseRepository.getHouseById(id);
+    }
+
+    @Override
+    public void editHouse(House house) {
+        houseRepository.save(house);
     }
 
     private String geneIdForEachHouse() {
