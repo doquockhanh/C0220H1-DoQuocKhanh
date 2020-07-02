@@ -35,12 +35,17 @@ public class RoomServiceImpl implements RoomService {
         return roomRepository.getRoomById(id);
     }
 
+    @Override
+    public void editRoom(Room room) {
+        roomRepository.save(room);
+    }
+
     private String geneIdForEachRoom() {
         Integer idGene = 0;
         idGene = (int) (Math.random() * 8999 + 1000);
-        if (roomRepository.existsRoomById("HO-" + (idGene))) {
+        if (roomRepository.existsRoomById("RO-" + (idGene))) {
             geneIdForEachRoom();
         }
-        return "HO-" + (idGene);
+        return "RO-" + (idGene);
     }
 }
