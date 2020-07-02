@@ -20,18 +20,18 @@ public class Contract {
     private String totalPrice;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "house_id", referencedColumnName = "id")
-    private House house;
-
-    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "villa_id", referencedColumnName = "id")
     private Villa villa;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "house_id", referencedColumnName = "id")
+    private House house;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "room_id", referencedColumnName = "id")
     private Room room;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="contractdetail_id")
     private ContractDetail contractdetail;
 
