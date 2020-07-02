@@ -1,9 +1,6 @@
 package com.codegym.models.employee;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Employee {
@@ -16,15 +13,15 @@ public class Employee {
     private String phoneNumber;
     private String email;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="literacy_id", nullable=false)
     private Literacy literacy;//trinh do
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="position_id", nullable=false)
     private Position position;//vi tri
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="department_id", nullable=false)
     private Department department;//bo phan
 
