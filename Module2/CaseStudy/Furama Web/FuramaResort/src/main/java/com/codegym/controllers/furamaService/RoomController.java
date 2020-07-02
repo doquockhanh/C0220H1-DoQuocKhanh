@@ -22,7 +22,7 @@ public class RoomController {
     @GetMapping("/addRoom")
     public String addRoom(Model model){
         model.addAttribute("room", new Room());
-        return "addService/addRoom";
+        return "service/room/addRoom";
     }
 
     @PostMapping("/addingRoom")
@@ -30,7 +30,7 @@ public class RoomController {
         roomService.saveRoom(room);
         model.addAttribute("room", new Room());
         model.addAttribute("message", "add successful !");
-        return "addService/addRoom";
+        return "service/room/addRoom";
     }
 
     @GetMapping("/allRoom")
@@ -39,19 +39,27 @@ public class RoomController {
         Page<Room> roomPage = roomService.getAllRoomPaging(pageable);
 
         model.addAttribute("allRoom", roomPage);
-        return "";
+        return "service/room/allRoom";
     }
 
     @GetMapping("/deleteRoom")
     public String deleteHouse(@RequestParam String id) {
         roomService.deleteRoomById(id);
-        return "";
+
+        return "redirect:/allRoom";
     }
 
     @GetMapping("/editRoom")
     public String editRoom(@RequestParam String id, Model model){
         Room room = roomService.getRoomById(id);
         model.addAttribute("room", room);
-        return "";
+        return "service/room/editRoom";
+    }
+
+    @PostMapping("/editingRoom")
+    public String editingVilla(@ModelAttribute Room room, Model model){
+        roomService.editRoom(room);
+        model.addAttribute("message", "saved your change!");
+        return "redirect:/allRoom";
     }
 }
