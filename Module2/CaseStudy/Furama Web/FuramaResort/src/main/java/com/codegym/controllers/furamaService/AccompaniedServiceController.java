@@ -21,7 +21,7 @@ public class AccompaniedServiceController {
     @GetMapping("/addAccompaniedService")
     public String addAccompaniedService(Model model){
         model.addAttribute("accompaniedService", new AccompaniedService());
-        return "";
+        return "service/accompaniedService/addAccompaniedService";
     }
 
     @PostMapping("/addingAccompaniedService")
@@ -29,32 +29,33 @@ public class AccompaniedServiceController {
         accompaniedService_service.saveAccompaniedService(accompaniedService);
         model.addAttribute("accompaniedService", new AccompaniedService());
         model.addAttribute("message", "add successful !");
-        return "";
+        return "service/accompaniedService/addAccompaniedService";
     }
 
     @GetMapping("/allAccompaniedService")
     public String allAccompaniedService(Model model){
         List<AccompaniedService> accompaniedServiceList = accompaniedService_service.getAllAccompaniedService();
         model.addAttribute("accompaniedServices", accompaniedServiceList);
-        return "";
+        return "service/accompaniedService/allAccompaniedService";
     }
 
     @GetMapping("/deleteAccompaniedService")
     public String deleteAccompaniedService(@RequestParam String id) {
         accompaniedService_service.deleteAccompaniedServiceById(id);
-        return "";
+        return "redirect:/allAccompaniedService";
     }
 
     @GetMapping("/editAccompaniedService")
     public String editAccompaniedService(@RequestParam String id, Model model){
         AccompaniedService accompaniedService = accompaniedService_service.getAccompaniedServiceById(id);
         model.addAttribute("accompaniedService", accompaniedService);
-        return "";
+        return "service/accompaniedService/editAccompaniedService";
     }
 
     @PostMapping("/editingAccompaniedService")
-    public String editingAccompaniedService(@ModelAttribute AccompaniedService accompaniedService){
+    public String editingAccompaniedService(@ModelAttribute AccompaniedService accompaniedService, Model model){
         accompaniedService_service.saveAccompaniedService(accompaniedService);
-        return "";
+        model.addAttribute("message", "saved your change!");
+        return "redirect:/allAccompaniedService";
     }
 }
