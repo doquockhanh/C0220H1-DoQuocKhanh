@@ -12,4 +12,6 @@ public interface VillaService {
     void deleteVillaById(String id);
 
     Villa getVillaById(String id);
+
+    void editVilla(Villa villa);
 }

@@ -12,4 +12,6 @@ public interface HouseService {
     void deleteHouseById(String id);
 
     House getHouseById(String id);
+
+    void editHouse(House house);
 }

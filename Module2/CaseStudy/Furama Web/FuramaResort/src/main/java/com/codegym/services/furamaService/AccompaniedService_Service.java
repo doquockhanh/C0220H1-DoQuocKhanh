@@ -12,4 +12,6 @@ public interface AccompaniedService_Service {
     void deleteAccompaniedServiceById(String id);
 
     AccompaniedService getAccompaniedServiceById(String id);
+
+    void editAccompaniedService(AccompaniedService accompaniedService);
 }

@@ -12,4 +12,6 @@ public interface RoomService {
     void deleteRoomById(String id);
 
     Room getRoomById(String id);
+
+    void editRoom(Room room);
 }
