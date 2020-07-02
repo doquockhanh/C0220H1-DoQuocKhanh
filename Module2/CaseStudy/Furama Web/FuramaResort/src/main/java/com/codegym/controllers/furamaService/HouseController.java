@@ -24,7 +24,7 @@ public class HouseController {
     @GetMapping("/addHouse")
     public String addHouse(Model model){
         model.addAttribute("house", new House());
-        return "addService/addHouse";
+        return "service/house/addHouse";
     }
 
     @PostMapping("/addingHouse")
@@ -32,7 +32,7 @@ public class HouseController {
         houseService.saveHouse(house);
         model.addAttribute("house", new House());
         model.addAttribute("message", "add successful !");
-        return "addService/addHouse";
+        return "service/house/addHouse";
     }
 
     @GetMapping("/allHouse")
@@ -41,25 +41,26 @@ public class HouseController {
         Page<House> housePage = houseService.getAllHousePaging(pageable);
 
         model.addAttribute("allHouse", housePage);
-        return "";
+        return "service/house/allHouse";
     }
 
     @GetMapping("/deleteHouse")
     public String deleteHouse(@RequestParam String id) {
         houseService.deleteHouseById(id);
-        return "";
+        return "redirect:/allHouse";
     }
 
     @GetMapping("/editHouse")
     public String editHouse(@RequestParam String id, Model model){
         House house = houseService.getHouseById(id);
         model.addAttribute("house", house);
-        return "";
+        return "service/house/editHouse";
     }
 
     @PostMapping("/editingHouse")
-    public String editingTypeCustomer(@ModelAttribute House house){
-        houseService.saveHouse(house);
-        return "";
+    public String editingTypeCustomer(@ModelAttribute House house, Model model){
+        houseService.editHouse(house);
+        model.addAttribute("message", "saved your change!");
+        return "redirect:/allHouse";
     }
 }
