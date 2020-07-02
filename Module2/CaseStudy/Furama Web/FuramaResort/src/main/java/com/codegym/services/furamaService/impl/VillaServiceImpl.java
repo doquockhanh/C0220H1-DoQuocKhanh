@@ -19,7 +19,6 @@ public class VillaServiceImpl implements VillaService {
         return villaRepository.findAll(pageable);
     }
 
-
     @Override
     public void saveVilla(Villa villa) {
         villa.setId(geneIdForEachVilla());
@@ -34,6 +33,11 @@ public class VillaServiceImpl implements VillaService {
     @Override
     public Villa getVillaById(String id) {
         return villaRepository.getVillaById(id);
+    }
+
+    @Override
+    public void editVilla(Villa villa) {
+        villaRepository.save(villa);
     }
 
     private String geneIdForEachVilla(){
