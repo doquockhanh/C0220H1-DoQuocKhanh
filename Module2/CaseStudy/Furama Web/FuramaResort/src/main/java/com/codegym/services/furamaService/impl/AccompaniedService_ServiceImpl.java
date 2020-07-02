@@ -44,5 +44,8 @@ public class AccompaniedService_ServiceImpl implements AccompaniedService_Servic
         return accompaniedServiceRepository.getAccompaniedServiceById(id);
     }
 
-
+    @Override
+    public void editAccompaniedService(AccompaniedService accompaniedService) {
+        accompaniedServiceRepository.save(accompaniedService);
+    }
 }
