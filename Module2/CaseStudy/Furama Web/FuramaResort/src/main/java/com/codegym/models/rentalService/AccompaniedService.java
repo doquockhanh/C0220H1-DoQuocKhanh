@@ -11,6 +11,7 @@ public class AccompaniedService {
 
     @Id
     private String id;
+    private String name;
     private String price;
     private Integer amount;
 
@@ -20,10 +21,28 @@ public class AccompaniedService {
     public AccompaniedService() {
     }
 
-    public AccompaniedService(String id, String price, Integer amount) {
+    public AccompaniedService(String id, String name, String price, Integer amount, ContractDetail contractDetail) {
         this.id = id;
+        this.name = name;
         this.price = price;
         this.amount = amount;
+        this.contractDetail = contractDetail;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ContractDetail getContractDetail() {
+        return contractDetail;
+    }
+
+    public void setContractDetail(ContractDetail contractDetail) {
+        this.contractDetail = contractDetail;
     }
 
     public String getId() {
