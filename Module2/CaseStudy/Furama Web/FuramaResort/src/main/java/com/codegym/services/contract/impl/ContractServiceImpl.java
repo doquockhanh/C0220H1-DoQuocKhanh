@@ -28,7 +28,7 @@ public class ContractServiceImpl implements ContractService {
 
     @Override
     public Contract getContractById(String id) {
-        return contractRepository.getAContractById(id);
+        return contractRepository.getContractById(id);
     }
 
     @Override
