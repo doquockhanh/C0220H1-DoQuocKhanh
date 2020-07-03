@@ -22,7 +22,7 @@ public class TypeCustomerController {
     public String allTypeCustomer(Model model) {
         List<TypeCustomer> typeCustomerList = typeCustomerService.getAllTypeCustomer();
         model.addAttribute("typeCustomers", typeCustomerList);
-        return "customer/typeCustomer";
+        return "customer/typeCustomer/allTypeCustomer";
     }
 
     @GetMapping("/deleteTypeCustomer")
@@ -35,19 +35,20 @@ public class TypeCustomerController {
     public String editTypeCustomer(@RequestParam Integer id, Model model){
         TypeCustomer typeCustomer = typeCustomerService.getTypeCustomerById(id);
         model.addAttribute("typeCustomer", typeCustomer);
-        return "editTypeCustomer";
+        return "customer/typeCustomer/editTypeCustomer";
     }
 
     @PostMapping("/editingTypeCustomer")
-    public String editingTypeCustomer(@ModelAttribute TypeCustomer typeCustomer){
+    public String editingTypeCustomer(@ModelAttribute TypeCustomer typeCustomer, Model model){
         typeCustomerService.saveTypeCustomer(typeCustomer);
+        model.addAttribute("message", "saved your change!");
         return "redirect:/allTypeCustomer";
     }
 
     @GetMapping("/addTypeCustomer")
     public String addTypeCustomer(Model model) {
         model.addAttribute("typeCus", new TypeCustomer());
-        return "customer/addTypeCustomer";
+        return "customer/typeCustomer/addTypeCustomer";
     }
 
     @PostMapping("/addingTypeCustomer")
@@ -55,6 +56,6 @@ public class TypeCustomerController {
         typeCustomerService.saveTypeCustomer(typeCustomer);
         model.addAttribute("typeCus", new TypeCustomer());
         model.addAttribute("message", "add successful");
-        return "customer/addTypeCustomer";
+        return "customer/typeCustomer/addTypeCustomer";
     }
 }
