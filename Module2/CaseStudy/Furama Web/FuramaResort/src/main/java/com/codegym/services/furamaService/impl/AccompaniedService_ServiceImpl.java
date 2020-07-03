@@ -5,10 +5,12 @@ import com.codegym.repositories.serviceRepo.AccompaniedServiceRepository;
 import com.codegym.services.furamaService.AccompaniedService_Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class AccompaniedService_ServiceImpl implements AccompaniedService_Service {
 
     @Autowired

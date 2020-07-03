@@ -5,10 +5,12 @@ import com.codegym.repositories.customerRepo.TypeCustomerRepository;
 import com.codegym.services.customer.TypeCustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class TypeCustomerServiceImpl implements TypeCustomerService {
 
     @Autowired

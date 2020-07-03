@@ -5,10 +5,12 @@ import com.codegym.repositories.contractRepo.ContractDetailRepository;
 import com.codegym.services.contract.ContractDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class ContractDetailControllerImpl implements ContractDetailService {
 
     @Autowired
