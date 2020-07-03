@@ -13,4 +13,6 @@ public interface PositionService {
     void deletePosition(Integer id);
 
     Position getPositionById(Integer id);
+
+    void editPosition(Position position);
 }

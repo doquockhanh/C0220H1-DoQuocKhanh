@@ -35,4 +35,9 @@ public class ContractDetailControllerImpl implements ContractDetailService {
     public void deleteContractDetailById(Integer id) {
         contractDetailRepository.deleteById(id);
     }
+
+    @Override
+    public void editContractDetail(ContractDetail contractDetail) {
+        contractDetailRepository.save(contractDetail);
+    }
 }

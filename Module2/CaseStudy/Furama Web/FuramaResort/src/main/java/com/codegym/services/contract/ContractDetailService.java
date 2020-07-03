@@ -12,4 +12,6 @@ public interface ContractDetailService {
     ContractDetail getContractDetailById(Integer id);
 
     void deleteContractDetailById(Integer id);
+
+    void editContractDetail(ContractDetail contractDetail);
 }

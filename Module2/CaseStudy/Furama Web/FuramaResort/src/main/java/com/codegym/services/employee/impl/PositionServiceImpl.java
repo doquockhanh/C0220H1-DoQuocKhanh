@@ -35,4 +35,11 @@ public class PositionServiceImpl implements PositionService {
     public Position getPositionById(Integer id) {
         return positionRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public void editPosition(Position position) {
+        positionRepository.save(position);
+    }
+
+
 }

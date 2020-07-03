@@ -14,4 +14,5 @@ public interface TypeCustomerService {
 
     TypeCustomer getTypeCustomerById(Integer id);
 
+    void editTypeCustomer(TypeCustomer typeCustomer);
 }

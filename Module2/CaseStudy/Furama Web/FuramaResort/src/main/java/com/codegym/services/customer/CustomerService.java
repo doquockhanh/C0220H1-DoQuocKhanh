@@ -14,5 +14,5 @@ public interface CustomerService {
 
     void deleteCustomerById(String id);
 
-
+    void editCustomer(Customer customer);
 }

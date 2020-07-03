@@ -35,4 +35,9 @@ public class LiteracyServiceImpl implements LiteracyService {
     public Literacy getLiteracyById(Integer id) {
         return literacyRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public void editLiteracy(Literacy literacy) {
+        literacyRepository.save(literacy);
+    }
 }

@@ -35,4 +35,9 @@ public class ContractServiceImpl implements ContractService {
     public void deleteContractById(String id) {
         contractRepository.deleteContractById(id);
     }
+
+    @Override
+    public void editContract(Contract contract) {
+        contractRepository.save(contract);
+    }
 }

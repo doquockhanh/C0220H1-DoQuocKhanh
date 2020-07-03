@@ -13,4 +13,6 @@ public interface LiteracyService {
     void deleteLiteracy(Integer id);
 
     Literacy getLiteracyById(Integer id);
+
+    void editLiteracy(Literacy literacy);
 }

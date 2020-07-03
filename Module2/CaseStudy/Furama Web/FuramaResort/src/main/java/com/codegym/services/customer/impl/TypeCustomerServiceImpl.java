@@ -35,4 +35,9 @@ public class TypeCustomerServiceImpl implements TypeCustomerService {
     public TypeCustomer getTypeCustomerById(Integer id) {
         return typeCustomerRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public void editTypeCustomer(TypeCustomer typeCustomer) {
+        typeCustomerRepository.save(typeCustomer);
+    }
 }
