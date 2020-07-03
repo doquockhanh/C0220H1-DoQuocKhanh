@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface ContractRepository extends JpaRepository<Contract, String> {
     boolean existsContractById(String id);
 
-    Contract getAContractById(String id);
+    Contract getContractById(String id);
 
     void deleteContractById(String id);
 }
