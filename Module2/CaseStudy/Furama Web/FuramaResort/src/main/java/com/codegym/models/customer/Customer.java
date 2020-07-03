@@ -15,8 +15,8 @@ public class Customer implements Validator {
     private String firstName;
     private String lastName;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "typecustomer_id", referencedColumnName = "id")
+    @ManyToOne()
+    @JoinColumn(name="typeCustomer_id")
     private TypeCustomer typeCustomer;
 
 
