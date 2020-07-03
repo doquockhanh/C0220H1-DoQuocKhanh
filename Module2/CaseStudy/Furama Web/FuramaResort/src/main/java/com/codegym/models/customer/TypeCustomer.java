@@ -1,6 +1,7 @@
 package com.codegym.models.customer;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class TypeCustomer {
@@ -10,15 +11,15 @@ public class TypeCustomer {
     private Integer id;
     private String name;
 
-    @OneToOne(mappedBy = "typeCustomer")
-    private Customer customer;
+    @OneToMany(mappedBy = "typeCustomer", cascade = CascadeType.ALL)
+    private Set<Customer> customers;
 
     public TypeCustomer() {
     }
 
-    public TypeCustomer(String name, Customer customer) {
+    public TypeCustomer(String name, Set<Customer> customers) {
         this.name = name;
-        this.customer = customer;
+        this.customers = customers;
     }
 
     public Integer getId() {
@@ -29,6 +30,14 @@ public class TypeCustomer {
         this.id = id;
     }
 
+    public Set<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(Set<Customer> customers) {
+        this.customers = customers;
+    }
+
     public String getName() {
         return name;
     }
@@ -37,11 +46,5 @@ public class TypeCustomer {
         this.name = name;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
 }
