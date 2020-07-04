@@ -1,6 +1,8 @@
 package com.codegym.controllers.customer;
 
+import com.codegym.models.contract.Contract;
 import com.codegym.models.customer.Customer;
+import com.codegym.services.contract.ContractService;
 import com.codegym.services.customer.CustomerService;
 import com.codegym.services.customer.TypeCustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
+import java.util.Set;
 
 @Controller
 public class CustomerController {
@@ -25,6 +28,9 @@ public class CustomerController {
 
     @Autowired
     TypeCustomerService typeCustomerService;
+
+    @Autowired
+    ContractService contractService;
 
     @GetMapping("/register")
     public String register(Model model) {
@@ -84,5 +90,16 @@ public class CustomerController {
         model.addAttribute("customer", new Customer());
         model.addAttribute("message", "saved your change!");
         return "redirect:/getAllCustomer";
+    }
+
+    @PostMapping("/addContractToCustomer")
+    public String addContractToCustomer(@RequestParam String idCus, @RequestParam String idContract){
+        //tách thành hàm đưa qua bên service
+        Customer customer = customerService.getCustomerById(idCus);
+        Set<Contract> contractSet = customer.getContract();
+        contractSet.add(contractService.getContractById(idContract));
+        customer.setContract(contractSet);
+        customer.getContract();
+        return "customer/customer/addContract";
     }
 }
