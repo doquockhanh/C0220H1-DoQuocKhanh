@@ -24,7 +24,7 @@ public class ContractController {
     @GetMapping("/addContract")
     public String addContract(Model model){
         model.addAttribute("contract", new Contract());
-        return "addContract";
+        return "contract/contract/addContract";
     }
 
     @PostMapping("/addingContract")
@@ -32,17 +32,17 @@ public class ContractController {
         contractService.saveContract(contract);
         model.addAttribute("contract", new Contract());
         model.addAttribute("message", "add successful !");
-        return "addContract";
+        return "contract/contract/addContract";
     }
 
     @GetMapping("/getAllContract")
     public String getAllContract(Model model, @RequestParam(defaultValue = "1") String page){
 
-        Pageable pageable = PageRequest.of(Integer.parseInt(page) - 1, 2);
+        Pageable pageable = PageRequest.of(Integer.parseInt(page) - 1, 6);
 
         Page<Contract> contractPage = contractService.getAllContract(pageable);
         model.addAttribute("contracts", contractPage);
-        return "";
+        return "contract/contract/allContract";
     }
 
     @GetMapping("/getContract")
@@ -55,6 +55,21 @@ public class ContractController {
     @GetMapping("/deleteContract")
     public String deleteContract(@RequestParam String id){
         contractService.deleteContractById(id);
-        return "";
+        return "redirect:/getAllContract";
+    }
+
+    @GetMapping("/editContract")
+    public String editContract(@RequestParam String id, Model model){
+        Contract contract = contractService.getContractById(id);
+        model.addAttribute("contract", contract);
+        return "contract/contract/editContract";
+    }
+
+    @PostMapping("/editingContract")
+    public String editingContract(@ModelAttribute Contract contract, Model model){
+        contractService.saveContract(contract);
+        model.addAttribute("contract", new Contract());
+        model.addAttribute("message", "saved your change!");
+        return "redirect:/getAllContract";
     }
 }
