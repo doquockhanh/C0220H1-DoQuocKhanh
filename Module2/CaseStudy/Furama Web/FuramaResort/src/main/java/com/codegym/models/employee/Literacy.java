@@ -11,7 +11,7 @@ public class Literacy {
     private Integer id;
     private String name;
 
-    @OneToMany(mappedBy="literacy")
+    @OneToMany(mappedBy="literacy", cascade = CascadeType.ALL)
     private Set<Employee> employees;
 
     public Literacy() {
