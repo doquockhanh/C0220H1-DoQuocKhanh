@@ -11,7 +11,7 @@ public class Department {
     private Integer id;
     private String name;
 
-    @OneToMany(mappedBy="department")
+    @OneToMany(mappedBy="department", cascade = CascadeType.ALL)
     private Set<Employee> employees;
 
     public Department() {
