@@ -10,7 +10,7 @@ public class AppConfig {
     @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-        messageSource.setBasenames("customer_error_message");
+        messageSource.setBasenames("error_message");
         return messageSource;
     }
 }
