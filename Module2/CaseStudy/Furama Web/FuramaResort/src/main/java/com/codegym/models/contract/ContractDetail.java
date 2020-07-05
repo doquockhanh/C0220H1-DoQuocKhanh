@@ -12,6 +12,7 @@ public class ContractDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    private String name;
     private Integer amount;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -24,10 +25,12 @@ public class ContractDetail {
     public ContractDetail() {
     }
 
-    public ContractDetail(Integer amount, AccompaniedService accompaniedService, Set<Contract> contract) {
-        this.amount = amount;
-        this.accompaniedService = accompaniedService;
-        this.contract = contract;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getId() {
