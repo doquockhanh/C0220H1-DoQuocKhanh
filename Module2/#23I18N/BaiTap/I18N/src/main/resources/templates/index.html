@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+lang:
+<a th:href="@{/?lang=vn}">VN</a>
+<a th:href="@{/?lang=en}">EN</a>
+<h2 th:text="#{list.title}"></h2>
+<table border="1px">
+    <th:block th:each="produce : ${produceList}">
+        <tr>
+            <td th:text="${produce.id}"></td>
+            <td th:text="${produce.name}"></td>
+            <td th:text="${produce.price}"></td>
+            <td><a th:href="@{/edit(id=${produce.id})}">edit</a></td>
+            <td><a th:href="@{/delete(id=${produce.id})}">delete</a></td>
+        </tr>
+    </th:block>
+</table><br><br><br>
+
+<h3 th:text="#{create.title}"></h3>
+<form action="/create" method="get">
+    <input type="text" name="id" placeholder="id"><br>
+    <input type="text" name="name" placeholder="name"><br>
+    <input type="text" name="price" placeholder="price"><br>
+    <input type="submit" value="create">
+</form>
+
+</body>
+</html>

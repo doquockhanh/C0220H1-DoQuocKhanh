@@ -481,12 +481,8 @@ WHERE TB.ID = 2;
 -- -----------------------------------------------------------------------------------
 -- YÊU CẦU 18 :
 
-delete khachhang,hopdong,hopdongchitiet 
-from khachhang 
-inner join hopdong 
-on khachhang.IdKhachHang = hopdong.IdKhachHang
-inner join hopdongchitiet 
-on hopdong.IdHopDong = hopdongchitiet.IdHopDong where not exists
+delete khachhang,hopdong,hopdongchitiet from khachhang inner join hopdong on khachhang.IdKhachHang = hopdong.IdKhachHang
+inner join hopdongchitiet on hopdong.IdHopDong = hopdongchitiet.IdHopDong where not exists
 (select hopdong.IdHopDong where year(hopdong.ngayLamHopDong) > '2016' and khachhang.IdKhachHang = hopdong.IdKhachHang);
 
 -- xóa khách hàng có hợp đồng trước 2016 
@@ -520,4 +516,3 @@ FROM khach_hang;
 
 -- END -----
 
--- còn yc 18

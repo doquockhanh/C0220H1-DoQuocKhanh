@@ -1,9 +1,12 @@
 package com.codegym.models.customer;
 
+import com.codegym.models.contract.Contract;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Customer implements Validator {
@@ -15,10 +18,12 @@ public class Customer implements Validator {
     private String firstName;
     private String lastName;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name="typeCustomer_id")
     private TypeCustomer typeCustomer;
 
+    @OneToMany(mappedBy = "customer")
+    private Set<Contract> contract = new HashSet<>();
 
     @Override
     public boolean supports(Class<?> clazz) {
@@ -29,16 +34,16 @@ public class Customer implements Validator {
     public void validate(Object target, Errors errors) {
         Customer customer = (Customer) target;
         if(!customer.userName.matches("[a-zA-Z0-9]{5,25}")) {
-            errors.rejectValue("userName", "customer.userName");
+            errors.rejectValue("userName", "userName");
         }
         if(!customer.passWord.matches("[a-zA-Z0-9]{7,25}")) {
-            errors.rejectValue("passWord", "customer.password");
+            errors.rejectValue("passWord", "password");
         }
         if(!customer.firstName.matches("[a-zA-Z\\s]{1,20}")) {
-            errors.rejectValue("firstName", "customer.firstName");
+            errors.rejectValue("firstName", "firstName");
         }
         if(!customer.lastName.matches("[a-zA-Z\\s]{1,20}")) {
-            errors.rejectValue("lastName", "customer.lastName");
+            errors.rejectValue("lastName", "lastName");
         }
     }
 
@@ -59,6 +64,14 @@ public class Customer implements Validator {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Set<Contract> getContract() {
+        return contract;
+    }
+
+    public void setContract(Set<Contract> contract) {
+        this.contract = contract;
     }
 
     public String getUserName() {

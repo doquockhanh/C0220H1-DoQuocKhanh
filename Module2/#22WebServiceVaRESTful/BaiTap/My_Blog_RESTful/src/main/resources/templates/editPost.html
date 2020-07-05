@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/editingPost" method="post" th:object="${blog}">
+    <input th:field="*{title}" placeholder="title">
+    <input th:field="*{content}" placeholder="content">
+    <input th:field="*{category.id}" type="hidden">
+    <input th:field="*{id}" type="hidden">
+    <input type="submit" value="edit">
+</form>
+
+</body>
+</html>

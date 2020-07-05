@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+
+<table class="table" border="1px" style="text-align: center">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">name</th>
+        <th scope="col">maxPeople</th>
+        <th scope="col">roomStandard</th>
+        <th scope="col">numberOfFloor</th>
+        <th scope="col">pollArea</th>
+        <th scope="col">rentType</th>
+        <th scope="col">rentPrice</th>
+        <th scope="col">imageSource</th>
+        <th scope="col">edit</th>
+        <th scope="col">delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="villa : ${allVilla}" th:object="${villa}">
+        <tr>
+            <th scope="row" th:text="*{id}"></th>
+            <td th:text="*{name}"></td>
+            <td th:text="*{maxPeople}"></td>
+            <td th:text="*{roomStandard}"></td>
+            <td th:text="*{numberOfFloor}"></td>
+            <td th:text="*{pollArea}"></td>
+            <td th:text="*{rentType}"></td>
+            <td th:text="*{rentPrice}"></td>
+            <td th:text="*{imageSource}"></td>
+            <td><a th:href="@{/editVilla(id=*{id})}">
+                edit
+            </a></td>
+            <td><a th:href="@{/deleteVilla(id=*{id})}">
+                delete
+            </a></td>
+        </tr>
+    </th:block>
+    </tbody>
+</table><br><br>
+
+<a type="button" class="btn btn-outline-dark" th:href="@{/addVilla}" style="margin-left: 5px; margin-right: 5px">add new villa</a>
+<a type="button" class="btn btn-outline-dark" th:href="@{/}" style="margin-right: 5px">home</a>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+</html>

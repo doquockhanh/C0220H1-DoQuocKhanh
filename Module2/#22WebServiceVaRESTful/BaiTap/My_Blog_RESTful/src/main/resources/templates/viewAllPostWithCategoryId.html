@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a th:href="@{/createCategory}">Create Category</a><br>
+<a th:href="@{/createBlog}">Create Blog</a>
+
+<h1>MY BLOG</h1>
+
+<form action="/viewPost" method="get">
+    <input type="text" name="keyWord" placeholder="type here to search">
+    <input type="hidden" name="id" th:value="${id}">
+    <input type="submit" value="search">
+</form><br>
+
+<table border="1px">
+    <tr>
+        <td>ID</td>
+        <td>Title</td>
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+    <th:block th:each="post : ${posts}" th:object="${post}">
+        <tr>
+            <td th:text="*{id}"></td>
+            <td th:text="*{title}"></td>
+            <td><a th:href="@{/viewContent(id=*{id})}">view</a></td>
+            <td><a th:href="@{/editPost(id=*{id})}">edit</a></td>
+            <td><a th:href="@{/deletePost(id=*{id})}">delete</a></td>
+        </tr>
+    </th:block>
+</table><br>
+
+<p th:text="${message}"></p>
+
+<a th:if="${posts.hasPrevious()}" th:href="@{/viewPost(page=${posts.getNumber()},id=*{id}, keyWord=${keyWord})}">previous</a>
+<span th:text="${posts.number + 1}"></span>/<span th:text="${posts.totalPages}"></span>
+<a th:if="${posts.hasNext()}" th:href="@{/viewPost(page=${posts.getNumber() + 2},id=*{id}, keyWord=${keyWord})}">next</a><br><br>
+
+<a th:href="@{/}">home</a>
+
+</body>
+</html>

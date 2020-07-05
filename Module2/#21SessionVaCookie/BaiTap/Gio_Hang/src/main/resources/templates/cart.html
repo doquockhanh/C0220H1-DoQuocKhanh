@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<th:block th:each="product : ${productList}" th:object="${product}">
+    <img th:src="*{imageSource}" width="200" height="200">
+    <img src="giftBox.png" width="200" height="200">
+    <p th:text="*{name}"></p>
+    <p th:text="*{id}"></p>
+    <p th:text="*{price}"></p>
+    <input type="number" th:field="*{amount}"><br>
+</th:block><br><br>
+
+<a th:href="@{/}">home</a>
+
+</body>
+</html>

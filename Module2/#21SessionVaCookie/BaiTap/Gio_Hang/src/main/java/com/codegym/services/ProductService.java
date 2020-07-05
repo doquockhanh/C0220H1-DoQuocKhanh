@@ -2,6 +2,8 @@ package com.codegym.services;
 
 import com.codegym.models.Product;
 
+import java.util.Optional;
+
 public interface ProductService {
-    Product getById(Integer Id);
+    Optional<Product> getById(Integer id);
 }

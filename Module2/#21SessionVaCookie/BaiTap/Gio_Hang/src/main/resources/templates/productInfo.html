@@ -8,7 +8,12 @@
 
 <img th:src="@{${product.imageSource}}" alt="gift picture" width="200" height="200">
 
-<form action="/addToCard" method="post" th:object="${product}">
+<form action="/addToCart" method="post" th:object="${product}">
+    <input th:field="*{id}" type="hidden">
+    <input th:field="*{name}" type="hidden">
+    <input th:field="*{imageSource}" type="hidden">
+    <input th:field="*{amount}" type="hidden">
+    <input th:field="*{price}" type="hidden">
     <input type="submit" value="mua ngay">
 </form>
 </body>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+<p th:text="${message}" style="color: green"></p>
+<form action="/addingRoom" method="post" accept-charset="UTF-8" th:object="${room}">
+    <div class="form-group row" style="margin-top: 20px">
+        <label class="col-sm-2 col-form-label" style="text-align: right">Name</label>
+        <div class="col-sm-5">
+            <input class="form-control" th:field="*{name}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" style="text-align: right">Rent type</label>
+        <div class="col-sm-5">
+            <input class="form-control" th:field="*{rentType}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" style="text-align: right">Rent price</label>
+        <div class="col-sm-5">
+            <input class="form-control" th:field="*{rentPrice}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" style="text-align: right">Max people</label>
+        <div class="col-sm-5">
+            <input class="form-control" th:field="*{maxPeople}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" style="text-align: right">Free service</label>
+        <div class="col-sm-5">
+            <input class="form-control" th:field="*{freeService}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" style="text-align: right">Image source</label>
+        <div class="col-sm-5">
+            <input class="form-control" th:field="*{imageSource}">
+        </div>
+    </div>
+
+    <input th:field="*{id}" type="hidden">
+
+    <button type="submit" class="btn btn-primary" style="margin-left: 300px">Create</button>
+
+    <a type="button" class="btn btn-outline-dark" th:href="@{/}" style="margin-right: 5px; margin-left: 300px">home</a>
+    <a type="button" class="btn btn-outline-dark" th:href="@{/allRoom}" style="margin-right: 5px; margin-left: 300px">allRoom</a>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+</html>

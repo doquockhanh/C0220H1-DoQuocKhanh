@@ -14,20 +14,60 @@
 <div class="fixed-left">
     <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-dark p-4">
-            <section class="nav-item dropdown active" style="margin-right: 25px ; margin-left: 200px">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Add Service
+
+            <div class="nav-item dropright active" style="margin-bottom: 10px">
+                <a class="dropdown-toggle btn btn-info active" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Service
                 </a>
+
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" th:href="@{/allVilla}">Villa Manage</a>
+                    <a class="dropdown-item" th:href="@{/allHouse}">House Manage</a>
+                    <a class="dropdown-item" th:href="@{/allRoom}">Room Manage</a>
+                    <a class="dropdown-item" th:href="@{/allAccompaniedService}">Accompanied Service Manage</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" th:href="@{/addVilla}">Add new Villa</a>
                     <a class="dropdown-item" th:href="@{/addHouse}">Add new House</a>
                     <a class="dropdown-item" th:href="@{/addRoom}">Add new Room</a>
+                    <a class="dropdown-item" th:href="@{/addAccompaniedService}">Add new Accompanied Service</a>
                 </div>
-            </section>
+
+            </div>
+
+            <div class="nav-item dropright active" style="margin-bottom: 10px">
+                <a class="dropdown-toggle btn btn-success active" href="#" id="dropdownMenuLink" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Customer
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" th:href="@{/getAllCustomer}">Customer Manage</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" th:href="@{/allTypeCustomer}">typeCustomer Manage</a>
+                </div>
+            </div>
+
+            <div class="nav-item dropright active" style="margin-bottom: 10px">
+                <a class="dropdown-toggle btn btn-warning active" href="#" id="dropdownMenu2" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Employee
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" th:href="@{/allEmployee}">Employee Manage</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" th:href="@{/allDepartment}">Department Manage</a>
+                    <a class="dropdown-item" th:href="@{/allLiteracy}">Literacy Manage</a>
+                    <a class="dropdown-item" th:href="@{/allPosition}">Position Manage</a>
+                </div>
+            </div>
         </div>
     </div>
     <nav class="navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler btn btn-info" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
             admin
         </button>
     </nav>
@@ -35,7 +75,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-    <a class="navbar-brand" th:href="@{/}" aria-label="Search" id="floatLeft" >FURAMA RESORT</a>
+    <a class="navbar-brand" th:href="@{/}" aria-label="Search" id="floatLeft">FURAMA RESORT</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -43,17 +83,9 @@
             <li class="nav-item active" style="margin-right: 25px">
                 <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
             </li>
-
-            <li class="nav-item" style="margin-right: 25px">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-
-            <li class="nav-item" style="margin-right: 25px">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
         </ul>
 
-        <a th:href="@{/}" class="btn btn-secondary active" role="button" aria-pressed="true" style="margin-right: 50px" >login</a>
+        <a th:href="@{/}" class="btn btn-secondary active" role="button" aria-pressed="true" style="margin-right: 50px">logout</a>
 
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -61,6 +93,56 @@
         </form>
     </div>
 </nav>
+
+<div style="position: relative; left: 1em; top: 15em">
+    <th:block th:if="${allService.hasPrevious()}">
+        <a class="btn btn-light" th:href="@{/home(page=${allService.getNumber()})}">
+            <svg width="1.5em" height="3em" viewBox="0 0 16 16" class="bi bi-chevron-double-left" fill="currentColor"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                <path fill-rule="evenodd"
+                      d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
+        </a>
+    </th:block>
+</div>
+
+<th:block th:each="service : ${allService}" th:object="${service}">
+    <div class="card" style="width: 36rem; height: 33rem; margin-left: 130px; float: left">
+        <img th:src="*{imageSource}" style="width: 36rem; height: 22rem" class="card-img-top" alt="image">
+        <div class="card-body" style="text-align: center">
+            <h5 class="card-title" th:text="*{name}"></h5>
+            <p class="card-text">
+                Room standard : <span th:text="*{roomStandard}"></span><br>
+                Rent price : <span th:text="*{rentPrice}"></span> $
+            </p>
+            <a href="#" class="btn btn-primary" style="margin-right: 50px">rent it!</a>
+            <a href="#" class="btn btn-primary">
+                detail
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-blockquote-right" fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                          d="M2 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                    <path d="M12.168 6.352c.184.105.332.197.445.275.114.074.229.174.346.299.11.117.193.24.252.369s.1.295.123.498h-.281c-.243 0-.432.06-.569.182-.14.117-.21.29-.21.521 0 .164.062.318.187.463.121.14.289.21.504.21.336 0 .576-.108.72-.327.145-.223.217-.514.217-.873 0-.254-.054-.485-.164-.692a2.436 2.436 0 0 0-.398-.562c-.16-.168-.33-.31-.51-.428-.18-.117-.33-.213-.451-.287l-.211.352zm-2.168 0c.184.105.332.197.445.275.114.074.229.174.346.299.113.12.2.246.258.375.055.125.094.289.117.492h-.281c-.242 0-.432.06-.569.182-.14.117-.21.29-.21.521 0 .164.062.318.187.463.121.14.289.21.504.21.336 0 .576-.108.72-.327.145-.223.217-.514.217-.873 0-.254-.054-.485-.164-.692a2.438 2.438 0 0 0-.398-.562c-.16-.168-.33-.31-.51-.428-.18-.117-.33-.213-.451-.287L10 6.352z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</th:block>
+
+
+<div style="position: relative; left:3.5em; top: 12em">
+    <a class="btn btn-light" th:if="${allService.hasNext()}" th:href="@{/home(page=${allService.getNumber() + 2})}">
+        <svg width="1.5em" height="3em" viewBox="0 0 16 16" class="bi bi-chevron-double-right" fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                  d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+            <path fill-rule="evenodd"
+                  d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+    </a>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

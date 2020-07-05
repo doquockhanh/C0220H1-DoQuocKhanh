@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @SessionAttributes("productList")
@@ -36,8 +37,8 @@ public class ProductController {
 
     @GetMapping("/productInfo")
     public String productInfo(Model model, @RequestParam Integer id){
-        Product product = productService.getById(id);
-        model.addAttribute("product", product);
+        Optional<Product> product = productService.getById(id);
+        model.addAttribute("product", product.get());
         return "productInfo";
     }
 }
