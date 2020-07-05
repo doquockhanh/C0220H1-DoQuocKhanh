@@ -1,10 +1,12 @@
 package com.codegym.models.contract;
 
+import com.codegym.models.customer.Customer;
 import com.codegym.models.rentalService.House;
 import com.codegym.models.rentalService.Room;
 import com.codegym.models.rentalService.Villa;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Contract {
@@ -32,18 +34,14 @@ public class Contract {
     private Room room;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="contractdetail_id")
+    @JoinColumn(name = "contractdetail_id")
     private ContractDetail contractdetail;
 
-    public Contract() {
-    }
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 
-    public Contract(Integer id, String dateStartRent, String dateEndRent, String deposits, String totalPrice) {
-        this.id = id;
-        this.dateStartRent = dateStartRent;
-        this.dateEndRent = dateEndRent;
-        this.deposits = deposits;
-        this.totalPrice = totalPrice;
+    public Contract() {
     }
 
     public Integer getId() {
@@ -84,6 +82,46 @@ public class Contract {
 
     public void setTotalPrice(String totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public Villa getVilla() {
+        return villa;
+    }
+
+    public void setVilla(Villa villa) {
+        this.villa = villa;
+    }
+
+    public House getHouse() {
+        return house;
+    }
+
+    public void setHouse(House house) {
+        this.house = house;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public ContractDetail getContractdetail() {
+        return contractdetail;
+    }
+
+    public void setContractdetail(ContractDetail contractdetail) {
+        this.contractdetail = contractdetail;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }
 
