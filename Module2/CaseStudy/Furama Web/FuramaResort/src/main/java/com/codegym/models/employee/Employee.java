@@ -4,7 +4,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import javax.persistence.*;
-
+import javax.validation.constraints.NotEmpty;
 @Entity
 public class Employee implements Validator {
 
@@ -47,17 +47,21 @@ public class Employee implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-        Employee employee = (Employee) errors;
-        if(!employee.birthday.matches("[0-9]{2}[/|-][0-9]{2}[/|-][0-9]{4}")) {
+        Employee employee = (Employee) target;
+
+        if(employee.birthday.isEmpty()){
             errors.rejectValue("birthday", "date");
         }
-        if(!employee.email.matches("[a-zA-Z0-9\\.\\_]{1,100}[@][a-zA-Z]{1,10}[.][a-zA-Z]{1,10}")) {
+
+        if(!employee.email.matches("^[a-zA-Z0-9\\.\\_]{1,100}[@][a-zA-Z]{1,10}[.][a-zA-Z]{1,10}$")) {
             errors.rejectValue("email", "email");
         }
-        if(!employee.idCard.matches("[0-9]{8}")) {
+
+        if(!employee.idCard.matches("^[0-9]{8}$")) {
             errors.rejectValue("idCard", "id");
         }
-        if(!employee.phoneNumber.matches("[0-9]{10}")) {
+
+        if(!employee.phoneNumber.matches("^[0-9]{10}$")) {
             errors.rejectValue("phoneNumber", "phoneNumber");
         }
     }

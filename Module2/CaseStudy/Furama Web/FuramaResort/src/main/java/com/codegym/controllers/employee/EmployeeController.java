@@ -85,7 +85,13 @@ public class EmployeeController {
     }
 
     @PostMapping("/editingEmployee")
-    public String editingEmployee(@ModelAttribute Employee employee, Model model){
+    public String editingEmployee(@Valid @ModelAttribute Employee employee, BindingResult bindingResult, Model model){
+        new Employee().validate(employee, bindingResult);
+
+        if (bindingResult.hasFieldErrors()) {
+            return "employee/employee/editEmployee";
+        }
+
         employeeService.editEmployee(employee);
         model.addAttribute("message", "saved your change!");
         return "redirect:/allEmployee";
