@@ -19,30 +19,30 @@
         <label class="col-sm-2 col-form-label" style="text-align: right">birthday</label>
         <div class="col-sm-5">
             <input class="form-control" th:field="*{birthday}" type="date">
+            <p class="col-sm-5" style="color: red" th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></p>
         </div>
     </div>
-<!--    <p th:if="${#fields.hasErrors('birthDay')}" th:errors="*{birthday}"></p>-->
     <div class="form-group row">
         <label class="col-sm-2 col-form-label" style="text-align: right">email</label>
         <div class="col-sm-5">
             <input class="form-control" th:field="*{email}">
+            <p class="col-sm-5" style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
         </div>
     </div>
-    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label" style="text-align: right">phoneNumber</label>
         <div class="col-sm-5">
             <input class="form-control" th:field="*{phoneNumber}">
+            <p class="col-sm-5" style="color: red" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p>
         </div>
     </div>
-    <p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label" style="text-align: right">idCard</label>
         <div class="col-sm-5">
             <input class="form-control" th:field="*{idCard}">
+            <p class="col-sm-5" style="color: red" th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}"></p>
         </div>
     </div>
-    <p th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}"></p>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label" style="text-align: right">department</label>
         <div class="col-sm-5">
