@@ -4,12 +4,16 @@ import com.codegym.models.customer.Customer;
 import com.codegym.models.rentalService.House;
 import com.codegym.models.rentalService.Room;
 import com.codegym.models.rentalService.Villa;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Set;
 
 @Entity
-public class Contract {
+public class Contract implements Validator {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -42,6 +46,40 @@ public class Contract {
     private Customer customer;
 
     public Contract() {
+    }
+
+    private Boolean checkDayRentService(String dateStartRent, String dateEndRent) {
+        String[] dateStartElement = dateStartRent.split("-");
+        LocalDate dateStart =
+                LocalDate.of(Integer.parseInt(dateStartElement[0]),
+                        Integer.parseInt(dateStartElement[1]),
+                        Integer.parseInt(dateStartElement[2]));
+        String[] dateEndElement = dateEndRent.split("-");
+        LocalDate dateEnd =
+                LocalDate.of(Integer.parseInt(dateEndElement[0]),
+                        Integer.parseInt(dateEndElement[1]),
+                        Integer.parseInt(dateEndElement[2]));
+
+        if (dateStart.compareTo(dateEnd) >= 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        Contract contract = (Contract) target;
+
+        if (contract.dateStartRent.isEmpty()) {
+            errors.rejectValue("dateStartRent", "date");
+        }
+
+        if (contract.dateEndRent.isEmpty()) {
+            errors.rejectValue("dateEndRent", "date");
+        } else if (checkDayRentService(contract.dateStartRent, contract.dateEndRent)) {
+            errors.rejectValue("dateEndRent", "contract.dateEndRent");
+        }
     }
 
     public Integer getId() {
@@ -122,6 +160,11 @@ public class Contract {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
     }
 }
 

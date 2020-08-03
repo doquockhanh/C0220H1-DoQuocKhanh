@@ -1,0 +1,38 @@
+<!--<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>-->
+
+new Employee().validate(employee, bindingResult);
+        if (bindingResult.hasFieldErrors()) {
+            return "";
+        }
+errors.rejectValue("birthday", "date");
+
+@OneToMany(mappedBy="department", cascade = CascadeType.ALL)
+    private Set<Employee> employees;
+
+@ManyToOne
+    @JoinColumn(name="department_id", nullable=false)
+
+@Transactional
+
+Employee employee = (Employee) target;
+
+@SessionAttributes("productList")
+@ModelAttribute("productList")
+public List<Product> product(){
+        return productList;
+    }
+@SessionAttribute("productList") List<Product> productList
+
+//LocalDate today = LocalDate.now();                          //Today's date
+//    LocalDate birthday = LocalDate.of(1959,8, 04);  //Birth date
+//
+//    Period p = Period.between(birthday, today);
+//        System.out.println(p.getYears());
+
+Pageable pageable = PageRequest.of(Integer.parseInt(page) - 1, 6);
+
+//    public String dateFormat(String date){
+//        String[] dateElement = date.split("-");
+//        String dateFormat = dateElement[2] + "-" + dateElement[1] +"-"+ dateElement[0];
+//        return dateFormat;
+//    }

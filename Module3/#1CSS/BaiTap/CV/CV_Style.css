@@ -1,0 +1,45 @@
+div.CV-background {
+    position: absolute;
+    left: 500px;
+    width: 600px;
+    height: 850px;
+    background-color: #f0f8ff;
+}
+
+div.CV-left {
+    width: 200px;
+    height: 810px;
+    font-size: 0.95rem;
+    padding: 20px;
+    color: white;
+    background-color: #305090;
+    float: left
+}
+
+div.CV-right {
+    border: 2px solid #305090;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 300px;
+    height: 785px;
+    padding: 20px;
+    font-size: 0.95rem;
+    color: black;
+}
+
+div.image {
+    border: 2px solid cadetblue;
+    width: 180px;
+    height: 200px;
+    margin: 5px;
+    border-bottom-left-radius: 15%;
+    border-top-right-radius: 15%;
+}
+
+img.border{
+    width: 180px ;
+    height: 200px;
+    border-bottom-left-radius: 14%;
+    border-top-right-radius: 14%;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Musi'K</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link type="text/css" href="skin/pink.flag/css/jplayer.pink.flag.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+</head>
+<body>
+<div class="container-fluid back-ground p-0 fixed-top">
+    <div class="row">
+        <div style="margin-bottom: 40px" class="col-lg-12">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: aliceblue;">
+                <a class="navbar-brand" href="#">Musi'K</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <form class="form-inline my-2 my-lg-0 f">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="card-img bg-gradient-grey album">
+                <a href="#">
+                    <img class="card-img size bg-dark ml-5 mt-3" src="image/Đen1.jpg" alt="album denvau">
+                    <p class="text-light text-center mt-2">Những bài hát hay nhất của đen</p>
+                </a>
+                <a href="#">
+                    <img class="card-img size bg-dark ml-5 mt-3" src="image/Đen2.jpg" alt="album denvau">
+                    <p class="text-light text-center mt-2">Giai điệu đồng âm</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div onclick="play('music/Tram-Dung-Chan-Kimmese-Den.mp3')">
+                        <img class="card-img song-title" src="image/Den_Tram_Dung_Chan.jpg" alt="Den-Tram dung chan">
+                    </div>
+                    <h6 class="text-light ml-3">Trạm Dừng Chân - Đen Vâu Ft Kimese</h6>
+                </div>
+                <div class="col-lg-4">
+                    <div onclick="play('music/Dung-Goi-Anh-La-Idol-Den-Lynk-Lee.mp3')">
+                        <img class="card-img song-title" src="image/Den_Dung_Goi_Anh_La_Idol.jpg"
+                             alt="Den-Dung Goi Anh La Idol">
+                    </div>
+                    <h6 class="text-light ml-3">Đừng gọi anh là Idol - Đen Vâu</h6>
+                </div>
+                <div class="col-lg-4">
+                    <div onclick="play('music/Di-Theo-Bong-Mat-Troi-Den-Giang-Nguyen.mp3')">
+                        <img class="card-img song-title" src="image/Den_Di_Theo_Bong_Mat_Troi.png"
+                             alt="Den_Di_Theo_Bong_Mat_Troi">
+                    </div>
+                    <h6 class="text-light ml-3">Đi Theo Bóng Mặt Trời</h6>
+                </div>
+            </div>
+            <div class="row player" id="player">
+                <div id="jquery_jplayer_1" class="jp-jplayer w-auto"></div>
+                <div id="jp_container_1" class="jp-audio w-100" role="application" aria-label="media player">
+                    <div class="jp-type-single">
+                        <div class="jp-gui jp-interface">
+                            <div class="jp-volume-controls ">
+                                <button class="jp-mute" role="button" tabindex="0">mute</button>
+                                <button class="jp-volume-max w-100" role="button" tabindex="0">max volume</button>
+                                <div class="jp-volume-bar">
+                                    <div class="jp-volume-bar-value"></div>
+                                </div>
+                            </div>
+                            <div class="jp-controls-holder">
+                                <div class="jp-controls">
+                                    <button class="jp-play" role="button" tabindex="0">play</button>
+                                    <button class="jp-stop" role="button" tabindex="0">stop</button>
+                                </div>
+                                <div class="jp-progress w-100 mt-4">
+                                    <div class="jp-seek-bar">
+                                        <div class="jp-play-bar"></div>
+                                    </div>
+                                </div>
+                                <div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+                                <div class="jp-duration " role="timer" aria-label="duration">&nbsp;</div>
+                                <div class="jp-toggles">
+                                    <button class="jp-repeat" role="button" tabindex="0">repeat</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jp-details">
+                            <div class="jp-title" aria-label="title">&nbsp;</div>
+                        </div>
+                        <div class="jp-no-solution">
+                            <span>Update Required</span>
+                            To play the media you will need to either update your browser to a recent version or update
+                            your <a
+                                href="https://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function play(link) {
+        destroyJPlayer();
+        $(document).ready(function () {
+            $("#jquery_jplayer_1").jPlayer({
+                ready: function () {
+                    $(this).jPlayer("setMedia", {
+                        title: "Bubble",
+                        oga: link
+                    });
+                    $("#jquery_jplayer_1").jPlayer('play');
+                },
+                cssSelectorAncestor: "#jp_container_1",
+                swfPath: "/js",
+                supplied: "m4a, oga",
+                useStateClassSkin: true,
+                autoBlur: false,
+                smoothPlayBar: true,
+                keyEnabled: true,
+                remainingDuration: true,
+                toggleDuration: true
+            });
+        });
+    }
+
+    function destroyJPlayer() {
+        $("#jquery_jplayer_1").jPlayer('destroy');
+    }
+
+</script>
+
+</body>
+</html>

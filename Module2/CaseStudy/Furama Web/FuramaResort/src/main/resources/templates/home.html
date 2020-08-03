@@ -79,9 +79,14 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-
             <li class="nav-item active" style="margin-right: 25px">
                 <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active" style="margin-right: 25px">
+                <a class="nav-link" th:href="@{/home(service=house)}">House <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active" style="margin-right: 25px">
+                <a class="nav-link" th:href="@{/home(service=room)}">Room <span class="sr-only">(current)</span></a>
             </li>
         </ul>
 
@@ -114,10 +119,10 @@
         <div class="card-body" style="text-align: center">
             <h5 class="card-title" th:text="*{name}"></h5>
             <p class="card-text">
-                Room standard : <span th:text="*{roomStandard}"></span><br>
+                -------------------------------------------------<br>
                 Rent price : <span th:text="*{rentPrice}"></span> $
             </p>
-            <a href="#" class="btn btn-primary" style="margin-right: 50px">rent it!</a>
+            <a href="/addContract" class="btn btn-primary" style="margin-right: 50px">rent it!</a>
             <a href="#" class="btn btn-primary">
                 detail
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-blockquote-right" fill="currentColor"

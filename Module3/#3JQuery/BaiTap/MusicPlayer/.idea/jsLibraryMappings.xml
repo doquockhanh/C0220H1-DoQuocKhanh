@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="PROJECT" libraries="{ZaloAuthen, app.bundle, gpt, jquery-1.11.1, main, sdk, session-sdk, styles, web-v5.200521.2, za, zlog.0.11, zplayer}" />
+  </component>
+</project>

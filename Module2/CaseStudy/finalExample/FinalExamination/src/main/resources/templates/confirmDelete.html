@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>confirm delete</title>
+</head>
+<body>
+
+<h3>Are you sure delete this Employee?</h3>
+<a th:href="@{/deletingEmployee(id=${id})}">Yes</a><br>
+<a th:href="@{/}">No</a>
+
+</form>
+</body>
+</html>

@@ -21,7 +21,6 @@ function veBanCo() {
             btn.onclick = function () {
                 if (btn.value === "") {
                     banCo[i][j] = nuoc;
-                    console.log(i + " " + j);
                     btn.innerText = nuoc;
                     // ketqua();
                     if (nuoc === "X") {

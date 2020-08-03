@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list student</title>
+    <script src="jquery-3.5.1.min.js"></script>
+</head>
+<body>
+
+<table border="1px">
+    <tr>
+        <th>NO.</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Birthday</th>
+        <th>Phone number</th>
+        <th>Address</th>
+    </tr>
+
+    <tbody id="rows">
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "https://spring-student-api.herokuapp.com/info?apiKey=eaf118ab-babf-43ed-a788-b66d2f0ca00c",
+            dataType: "json",
+            success: function (listStudent) {
+                makeTable(listStudent);
+            },
+        });
+    });
+
+    function makeTable(listStudent) {
+        let rows = "";
+        $.each(listStudent, function (i, listStudent) {
+            rows += "<tr>" +
+                "<td>" + listStudent.id + "</td>" +
+                "<td>" + listStudent.fullName + "</td>" +
+                "<td>" + listStudent.gender + "</td>" +
+                "<td>" + listStudent.birthDate + "</td>" +
+                "<td>" + listStudent.phoneNumber + "</td>" +
+                "<td>" + listStudent.address + "</td>"
+                + "</tr>";
+        });
+        document.getElementById("rows").innerHTML = rows;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+#logo {
+    width: 20%;
+    height: 80px;
+    text-align: center;
+    padding: 10px ;
+    border-color: cadetblue;
+    color: cadetblue;
+    background-color: antiquewhite;
+    float: left;
+
+}
+
+#banner{
+    height: 80px;
+    background-color: cadetblue;
+    text-align: center;
+    padding: 10px ;
+    border-color: cadetblue;
+}
+
+#head {
+    height: 100px;
+    background-color: aliceblue;
+    margin-bottom: 5px;
+}
+
+#head-link{
+    background-color: aliceblue;
+    padding: 10px ;
+    margin: 5px;
+}
+
+.left {
+    background-color: beige;
+    width: 20%;
+    height: 460px;
+    padding: 5px;
+    text-align: center;
+    margin-right: 5px;
+    float: left;
+}
+
+.content{
+    background-color: cornflowerblue;
+    height: 460px;
+    width: 57%;
+    padding: 5px;
+    text-align: center;
+    margin-right: 5px;
+    float: left;
+}
+
+.right {
+    background-color: beige;
+    width: 20%;
+    height: 460px;
+    padding: 5px;
+    text-align: center;
+    margin-right: 5px;
+    float: left;
+}
+
+#foot {
+    position: absolute;
+    width: 99%;
+    height: 90px;
+    bottom: 0;
+    text-align: center;
+    margin-top: 5px;
+    background-color: cornsilk;
+}

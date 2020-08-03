@@ -89,6 +89,9 @@ public class EmployeeController {
         new Employee().validate(employee, bindingResult);
 
         if (bindingResult.hasFieldErrors()) {
+            model.addAttribute("departments", departmentService.getAllDepartment());
+            model.addAttribute("literacy", literacyService.getAllLiteracy());
+            model.addAttribute("positions", positionService.getAllPosition());
             return "employee/employee/editEmployee";
         }
 

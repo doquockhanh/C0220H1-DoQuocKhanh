@@ -7,7 +7,93 @@
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
+<div class="fixed-left">
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
 
+            <div class="nav-item dropright active" style="margin-bottom: 10px">
+                <a class="dropdown-toggle btn btn-info active" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Service
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" th:href="@{/allVilla}">Villa Manage</a>
+                    <a class="dropdown-item" th:href="@{/allHouse}">House Manage</a>
+                    <a class="dropdown-item" th:href="@{/allRoom}">Room Manage</a>
+                    <a class="dropdown-item" th:href="@{/allAccompaniedService}">Accompanied Service Manage</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" th:href="@{/addVilla}">Add new Villa</a>
+                    <a class="dropdown-item" th:href="@{/addHouse}">Add new House</a>
+                    <a class="dropdown-item" th:href="@{/addRoom}">Add new Room</a>
+                    <a class="dropdown-item" th:href="@{/addAccompaniedService}">Add new Accompanied Service</a>
+                </div>
+
+            </div>
+
+            <div class="nav-item dropright active" style="margin-bottom: 10px">
+                <a class="dropdown-toggle btn btn-success active" href="#" id="dropdownMenuLink" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Customer
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" th:href="@{/getAllCustomer}">Customer Manage</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" th:href="@{/allTypeCustomer}">typeCustomer Manage</a>
+                </div>
+            </div>
+
+            <div class="nav-item dropright active" style="margin-bottom: 10px">
+                <a class="dropdown-toggle btn btn-warning active" href="#" id="dropdownMenu2" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Employee
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" th:href="@{/allEmployee}">Employee Manage</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" th:href="@{/allDepartment}">Department Manage</a>
+                    <a class="dropdown-item" th:href="@{/allLiteracy}">Literacy Manage</a>
+                    <a class="dropdown-item" th:href="@{/allPosition}">Position Manage</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler btn btn-info" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            admin
+        </button>
+    </nav>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" th:href="@{/}" aria-label="Search" id="floatLeft">FURAMA RESORT</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active" style="margin-right: 25px">
+                <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active" style="margin-right: 25px">
+                <a class="nav-link" th:href="@{/home(service=house)}">House <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active" style="margin-right: 25px">
+                <a class="nav-link" th:href="@{/home(service=room)}">Room <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+
+        <a th:href="@{/}" class="btn btn-secondary active" role="button" aria-pressed="true" style="margin-right: 50px">logout</a>
+
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
 <form action="/editingEmployee" method="post" accept-charset="UTF-8" th:object="${employee}">
     <div class="form-group row" style="margin-top: 20px">
         <label class="col-sm-2 col-form-label" style="text-align: right">Name</label>
@@ -45,7 +131,7 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label" style="text-align: right">Max people</label>
+        <label class="col-sm-2 col-form-label" style="text-align: right">department</label>
         <div class="col-sm-5">
             <select th:field="*{department.id}" class="form-control">
                 <option th:each="department : ${departments}"
@@ -54,7 +140,7 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label" style="text-align: right">Image source</label>
+        <label class="col-sm-2 col-form-label" style="text-align: right">literacy</label>
         <div class="col-sm-5">
             <select th:field="*{literacy.id}" class="form-control">
                 <option th:each="lit : ${literacy}"
@@ -63,7 +149,7 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label" style="text-align: right">Image source</label>
+        <label class="col-sm-2 col-form-label" style="text-align: right">position</label>
         <div class="col-sm-5">
             <select th:field="*{position.id}" class="form-control">
                 <option th:each="position : ${positions}"

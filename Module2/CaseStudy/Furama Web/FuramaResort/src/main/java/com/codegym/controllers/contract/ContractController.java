@@ -8,12 +8,14 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.persistence.criteria.CriteriaBuilder;
+import javax.validation.Valid;
 
 @Controller
 public class ContractController {
@@ -28,7 +30,13 @@ public class ContractController {
     }
 
     @PostMapping("/addingContract")
-    public String addingHouse(@ModelAttribute Contract contract, Model model){
+    public String addingHouse(@Valid @ModelAttribute Contract contract, BindingResult bindingResult, Model model){
+        new Contract().validate(contract, bindingResult);
+
+        if (bindingResult.hasFieldErrors()) {
+            return "contract/contract/addContract";
+        }
+
         contractService.saveContract(contract);
         model.addAttribute("contract", new Contract());
         model.addAttribute("message", "add successful !");
@@ -66,7 +74,13 @@ public class ContractController {
     }
 
     @PostMapping("/editingContract")
-    public String editingContract(@ModelAttribute Contract contract, Model model){
+    public String editingContract(@Valid @ModelAttribute Contract contract, BindingResult bindingResult, Model model){
+        new Contract().validate(contract, bindingResult);
+
+        if (bindingResult.hasFieldErrors()) {
+            return "contract/contract/editContract";
+        }
+
         contractService.saveContract(contract);
         model.addAttribute("contract", new Contract());
         model.addAttribute("message", "saved your change!");

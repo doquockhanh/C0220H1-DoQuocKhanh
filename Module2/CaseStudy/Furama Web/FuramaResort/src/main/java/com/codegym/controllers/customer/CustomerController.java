@@ -85,7 +85,14 @@ public class CustomerController {
     }
 
     @PostMapping("/editingCustomer")
-    public String editingCustomer(@ModelAttribute Customer customer, Model model){
+    public String editingCustomer(@Valid @ModelAttribute Customer customer, BindingResult bindingResult, Model model){
+        new Customer().validate(customer, bindingResult);
+
+        if (bindingResult.hasFieldErrors()) {
+            model.addAttribute("typeCustomers", typeCustomerService.getAllTypeCustomer());
+            return "customer/register";
+        }
+
         customerService.saveCustomer(customer);
         model.addAttribute("customer", new Customer());
         model.addAttribute("message", "saved your change!");
