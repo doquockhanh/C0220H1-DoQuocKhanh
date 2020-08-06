@@ -61,7 +61,7 @@
               </div>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
+          <form [formGroup]="" class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
@@ -72,58 +72,78 @@
 
   <div class="row">
     <div class="col-lg-12 opacity bg-color">
-      <form class="form-group m-5 p-5">
+      <form [formGroup]="addContract" class="form-group m-5 p-5">
         <h4 class="margin-left-220">Add new contract</h4><br>
         <div class="form-group row" style="margin-top: 20px">
           <label class="col-sm-2 col-form-label" style="text-align: right">Customer</label>
           <div class="col-sm-5">
-            <input class="form-control">
+            <input formControlName="customer" class="form-control">
           </div>
+          <span class="text-danger" *ngIf="addContract.get('customer').hasError('pattern') &&
+          addContract.get('customer').touched">
+            wrong customer name!
+          </span>
         </div>
         <div class="form-group row">
           <label class="col-sm-2 col-form-label" style="text-align: right">house</label>
           <div class="col-sm-5">
-            <input class="form-control">
+            <input formControlName="house" class="form-control">
           </div>
+          <span class="text-danger" *ngIf="addContract.get('house').hasError('pattern') &&
+          addContract.get('house').touched">
+            wrong house name!
+          </span>
         </div>
         <div class="form-group row">
           <label class="col-sm-2 col-form-label" style="text-align: right">villa</label>
           <div class="col-sm-5">
-            <input class="form-control">
+            <input formControlName="villa" class="form-control">
           </div>
+          <span class="text-danger" *ngIf="addContract.get('villa').hasError('pattern') &&
+          addContract.get('villa').touched">
+            wrong villa name!
+          </span>
         </div>
         <div class="form-group row">
           <label class="col-sm-2 col-form-label" style="text-align: right">room</label>
           <div class="col-sm-5">
-            <input class="form-control">
+            <input formControlName="room" class="form-control">
           </div>
+          <span class="text-danger" *ngIf="addContract.get('room').hasError('pattern') &&
+          addContract.get('room').touched">
+            wrong room name!
+          </span>
         </div>
 
         <div class="form-group row">
           <label class="col-sm-2 col-form-label" style="text-align: right">contractdetail</label>
           <div class="col-sm-5">
-            <input class="form-control">
+            <input formControlName="contractDetail" class="form-control">
           </div>
+          <span class="text-danger" *ngIf="addContract.get('contractDetail').hasError('pattern') &&
+          addContract.get('contractDetail').touched">
+            wrong contractDetail name!
+          </span>
         </div>
         <div class="form-group row">
           <label class="col-sm-2 col-form-label" style="text-align: right">deposits</label>
           <div class="col-sm-5">
-            <input class="form-control">
+            <input formControlName="deposits" class="form-control">
           </div>
         </div>
         <div class="form-group row">
           <label class="col-sm-2 col-form-label" style="text-align: right">dateStartRent</label>
           <div class="col-sm-5">
-            <input class="form-control" type="date">
+            <input formControlName="dateStartRent" class="form-control" type="date">
           </div>
         </div>
         <div class="form-group row">
           <label class="col-sm-2 col-form-label" style="text-align: right">dateEndRent</label>
           <div class="col-sm-5">
-            <input class="form-control" type="date">
+            <input formControlName="dateEndRent" class="form-control" type="date">
           </div>
         </div>
-        <button type="submit" class="btn btn-primary" style="margin-left: 300px">Create</button>
+        <button (click)="add()" type="submit" class="btn btn-primary" style="margin-left: 300px">Create</button>
       </form>
     </div>
   </div>

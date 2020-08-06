@@ -1,15 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { HomePgComponent } from './home-pg/home-pg.component';
-import { AllCustomerComponent } from './all-customer/all-customer.component';
-import { AllEmployeeComponent } from './all-employee/all-employee.component';
-import { AllServiceComponent } from './all-service/all-service.component';
-import { AddServiceComponent } from './add-service/add-service.component';
-import { AddEmployeeComponent } from './add-employee/add-employee.component';
-import { AddCustomerComponent } from './add-customer/add-customer.component';
-import { AddContractComponent } from './add-contract/add-contract.component';
+import {AppComponent} from './app.component';
+import {HomePgComponent} from './home-pg/home-pg.component';
+import {AllCustomerComponent} from './component/customer/all-customer/all-customer.component';
+import {AllEmployeeComponent} from './component/employee/all-employee/all-employee.component';
+import {AllServiceComponent} from './component/_services/all-service/all-service.component';
+import {AddServiceComponent} from './component/_services/add-service/add-service.component';
+import {AddEmployeeComponent} from './component/employee/add-employee/add-employee.component';
+import {AddCustomerComponent} from './component/customer/add-customer/add-customer.component';
+import {AddContractComponent} from './component/contract/add-contract/add-contract.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {AppRouterModule} from './app-router.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,13 @@ import { AddContractComponent } from './add-contract/add-contract.component';
     AddContractComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    AppRouterModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
