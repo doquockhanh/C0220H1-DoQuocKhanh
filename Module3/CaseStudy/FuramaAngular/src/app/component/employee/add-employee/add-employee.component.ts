@@ -10,6 +10,7 @@ import {Employee, EmployeeService} from '../../../employee.service';
 export class AddEmployeeComponent implements OnInit {
   addEmployee: FormGroup;
   employee: Employee;
+  status: string;
 
   constructor(private formBuilder: FormBuilder,
               private employeeService: EmployeeService) {
@@ -31,5 +32,10 @@ export class AddEmployeeComponent implements OnInit {
   add(): void {
     this.employee = this.addEmployee.value;
     this.employeeService.add(this.employee);
+    this.status = 'add successful !';
+  }
+
+  changeStatus(): void {
+    this.status = '';
   }
 }

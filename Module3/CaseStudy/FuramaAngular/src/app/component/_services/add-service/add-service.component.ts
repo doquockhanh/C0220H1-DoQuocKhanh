@@ -11,6 +11,7 @@ import {Service, ServiceService} from '../../../service.service';
 export class AddServiceComponent implements OnInit {
   service: Service;
   addService: FormGroup;
+  status: string;
 
   constructor(private formBuilder: FormBuilder,
               private serviceService: ServiceService) {
@@ -30,8 +31,13 @@ export class AddServiceComponent implements OnInit {
     });
   }
 
+  changeStatus(): void {
+    this.status = '';
+  }
+
   add(): void {
     this.service = this.addService.value;
     this.serviceService.add(this.service);
+    this.status = 'add successful!';
   }
 }

@@ -1,111 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Home</title>
-</head>
-<body style="background-image: url('assets/image/background.gif'); background-attachment: fixed; background-size: 500px">
-
-<div class="container-fluid">
-  <!-- NAV bar -->
-  <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 p-0 fixed-top">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <img src="assets/image/word/furama-logo.png" alt="furama-logo" style="width: 45px; height: 40px">
-        <a class="navbar-brand" style="font-style: italic; margin-left: -9px" href="#">URAMA</a>
-
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto mt-1">
-            <li class="nav-item ml-2">
-              <a class="nav-link" href="http://localhost:63342/casestudy_layout/furama_home.html?_ijt=eirockuji5corhrmvaji1bmuf0">home</a>
-            </li>
-            <li class="nav-item dropdown ml-2">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                service
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="http://localhost:63342/casestudy_layout/all-service.html?_ijt=7h3neubkm19ac39ceethp1n2g1">all service</a>
-                <a class="dropdown-item" href="http://localhost:63342/casestudy_layout/add-service.html?_ijt=3plq07m6gebkvqk87cu7fn65so">add service</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown ml-2">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarNav" role="button"
-                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                customer
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="http://localhost:63342/casestudy_layout/all-customer.html?_ijt=i05pgs2s0e56huasd371r8mc09">all customer</a>
-                <a class="dropdown-item" href="http://localhost:63342/casestudy_layout/add-customer.html?_ijt=g86h9797el59vb5biifuiihrfp">add customer</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown ml-2">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                contract
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">all contract</a>
-                <a class="dropdown-item" href="http://localhost:63342/casestudy_layout/add-contract.html?_ijt=c2882k5374c5q6atl6dk09u724">add contract</a>
-              </div>
-            </li>
-
-            <li class="nav-item dropdown ml-2">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarNavAltMarkup" role="button"
-                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                employee
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="http://localhost:63342/casestudy_layout/all-employee.html?_ijt=jq8aroe7ihenmi6p6dkqhcabv0">all employee</a>
-                <a class="dropdown-item" href="http://localhost:63342/casestudy_layout/add-employee.html?_ijt=t4kcifaf42vq2dh1lbrgajacp1">add employee</a>
-              </div>
-            </li>
-          </ul>
-          <form [formGroup]="" class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-12 mt-5 p-5 bg-color opacity">
-      <table class="table" border="1px" style="text-align: center">
-        <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">name</th>
-          <th scope="col">maxPeople</th>
-          <th scope="col">roomStandard</th>
-          <th scope="col">numberOfFloor</th>
-          <th scope="col">pollArea</th>
-          <th scope="col">rentType</th>
-          <th scope="col">rentPrice</th>
-          <th scope="col">imageSource</th>
-          <th scope="col">edit</th>
-          <th scope="col">delete</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let service of services">
-          <th>{{service.id}}</th>
-          <td>{{service.name}}</td>
-          <td>{{service.numberOfFloor}}</td>
-          <td>{{service.poolArea}}</td>
-          <td>{{service.maxPeople}}</td>
-          <td>{{service.roomStandard}}</td>
-          <td>{{service.rentType}}</td>
-          <td>{{service.rentPrice}}</td>
-          <td>{{service.imageSource}}</td>
-          <td></td>
-          <td></td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
+<div class="row">
+  <div class="col-lg-12 mt-5 p-5 bg-color opacity">
+    <table class="table" border="1px" style="text-align: center">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">name</th>
+        <th scope="col">maxPeople</th>
+        <th scope="col">roomStandard</th>
+        <th scope="col">numberOfFloor</th>
+        <th scope="col">pollArea</th>
+        <th scope="col">rentType</th>
+        <th scope="col">rentPrice</th>
+        <th scope="col">imageSource</th>
+        <th scope="col">edit</th>
+        <th scope="col">delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let service of services">
+        <th>{{service.id}}</th>
+        <td>{{service.name}}</td>
+        <td>{{service.numberOfFloor}}</td>
+        <td>{{service.poolArea}}</td>
+        <td>{{service.maxPeople}}</td>
+        <td>{{service.roomStandard}}</td>
+        <td>{{service.rentType}}</td>
+        <td>{{service.rentPrice}}</td>
+        <td>{{service.imageSource}}</td>
+        <td></td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </div>
-</body>
-</html>

@@ -10,6 +10,7 @@ import {Customer, CustomerService} from '../../../customer.service';
 export class AddCustomerComponent implements OnInit {
   customer: Customer;
   addCustomer: FormGroup;
+  status: string;
 
   constructor(private formBuilder: FormBuilder,
               private customerService: CustomerService) {
@@ -31,5 +32,10 @@ export class AddCustomerComponent implements OnInit {
   add(): void {
     this.customer = this.addCustomer.value;
     this.customerService.add(this.customer);
+    this.status = 'add successful !';
+  }
+
+  changeStatus(): void {
+     this.status = '';
   }
 }
