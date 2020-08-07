@@ -1,10 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-
-interface User {
-  userName: string;
-  passWord: string;
-}
+import {User} from '../user';
 
 @Component({
   selector: 'app-app-register',
@@ -13,7 +9,8 @@ interface User {
 })
 
 export class AppRegisterComponent implements OnInit {
-  users: Array<User> = [];
+  users: number[][] = [{1, 1}];
+  user: User;
 
   register: FormGroup;
 
@@ -28,11 +25,13 @@ export class AppRegisterComponent implements OnInit {
   }
 
   doRegister(): void {
-    if (!this.register.hasError('required')) {
-      if (!this.users.includes(this.register.value)) {
-        this.users.push(this.register.value);
-      }
-      console.log(this.users);
-    }
+    console.log(this.users.indexOf(2));
+    // if (!this.register.hasError('required')) {
+    //   this.user = this.register.value;
+    //   if (this.users.indexOf([this.user.userName, this.user.passWord]) === -1) {
+    //     this.users.push([this.user.userName, this.user.passWord]);
+    //   }
+    // }
+    // console.log(this.users);
   }
 }

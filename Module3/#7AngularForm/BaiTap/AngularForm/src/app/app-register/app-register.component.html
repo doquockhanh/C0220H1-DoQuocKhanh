@@ -14,7 +14,7 @@
   <br><br>
   <label>
     Password
-    <input formControlName="passWord" type="password" placeholder="enter password">
+    <input formControlName="passWord" type="text" placeholder="enter password">
   </label>
   <span style="color: red" *ngIf="register.get('passWord').hasError('required')
     && register.get('passWord').touched">

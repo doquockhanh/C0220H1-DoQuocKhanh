@@ -13,6 +13,7 @@ import {AddContractComponent} from './component/contract/add-contract/add-contra
 import {ReactiveFormsModule} from '@angular/forms';
 import {AppRouterModule} from './app-router.module';
 import {RouterModule} from '@angular/router';
+import { UpdateServiceComponent } from './component/_services/update-service/update-service.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {RouterModule} from '@angular/router';
     AddServiceComponent,
     AddEmployeeComponent,
     AddCustomerComponent,
-    AddContractComponent
+    AddContractComponent,
+    UpdateServiceComponent
   ],
   imports: [
     BrowserModule,
