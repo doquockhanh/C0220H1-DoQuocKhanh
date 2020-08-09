@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Service, ServiceService} from '../../../service.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ActivatedRoute, ParamMap} from '@angular/router';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 
 @Component({
   selector: 'app-update-service',
@@ -9,14 +9,14 @@ import {ActivatedRoute, ParamMap} from '@angular/router';
   styleUrls: ['./update-service.component.css']
 })
 export class UpdateServiceComponent implements OnInit {
-  services: Array<Service>;
   service: Service;
   addService: FormGroup;
   status: string;
 
   constructor(private formBuilder: FormBuilder,
               private serviceService: ServiceService,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -42,10 +42,11 @@ export class UpdateServiceComponent implements OnInit {
     this.status = '';
   }
 
-  add(): void {
+  update(): void {
     this.service = this.addService.value;
-    this.serviceService.add(this.service);
-    this.status = 'add successful!';
+    this.serviceService.updateById(this.service.id, this.service);
+    this.status = 'update successful!';
+    this.router.navigateByUrl('home/allService');
   }
 
 }

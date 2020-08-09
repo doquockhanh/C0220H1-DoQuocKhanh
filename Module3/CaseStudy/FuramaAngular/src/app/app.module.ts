@@ -10,10 +10,14 @@ import {AddServiceComponent} from './component/_services/add-service/add-service
 import {AddEmployeeComponent} from './component/employee/add-employee/add-employee.component';
 import {AddCustomerComponent} from './component/customer/add-customer/add-customer.component';
 import {AddContractComponent} from './component/contract/add-contract/add-contract.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppRouterModule} from './app-router.module';
 import {RouterModule} from '@angular/router';
 import { UpdateServiceComponent } from './component/_services/update-service/update-service.component';
+import { UpdateCustomerComponent } from './component/customer/update-customer/update-customer.component';
+import { UpdateEmployeeComponent } from './component/employee/update-employee/update-employee.component';
+import { AllContractComponent } from './component/contract/all-contract/all-contract.component';
+import { UpdateContractComponent } from './component/contract/update-contract/update-contract.component';
 
 @NgModule({
   declarations: [
@@ -26,14 +30,19 @@ import { UpdateServiceComponent } from './component/_services/update-service/upd
     AddEmployeeComponent,
     AddCustomerComponent,
     AddContractComponent,
-    UpdateServiceComponent
+    UpdateServiceComponent,
+    UpdateCustomerComponent,
+    UpdateEmployeeComponent,
+    AllContractComponent,
+    UpdateContractComponent
   ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    AppRouterModule,
-    RouterModule
-  ],
+    imports: [
+        BrowserModule,
+        ReactiveFormsModule,
+        AppRouterModule,
+        RouterModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

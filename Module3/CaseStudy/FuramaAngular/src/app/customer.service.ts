@@ -20,7 +20,7 @@ export class CustomerService {
     {
       id: 'KH-0001',
       typeCus: 'diamond',
-      name: 'khanh',
+      name: 'khanhquoc',
       birthday: '02-09-2001',
       idCard: '46445235',
       phoneNumber: '0393074552',
@@ -118,5 +118,22 @@ export class CustomerService {
 
   add(customer: Customer): void {
     this.listCustomer.push(customer);
+  }
+
+  updateById(id: string, customer: Customer): void {
+    for (let i = 0; i < this.listCustomer.length; i++) {
+      if (this.listCustomer[i].id === id) {
+        this.listCustomer[i] = customer;
+        return;
+      }
+    }
+  }
+
+  deleteById(id: string): void {
+    this.listCustomer.splice(this.listCustomer.indexOf(this.findById(id)), 1);
+  }
+
+  findById(id: string): Customer {
+    return this.listCustomer.find(customer => customer.id === id);
   }
 }

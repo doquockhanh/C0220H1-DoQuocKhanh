@@ -19,7 +19,7 @@ export class ServiceService {
   listService: Array<Service> = [
     {
       id: 'DV-0001',
-      name: 'khanh',
+      name: 'khanhquoc',
       maxPeople: 10,
       roomStandard: 'vip',
       numberOfFloor: 2,
@@ -82,6 +82,7 @@ export class ServiceService {
   }
 
   findById(id: string): Service {
+    // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < this.listService.length; i++) {
       if (this.listService[i].id === id) {
         return this.listService[i];
@@ -92,5 +93,23 @@ export class ServiceService {
 
   add(service: Service): void {
     this.listService.push(service);
+  }
+
+  updateById(id: string, service: Service): void {
+    for (let i = 0; i < this.listService.length; i++) {
+      if (this.listService[i].id === id) {
+        this.listService[i] = service;
+        return;
+      }
+    }
+  }
+
+  deleteById(id: string): void {
+    for (let i = 0; i < this.listService.length; i++) {
+      if (this.listService[i].id === id) {
+        this.listService.splice(i, 1);
+        return;
+      }
+    }
   }
 }

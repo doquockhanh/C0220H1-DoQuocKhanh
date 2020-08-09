@@ -38,4 +38,5 @@ export class AddCustomerComponent implements OnInit {
   changeStatus(): void {
      this.status = '';
   }
+
 }

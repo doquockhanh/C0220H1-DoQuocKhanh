@@ -5,7 +5,7 @@
   <title>Home</title>
 </head>
 <body
-  style="background-image: url('assets/image/background.png'); background-attachment: fixed; background-size: 1000px">
+  style="background-image: url('assets/image/background.png'); background-attachment: fixed; background-size: 1400px">
 
 <!--header-->
 <div class="container-fluid">
@@ -52,6 +52,8 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item"
+                   [routerLink]="['home/allContract']">all contract</a>
+                <a class="dropdown-item"
                    [routerLink]="['home/addContract']">add contract</a>
               </div>
             </li>
@@ -70,10 +72,12 @@
               </div>
             </li>
           </ul>
-          <form [formGroup]="" class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+          <div>
+            <a href="#">
+              <img src="assets/image/flag.png" alt="vnflag" style="width: 30px; height: 30px">
+            </a>
+
+          </div>
         </div>
       </nav>
     </div>

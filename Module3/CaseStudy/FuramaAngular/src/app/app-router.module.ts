@@ -10,6 +10,10 @@ import {AllServiceComponent} from './component/_services/all-service/all-service
 import {AllCustomerComponent} from './component/customer/all-customer/all-customer.component';
 import {AllEmployeeComponent} from './component/employee/all-employee/all-employee.component';
 import {UpdateServiceComponent} from './component/_services/update-service/update-service.component';
+import {UpdateCustomerComponent} from './component/customer/update-customer/update-customer.component';
+import {UpdateEmployeeComponent} from './component/employee/update-employee/update-employee.component';
+import {AllContractComponent} from './component/contract/all-contract/all-contract.component';
+import {UpdateContractComponent} from './component/contract/update-contract/update-contract.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'}, // path
@@ -21,15 +25,23 @@ const routes: Routes = [
       {path: 'addEmployee', component: AddEmployeeComponent},
       {path: 'allService', children: [
           {path: '', component: AllServiceComponent},
-          {path: 'editService/:id', component: UpdateServiceComponent}
+          {path: 'editService/:id', component: UpdateServiceComponent},
+          {path: 'addService', component: AddServiceComponent}
         ]},
       {path: 'allCustomer', children: [
           {path: '', component: AllCustomerComponent},
-          // them sua xoa
+          {path: 'editCustomer/:id', component: UpdateCustomerComponent},
+          {path: 'addCustomer', component: AddCustomerComponent},
         ]},
       {path: 'allEmployee', children: [
           {path: '', component: AllEmployeeComponent},
-          // them sua xoa
+          {path: 'editEmployee/:id', component: UpdateEmployeeComponent},
+          {path: 'addEmployee', component: AddEmployeeComponent},
+        ]},
+      {path: 'allContract', children: [
+          {path: '', component: AllContractComponent},
+          {path: 'editContract/:id', component: UpdateContractComponent},
+          {path: 'addContract', component: AddContractComponent},
         ]}
     ]}
 ];
