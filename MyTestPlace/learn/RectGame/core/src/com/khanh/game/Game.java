@@ -72,3 +72,5 @@ public class Game extends ApplicationAdapter {
         batch.dispose();
     }
 }
+
+// tao ra arrow nhung chua update vi tri va ve ra duoc

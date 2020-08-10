@@ -1,0 +1,102 @@
+<div class="row">
+  <div class="col-lg-12 bg-color opacity">
+    <form [formGroup]="updateEmployee" (ngSubmit)="update()" (change)="changeStatus()" class="form-group m-5 p-5">
+      <h6 style="color:green">{{status}}</h6>
+      <h4 class="margin-left-220">Register Employee</h4><br>
+      <h6 class="margin-left-220">Account</h6>
+      <div class="form-group row" style="margin-top: 20px">
+        <label class="col-sm-2 col-form-label" style="text-align: right">User name</label>
+        <div class="col-sm-5">
+          <input formControlName="userName" class="form-control" type="text">
+        </div>
+        <span class="text-danger" *ngIf="updateEmployee.get('userName').hasError('pattern') ||
+          updateEmployee.get('userName').hasError('required') &&
+          updateEmployee.get('userName').touched">
+           from 6 to 20 number and character!
+          </span>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" style="text-align: right">Password</label>
+        <div class="col-sm-5">
+          <input formControlName="password" class="form-control" type="text">
+        </div>
+        <span class="text-danger" *ngIf="updateEmployee.get('password').hasError('pattern') ||
+          updateEmployee.get('password').hasError('required') &&
+          updateEmployee.get('password').touched">
+            from 6 to 20 number and character!
+          </span>
+      </div>
+      <br>
+      <h6 class="margin-left-220">Personal information</h6>
+      <div class="form-group row" style="margin-top: 20px">
+        <div class="col-sm-5">
+          <input formControlName="id" class="form-control" placeholder="NV-XXXX" hidden>
+        </div>
+        <span class="text-danger" *ngIf="updateEmployee.get('id').hasError('pattern') ||
+          updateEmployee.get('id').hasError('required') &&
+          updateEmployee.get('id').touched">
+            format NV-XXXX!
+          </span>
+      </div>
+      <div class="form-group row" style="margin-top: 20px">
+        <label class="col-sm-2 col-form-label" style="text-align: right">Name</label>
+        <div class="col-sm-5">
+          <input formControlName="name" class="form-control">
+        </div>
+        <span class="text-danger" *ngIf="updateEmployee.get('name').hasError('pattern') ||
+          updateEmployee.get('name').hasError('required') &&
+          updateEmployee.get('name').touched">
+            wrong name!
+          </span>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" style="text-align: right">birthday</label>
+        <div class="col-sm-5">
+          <input formControlName="birthday" class="form-control" type="date">
+        </div>
+        <span class="text-danger" *ngIf="updateEmployee.get('name').hasError('required') &&
+          updateEmployee.get('name').touched">
+            not empty!
+          </span>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" style="text-align: right">email</label>
+        <div class="col-sm-5">
+          <input formControlName="email" class="form-control">
+        </div>
+        <span class="text-danger" *ngIf="updateEmployee.get('email').hasError('pattern') ||
+          updateEmployee.get('email').hasError('required') &&
+          updateEmployee.get('email').touched">
+            format abc@abc.abc !
+          </span>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" style="text-align: right">phoneNumber</label>
+        <div class="col-sm-5">
+          <input formControlName="phoneNumber" class="form-control">
+        </div>
+        <span class="text-danger" *ngIf="updateEmployee.get('phoneNumber').hasError('pattern') ||
+          updateEmployee.get('phoneNumber').hasError('required') &&
+          updateEmployee.get('phoneNumber').touched">
+            format XXXXXXXXXX !
+          </span>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" style="text-align: right">idCard</label>
+        <div class="col-sm-5">
+          <input formControlName="idCard" class="form-control">
+        </div>
+        <span class="text-danger" *ngIf="updateEmployee.get('idCard').hasError('pattern') ||
+          updateEmployee.get('idCard').hasError('required') &&
+          updateEmployee.get('idCard').touched">
+           format XXXXXXXX !
+          </span>
+      </div>
+      <button [disabled]="updateEmployee.invalid" type="submit" class="btn btn-primary"
+              style="margin-left: 300px">Update
+      </button>
+    </form>
+
+  </div>
+</div>
+
