@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
-import {HomePgComponent} from './home-pg/home-pg.component';
+import {HomePgComponent} from './component/home-pg/home-pg.component';
 import {AddServiceComponent} from './component/_services/add-service/add-service.component';
 import {AddContractComponent} from './component/contract/add-contract/add-contract.component';
 import {AddCustomerComponent} from './component/customer/add-customer/add-customer.component';
@@ -16,31 +16,31 @@ import {AllContractComponent} from './component/contract/all-contract/all-contra
 import {UpdateContractComponent} from './component/contract/update-contract/update-contract.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'}, // path
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', children: [
       {path: '', component: HomePgComponent},
-      {path: 'addService', component: AddServiceComponent},
-      {path: 'addContract', component: AddContractComponent},
-      {path: 'addCustomer', component: AddCustomerComponent},
-      {path: 'addEmployee', component: AddEmployeeComponent},
       {path: 'allService', children: [
           {path: '', component: AllServiceComponent},
           {path: 'editService/:id', component: UpdateServiceComponent},
-          {path: 'addService', component: AddServiceComponent}
+          {path: 'addService', component: AddServiceComponent},
+          {path: 'addService', component: AddServiceComponent},
         ]},
       {path: 'allCustomer', children: [
           {path: '', component: AllCustomerComponent},
           {path: 'editCustomer/:id', component: UpdateCustomerComponent},
+          {path: 'addCustomer', component: AddCustomerComponent},
           {path: 'addCustomer', component: AddCustomerComponent},
         ]},
       {path: 'allEmployee', children: [
           {path: '', component: AllEmployeeComponent},
           {path: 'editEmployee/:id', component: UpdateEmployeeComponent},
           {path: 'addEmployee', component: AddEmployeeComponent},
+          {path: 'addEmployee', component: AddEmployeeComponent},
         ]},
       {path: 'allContract', children: [
           {path: '', component: AllContractComponent},
           {path: 'editContract/:id', component: UpdateContractComponent},
+          {path: 'addContract', component: AddContractComponent},
           {path: 'addContract', component: AddContractComponent},
         ]}
     ]}

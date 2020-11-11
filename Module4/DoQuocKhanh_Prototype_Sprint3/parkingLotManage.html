@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="resource/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <script src="resource/jquery-3.5.1.min.js"></script>
+    <script src="resource/bootstrap-4.5.0-dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="resource/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/parkingLotPageStyle.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row text-white page-style align-items-center ">
+        <div class="title col-6 mt-2">
+            <h4 class="align-items-center">HỆ THỐNG QUẢN LÍ BÃI ĐỖ XE</h4>
+        </div>
+        <div class="col-6 mt-1">
+            <div class="row align-items-center">
+                <div class="col-9 text-right">
+                    <span>Xin chào Khánh!</span>
+                </div>
+                <div class="col-3 text-center">
+                    <img class="circle-pic" src="img/ProfilePicture.jpg" alt="profile picture">
+                    <a class="logout ml-2">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2 border-nav">
+            <div class="item-nav row">
+                <a class="link" href="#"><i class="fa fa-home fa-2x text-warning" aria-hidden="true"></i> Trang chủ</a>
+            </div>
+            <div class="item-nav row">
+                <a class="link" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> Quản lý nhân viên</a>
+            </div>
+            <div class="item-nav row">
+                <a class="link" href="#"><i class="fa fa-users" aria-hidden="true"></i> Quản lí khách hàng</a>
+            </div>
+            <div class="item-nav row">
+                <a class="link" href="#"><i class="fa fa-car" aria-hidden="true"></i> Quản lí xe ra / vào</a>
+            </div>
+            <div class="item-nav row main-color">
+                <a class="link" href="#"><i class="fa fa-braille" aria-hidden="true"></i> Quản lí bãi đỗ</a>
+            </div>
+            <div class="item-nav row">
+                <a class="link" href="#"><i class="fa fa-ticket" aria-hidden="true"></i> Quản lí vé</a>
+            </div>
+            <div class="item-nav row">
+                <a class="link" href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i> Thống kê</a>
+            </div>
+        </div>
+        <div class="col-10">
+            <div class="row">
+                <div class="col-6">
+                    <h3 class="text-secondary p-3">Danh sách bãi xe</h3>
+                </div>
+                <div class="col-6">
+                    <button class="button-custom">Thêm vị trí mới</button>
+                    <input class="input-custom" placeholder="Tìm kiếm ... ">
+                </div>
+            </div>
+            <div class="row text-secondary">
+                <div class="col">
+                    <h5 class="ml-3">
+                        Tầng: <select class="pl-2 ">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    </h5>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table table-bordered mt-4 text-center">
+                    <thead class="text-warning">
+                    <tr>
+                        <th>#</th>
+                        <th>Vị trí</th>
+                        <th>Tầng</th>
+                        <th>Tình Trạng</th>
+                        <th>Tác vụ</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>A-1</td>
+                        <td>1</td>
+                        <td>Chưa đăng kí</td>
+                        <td>
+                            <a href="#" class="text-danger"> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
+                            <a href="#" class="text-danger"> <i class="fa fa-trash-o" aria-hidden="true"></i> </a>
+                            <a href="#" class="text-danger"> <i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <td>A-1</td>
+                        <td>1</td>
+                        <td>Chưa đăng kí</td>
+                        <td>
+                            <a href="#" class="text-danger"> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
+                            <a href="#" class="text-danger"> <i class="fa fa-trash-o" aria-hidden="true"></i> </a>
+                            <a href="#" class="text-danger"> <i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <td>A-1</td>
+                        <td>1</td>
+                        <td>Chưa đăng kí</td>
+                        <td>
+                            <a href="#" class="text-danger"> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
+                            <a href="#" class="text-danger"> <i class="fa fa-trash-o" aria-hidden="true"></i> </a>
+                            <a href="#" class="text-danger"> <i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <td>A-1</td>
+                        <td>1</td>
+                        <td>Chưa đăng kí</td>
+                        <td>
+                            <a href="#" class="text-danger"> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
+                            <a href="#" class="text-danger"> <i class="fa fa-trash-o" aria-hidden="true"></i> </a>
+                            <a href="#" class="text-danger"> <i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <td>A-1</td>
+                        <td>1</td>
+                        <td>Chưa đăng kí</td>
+                        <td>
+                            <a href="#" class="text-danger"> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
+                            <a href="#" class="text-danger"> <i class="fa fa-trash-o" aria-hidden="true"></i> </a>
+                            <a href="#" class="text-danger"> <i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                        </td>
+                    </tr> <tr>
+                        <th>1</th>
+                        <td>A-1</td>
+                        <td>1</td>
+                        <td>Chưa đăng kí</td>
+                        <td>
+                            <a href="#" class="text-danger"> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
+                            <a href="#" class="text-danger"> <i class="fa fa-trash-o" aria-hidden="true"></i> </a>
+                            <a href="#" class="text-danger"> <i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="ml-3">
+                    <a href="#" class="text-decoration-none main-color-text"><< trước</a>
+                    Trang 1 trên 10
+                    <a href="#" class="text-decoration-none main-color-text">sau >></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

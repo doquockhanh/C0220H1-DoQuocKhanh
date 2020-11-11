@@ -1,0 +1,342 @@
+{
+  "serviceList": [
+    {
+      "id": "DV-0002",
+      "name": "khanhquoc",
+      "maxPeople": 10,
+      "roomStandard": "vip",
+      "numberOfFloor": 10,
+      "poolArea": 50,
+      "rentType": "month",
+      "rentPrice": 1000,
+      "imageSource": "service-0002"
+    },
+    {
+      "id": "DV-0003",
+      "name": "khanh",
+      "maxPeople": 10,
+      "roomStandard": "vip",
+      "numberOfFloor": 2,
+      "poolArea": 50,
+      "rentType": "week",
+      "rentPrice": 1000,
+      "imageSource": "service-0003"
+    },
+    {
+      "id": "DV-0004",
+      "name": "buzz",
+      "maxPeople": 10,
+      "roomStandard": "vip",
+      "numberOfFloor": 2,
+      "poolArea": 50,
+      "rentType": "month",
+      "rentPrice": 2000,
+      "imageSource": "service-0004"
+    },
+    {
+      "id": "DV-0005",
+      "name": "buzzvvv",
+      "maxPeople": 10,
+      "roomStandard": "vip",
+      "numberOfFloor": 4,
+      "poolArea": 60,
+      "rentType": "month",
+      "rentPrice": 1000,
+      "imageSource": "service-0005"
+    },
+    {
+      "id": "DV-0123",
+      "name": "k",
+      "roomStandard": "k",
+      "maxPeople": 1,
+      "numberOfFloor": 1,
+      "poolArea": 12,
+      "rentType": "k",
+      "rentPrice": 0,
+      "imageSource": "k"
+    },
+    {
+      "id": "DV-4355",
+      "name": "k",
+      "roomStandard": "k",
+      "maxPeople": 1,
+      "numberOfFloor": 1,
+      "poolArea": 12,
+      "rentType": "k",
+      "rentPrice": 0,
+      "imageSource": "k"
+    },
+    {
+      "id": "DV-1234",
+      "name": "a",
+      "roomStandard": "a",
+      "maxPeople": 1,
+      "numberOfFloor": 1,
+      "poolArea": 12,
+      "rentType": "a",
+      "rentPrice": 0,
+      "imageSource": "a"
+    },
+    {
+      "id": "DV-0013",
+      "name": "k",
+      "roomStandard": "k",
+      "maxPeople": 1,
+      "numberOfFloor": 1,
+      "poolArea": 12,
+      "rentType": "k",
+      "rentPrice": 0,
+      "imageSource": "k"
+    },
+    {
+      "id": "DV-0127",
+      "name": "k",
+      "roomStandard": "k",
+      "maxPeople": 1,
+      "numberOfFloor": 1,
+      "poolArea": 12,
+      "rentType": "k",
+      "rentPrice": 0,
+      "imageSource": "k"
+    },
+    {
+      "id": "DV-0128",
+      "name": "k",
+      "roomStandard": "k",
+      "maxPeople": 1,
+      "numberOfFloor": 1,
+      "poolArea": 12,
+      "rentType": "k",
+      "rentPrice": 0,
+      "imageSource": "k"
+    },
+    {
+      "id": "DV-0006",
+      "name": "k",
+      "roomStandard": "k",
+      "maxPeople": 1,
+      "numberOfFloor": 1,
+      "poolArea": 12,
+      "rentType": "k",
+      "rentPrice": 0,
+      "imageSource": "k"
+    },
+    {
+      "id": "DV-0007",
+      "name": "k",
+      "roomStandard": "k",
+      "maxPeople": 1,
+      "numberOfFloor": 1,
+      "poolArea": 12,
+      "rentType": "k",
+      "rentPrice": 0,
+      "imageSource": "k"
+    },
+    {
+      "id": "DV-0008",
+      "name": "k",
+      "roomStandard": "k",
+      "maxPeople": 1,
+      "numberOfFloor": 1,
+      "poolArea": 12,
+      "rentType": "k",
+      "rentPrice": 0,
+      "imageSource": "k"
+    }
+  ],
+  "contractList": [
+    {
+      "id": "HD-0001",
+      "idCustomer": "KH-0001",
+      "idService": "DV-0001",
+      "dateStartRent": "01-01-2020",
+      "dateEndRent": "01-02-2020",
+      "deposit": 100,
+      "price": 1000
+    },
+    {
+      "id": "HD-0002",
+      "idCustomer": "KH-0001",
+      "idService": "DV-0001",
+      "dateStartRent": "01-01-2020",
+      "dateEndRent": "01-02-2020",
+      "deposit": 101,
+      "price": 1000
+    },
+    {
+      "id": "HD-0003",
+      "idCustomer": "KH-0001",
+      "idService": "DV-0001",
+      "dateStartRent": "01-01-2020",
+      "dateEndRent": "01-02-2020",
+      "deposit": 101,
+      "price": 1000
+    },
+    {
+      "id": "HD-0004",
+      "idCustomer": "KH-0001",
+      "idService": "DV-0001",
+      "dateStartRent": "01-01-2020",
+      "dateEndRent": "01-02-2020",
+      "deposit": 101,
+      "price": 1000
+    },
+    {
+      "id": "HD-0005",
+      "idCustomer": "KH-0002",
+      "idService": "DV-0001",
+      "dateStartRent": "01-01-2020",
+      "dateEndRent": "01-02-2020",
+      "deposit": 101,
+      "price": 1000
+    },
+    {
+      "id": "HD-0006",
+      "idCustomer": "KH-0001",
+      "idService": "DV-0001",
+      "dateStartRent": "0011-11-11",
+      "dateEndRent": "0001-01-01",
+      "deposit": 1,
+      "price": 1
+    },
+    {
+      "id": "HD-0123",
+      "idCustomer": "KH-1234",
+      "idService": "DV-1234",
+      "dateStartRent": "0001-01-01",
+      "dateEndRent": "0001-01-01",
+      "deposit": 1,
+      "price": 1
+    },
+    {
+      "id": "HD-1234",
+      "idCustomer": "KH-1234",
+      "idService": "DV-1234",
+      "dateStartRent": "01-01-2020",
+      "dateEndRent": "02-02-2020",
+      "deposit": 1,
+      "price": 1
+    },
+    {
+      "id": "HD-1222",
+      "idCustomer": "KH-1234",
+      "idService": "DV-1234",
+      "dateStartRent": "01-01-1901",
+      "dateEndRent": "01-01-1901",
+      "deposit": 1,
+      "price": 1
+    },
+    {
+      "id": "HD-1235",
+      "idCustomer": "KH-1234",
+      "idService": "DV-1234",
+      "dateStartRent": "01-01-1901",
+      "dateEndRent": "01-01-1901",
+      "deposit": 1,
+      "price": 0
+    },
+    {
+      "id": "HD-1236",
+      "idCustomer": "KH-1243",
+      "idService": "DV-3456",
+      "dateStartRent": "01-01-1901",
+      "dateEndRent": "01-01-1901",
+      "deposit": 0,
+      "price": 0
+    }
+  ],
+  "customerList": [
+    {
+      "id": "KH-0002",
+      "typeCus": "diamond",
+      "name": "khanhquocdo",
+      "birthday": "02-09-2001",
+      "idCard": "46445235",
+      "phoneNumber": "0393074552",
+      "email": "khanhquocdo@gmail.com",
+      "address": "hvt"
+    },
+    {
+      "id": "KH-0003",
+      "typeCus": "diamond",
+      "name": "khanhquoc",
+      "birthday": "02-09-2001",
+      "idCard": "46445235",
+      "phoneNumber": "0393074552",
+      "email": "khanhquocdo@gmail.com",
+      "address": "hvt"
+    },
+    {
+      "id": "KH-0004",
+      "typeCus": "diamond",
+      "name": "khanhquoc",
+      "birthday": "02-09-2001",
+      "idCard": "46445235",
+      "phoneNumber": "0393074552",
+      "email": "khanhquocdo@gmail.com",
+      "address": "hvt"
+    },
+    {
+      "id": "KH-0001",
+      "typeCus": "k",
+      "name": "k",
+      "birthday": "k",
+      "idCard": "12121212",
+      "phoneNumber": "1212121212",
+      "email": "abc@c.c",
+      "address": "k"
+    }
+  ],
+  "employeeList": [
+    {
+      "userName": "khanhq",
+      "password": "khanhq",
+      "id": "NV-0001",
+      "name": "khanhquocdo",
+      "birthday": "02-09-2001",
+      "idCard": "47534934",
+      "phoneNumber": "0393074552",
+      "email": "khanhquocdo@gmail.com"
+    },
+    {
+      "userName": "khanhq",
+      "password": "khanhq",
+      "id": "NV-0002",
+      "name": "khanhquoc",
+      "birthday": "02-09-2001",
+      "idCard": "47534934",
+      "phoneNumber": "0393074552",
+      "email": "khanhquocdo@gmail.com"
+    },
+    {
+      "userName": "khanhq",
+      "password": "khanhq",
+      "id": "NV-0003",
+      "name": "khanhquoc",
+      "birthday": "02-09-2001",
+      "idCard": "47534934",
+      "phoneNumber": "0393074552",
+      "email": "khanhquocdo@gmail.com"
+    },
+    {
+      "userName": "khanhq",
+      "password": "khanhq",
+      "id": "NV-0004",
+      "name": "khanhquoc",
+      "birthday": "02-09-2001",
+      "idCard": "47534934",
+      "phoneNumber": "0393074552",
+      "email": "khanhquocdo@gmail.com"
+    },
+    {
+      "userName": "khanhq",
+      "password": "khanhq",
+      "id": "NV-0005",
+      "name": "khanhquoc",
+      "birthday": "02-09-2001",
+      "idCard": "47534934",
+      "phoneNumber": "0393074552",
+      "email": "khanhquocdo@gmail.com"
+    }
+  ]
+}

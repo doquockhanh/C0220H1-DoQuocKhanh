@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Customer, CustomerService} from '../../../customer.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-customer',
@@ -10,10 +11,12 @@ import {Customer, CustomerService} from '../../../customer.service';
 export class AddCustomerComponent implements OnInit {
   customer: Customer;
   addCustomer: FormGroup;
-  status: string;
+  success: string;
+  failure: string;
 
   constructor(private formBuilder: FormBuilder,
-              private customerService: CustomerService) {
+              private customerService: CustomerService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -31,12 +34,18 @@ export class AddCustomerComponent implements OnInit {
 
   add(): void {
     this.customer = this.addCustomer.value;
-    this.customerService.add(this.customer);
-    this.status = 'add successful !';
+    this.customerService.add(this.customer).subscribe(
+      () => this.changeStatus('add successful!', ''),
+      error => this.changeStatus('', 'add failure, ID service existed!')
+    );
   }
 
-  changeStatus(): void {
-     this.status = '';
+  changeStatus(success: string, failure: string): void {
+    this.success = success;
+    this.failure = failure;
   }
 
+  returnListPage(): void {
+    this.router.navigateByUrl('home/allService');
+  }
 }

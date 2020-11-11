@@ -1,4 +1,6 @@
 import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 export interface Service {
   id: string;
@@ -16,100 +18,29 @@ export interface Service {
   providedIn: 'root'
 })
 export class ServiceService {
-  listService: Array<Service> = [
-    {
-      id: 'DV-0001',
-      name: 'khanhquoc',
-      maxPeople: 10,
-      roomStandard: 'vip',
-      numberOfFloor: 2,
-      poolArea: 100,
-      rentType: 'month',
-      rentPrice: 1000,
-      imageSource: 'service1.png'
-    },
-    {
-      id: 'DV-0002',
-      name: 'khanh',
-      maxPeople: 10,
-      roomStandard: 'vip',
-      numberOfFloor: 2,
-      poolArea: 100,
-      rentType: 'month',
-      rentPrice: 1000,
-      imageSource: 'service1.png'
-    },
-    {
-      id: 'DV-0003',
-      name: 'khanh',
-      maxPeople: 10,
-      roomStandard: 'vip',
-      numberOfFloor: 2,
-      poolArea: 100,
-      rentType: 'month',
-      rentPrice: 1000,
-      imageSource: 'service1.png'
-    },
-    {
-      id: 'DV-0004',
-      name: 'khanh',
-      maxPeople: 10,
-      roomStandard: 'vip',
-      numberOfFloor: 2,
-      poolArea: 100,
-      rentType: 'month',
-      rentPrice: 1000,
-      imageSource: 'service1.png'
-    },
-    {
-      id: 'DV-0005',
-      name: 'khanh',
-      maxPeople: 10,
-      roomStandard: 'vip',
-      numberOfFloor: 2,
-      poolArea: 100,
-      rentType: 'month',
-      rentPrice: 1000,
-      imageSource: 'service1.png'
-    },
-  ];
+  private API_URL = 'http://localhost:3000/serviceList';
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
   }
 
-  findAll(): Array<Service> {
-    return this.listService;
+  findAll(): Observable<Service[]> {
+    return this.httpClient.get<Service[]>(this.API_URL);
   }
 
-  findById(id: string): Service {
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < this.listService.length; i++) {
-      if (this.listService[i].id === id) {
-        return this.listService[i];
-      }
-    }
-    return null;
+  findById(id: string): Observable<Service> {
+    return this.httpClient.get<Service>(`${this.API_URL}/${id}`);
   }
 
-  add(service: Service): void {
-    this.listService.push(service);
+  add(service: Service): Observable<Service> {
+    //  method post error when id existed
+    return this.httpClient.post<Service>(this.API_URL, service);
   }
 
-  updateById(id: string, service: Service): void {
-    for (let i = 0; i < this.listService.length; i++) {
-      if (this.listService[i].id === id) {
-        this.listService[i] = service;
-        return;
-      }
-    }
+  updateById(service: Service): Observable<void> {
+    return this.httpClient.patch<void>(this.API_URL + '/' + service.id, service);
   }
 
-  deleteById(id: string): void {
-    for (let i = 0; i < this.listService.length; i++) {
-      if (this.listService[i].id === id) {
-        this.listService.splice(i, 1);
-        return;
-      }
-    }
+  deleteById(id: string): Observable<Service>{
+    return this.httpClient.delete<Service>(this.API_URL + '/' + id);
   }
 }

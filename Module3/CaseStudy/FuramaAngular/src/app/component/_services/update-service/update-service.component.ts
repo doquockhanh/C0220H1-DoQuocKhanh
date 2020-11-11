@@ -22,9 +22,15 @@ export class UpdateServiceComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       const id = String(paramMap.get('id'));
-      this.service = this.serviceService.findById(id);
+      this.serviceService.findById(id).subscribe(
+        next => this.service = next,
+        error => null,
+        () => this.validate()
+      );
     });
+  }
 
+  validate(): void {
     this.addService = this.formBuilder.group({
       id: [this.service.id, [Validators.pattern('^(DV-)[0-9]{4}$'), Validators.required]],
       name: [this.service.name, [Validators.pattern('^[a-zA-Z]{1,32}$'), Validators.required]],
@@ -44,7 +50,7 @@ export class UpdateServiceComponent implements OnInit {
 
   update(): void {
     this.service = this.addService.value;
-    this.serviceService.updateById(this.service.id, this.service);
+    this.serviceService.updateById(this.service).subscribe();
     this.status = 'update successful!';
     this.router.navigateByUrl('home/allService');
   }

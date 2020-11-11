@@ -2,7 +2,8 @@
   <div class="col-lg-12 mt-5 p-5 bg-color opacity">
     <nav class="navbar navbar-light bg-light">
       <form (ngSubmit)="search()" class="form-inline my-lg-2">
-        <input style="width: 900px" class="form-control mr-sm-2 htSearch" type="search" [ngModel]="inputName" [ngModelOptions]="{standalone: true}" placeholder="Search" aria-label="Search">
+        <input style="width: 900px" class="form-control mr-sm-2 htSearch" type="search" [(ngModel)]="inputName"
+               [ngModelOptions]="{standalone: true}" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0 htSearch" type="submit">Search</button>
       </form>
     </nav>
@@ -11,10 +12,10 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">name</th>
-        <th scope="col">maxPeople</th>
-        <th scope="col">roomStandard</th>
         <th scope="col">numberOfFloor</th>
         <th scope="col">pollArea</th>
+        <th scope="col">maxPeople</th>
+        <th scope="col">roomStandard</th>
         <th scope="col">rentType</th>
         <th scope="col">rentPrice</th>
         <th scope="col">imageSource</th>
@@ -23,7 +24,12 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let service of services">
+      <tr *ngFor="let service of services | paginate: {
+      id: 'listing_pagination',
+      itemsPerPage: 4,
+      currentPage: currentPage,
+      totalItems: totalItem
+      }">
         <th>{{service.id}}</th>
         <td>{{service.name}}</td>
         <td>{{service.numberOfFloor}}</td>
@@ -56,8 +62,15 @@
       </tr>
       </tbody>
     </table>
-    <a class="text-decoration-none" [routerLink]="['addService']">
-      <button class="text-info border-info">add new service >></button>
-    </a>
+    <div class="row">
+      <div class="col-4">
+        <a class="text-decoration-none" [routerLink]="['addService']">
+          <button class="text-info border-info">add new service >></button>
+        </a>
+      </div>
+      <div class="col-4">
+        <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="currentPage = $event"></pagination-controls>
+      </div>
+    </div>
   </div>
 </div>

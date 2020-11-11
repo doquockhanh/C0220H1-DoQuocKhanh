@@ -1,127 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Home</title>
-</head>
-<body
-  style="background-image: url('assets/image/background.png'); background-attachment: fixed; background-size: 1400px">
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Home</title>-->
+<!--</head>-->
+<!--<body-->
+<!--  style="background-image: url('assets/image/background.png'); background-attachment: fixed; background-size: 1400px">-->
 
-<!--header-->
-<div class="container-fluid">
-  <!-- NAV bar -->
-  <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 p-0 fixed-top">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <img src="assets/image/word/furama-logo.png" alt="furama-logo" style="width: 45px; height: 40px">
-        <a [routerLink]="['home']" class="navbar-brand" style="font-style: italic; margin-left: -9px">URAMA</a>
+<!--&lt;!&ndash;header&ndash;&gt;-->
+<!--<div class="container-fluid">-->
+<!--  &lt;!&ndash; NAV bar &ndash;&gt;-->
+<!--  <div class="row">-->
+<!--    <div class="col-lg-12 col-md-12 col-sm-12 p-0 fixed-top">-->
+<!--      <nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<!--        <img src="assets/image/word/furama-logo.png" alt="furama-logo" style="width: 45px; height: 40px">-->
+<!--        <a [routerLink]="['home']" class="navbar-brand" style="font-style: italic; margin-left: -9px">URAMA</a>-->
 
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto mt-1">
-            <li class="nav-item ml-2">
-              <a [routerLink]="['home']" class="nav-link">home</a>
-            </li>
-            <li class="nav-item dropdown ml-2">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                service
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item"
-                   [routerLink]="['home/allService']">all service</a>
-                <a class="dropdown-item"
-                   [routerLink]="['home/addService']">add service</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown ml-2">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarNav" role="button"
-                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                customer
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item"
-                   [routerLink]="['home/allCustomer']">all customer</a>
-                <a class="dropdown-item"
-                   [routerLink]="['home/addCustomer']">add customer</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown ml-2">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                contract
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item"
-                   [routerLink]="['home/allContract']">all contract</a>
-                <a class="dropdown-item"
-                   [routerLink]="['home/addContract']">add contract</a>
-              </div>
-            </li>
+<!--        <div class="collapse navbar-collapse " id="navbarSupportedContent">-->
+<!--          <ul class="navbar-nav mr-auto mt-1">-->
+<!--            <li class="nav-item ml-2">-->
+<!--              <a [routerLink]="['home']" class="nav-link">home</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item dropdown ml-2">-->
+<!--              <a class="nav-link"-->
+<!--                 [routerLink]="['home/allService']">service</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item dropdown ml-2">-->
+<!--              <a class="nav-link"-->
+<!--                 [routerLink]="['home/allCustomer']">customer</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item dropdown ml-2">-->
+<!--              <a class="nav-link"-->
+<!--                 [routerLink]="['home/allContract']">contract</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item dropdown ml-2 mr-5">-->
+<!--                <a class="nav-link"-->
+<!--                   [routerLink]="['home/allEmployee']">employee</a>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--          <div>-->
+<!--            <ul class="navbar-nav mr-auto mt-1">-->
+<!--              <li class="nav-item dropdown mt-1">-->
+<!--                <a href="#">-->
+<!--                  <img src="assets/image/flag.png" alt="vnflag" style="width: 30px; height: 30px">-->
+<!--                </a>-->
+<!--              </li>-->
+<!--              <li class="nav-item dropdown ml-1">-->
+<!--                <a class="nav-link">Do Quoc Khanh</a>-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </nav>-->
+<!--    </div>-->
+<!--  </div>-->
 
-            <li class="nav-item dropdown ml-2">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarNavAltMarkup" role="button"
-                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                employee
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item"
-                   [routerLink]="['home/allEmployee']">all employee</a>
-                <a class="dropdown-item"
-                   [routerLink]="['home/addEmployee']">add
-                  employee</a>
-              </div>
-            </li>
-          </ul>
-          <div>
-            <a href="#">
-              <img src="assets/image/flag.png" alt="vnflag" style="width: 30px; height: 30px">
-            </a>
+<!--  <router-outlet></router-outlet>-->
 
-          </div>
-        </div>
-      </nav>
-    </div>
-  </div>
+<!--  &lt;!&ndash;  footer&ndash;&gt;-->
+<!--  <div class="row bg-color border-top font-size">-->
+<!--    <div class="col-lg-3">-->
+<!--      <div>-->
+<!--        <br><br>-->
+<!--        <h4 style="color: #0f6674">>> Contact us</h4>-->
+<!--        <br>-->
+<!--        <ul>-->
+<!--          <li>103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam</li>-->
+<!--          <br>-->
+<!--          <li>Tel.: 84-236-3847 333/888 * Fax: 84-236-3847 666</li>-->
+<!--          <br>-->
+<!--          <li>Email: reservation@furamavietnam.com * www.furamavietnam.com</li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-lg-3">-->
+<!--      <div>-->
+<!--        <br><br>-->
+<!--        <h4 style="color: #0f6674">>> Contact us</h4>-->
+<!--        <br>-->
+<!--        <ul>-->
+<!--          <li>103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam</li>-->
+<!--          <br>-->
+<!--          <li>Tel.: 84-236-3847 333/888 * Fax: 84-236-3847 666</li>-->
+<!--          <br>-->
+<!--          <li>Email: reservation@furamavietnam.com * www.furamavietnam.com</li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-lg-6">-->
+<!--      <img src="assets/image/word/furama-logo.png" style="width: 500px; height: 400px; margin-left: 100px" alt="f-logo">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
-  <router-outlet></router-outlet>
-
-<!--  footer-->
-  <div class="row bg-color border-top font-size">
-    <div class="col-lg-3">
-      <div>
-        <br><br>
-        <h4 style="color: #0f6674">>>  Contact us</h4>
-        <br>
-        <ul>
-          <li>103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam</li><br>
-          <li>Tel.: 84-236-3847 333/888 *  Fax: 84-236-3847 666</li><br>
-          <li>Email: reservation@furamavietnam.com * www.furamavietnam.com</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div>
-        <br><br>
-        <h4 style="color: #0f6674">>>  Contact us</h4>
-        <br>
-        <ul>
-          <li>103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam</li><br>
-          <li>Tel.: 84-236-3847 333/888 *  Fax: 84-236-3847 666</li><br>
-          <li>Email: reservation@furamavietnam.com * www.furamavietnam.com</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-lg-6">
-      <img src="assets/image/word/furama-logo.png" style="width: 500px; height: 400px; margin-left: 100px" alt="f-logo">
-    </div>
-  </div>
-</div>
-
-<!--action-->
-<script>
-  $('.carousel').carousel({
-    interval: 3000
-  })
-</script>
-</body>
-</html>
+<!--&lt;!&ndash;action&ndash;&gt;-->
+<!--<script>-->
+<!--  $('.carousel').carousel({-->
+<!--    interval: 3000-->
+<!--  })-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+<app-home-pg></app-home-pg>

@@ -1,0 +1,25 @@
+System.out.print("khanh")
+
+public class Cau1 {
+   public static void main(){
+       int[] LA = new int[N];
+       for(int i = K; i < LA.length - 1; i++){
+           LA[K] = LA[K+1];
+       }
+       LA[LA.length - 1] = 0;
+   }
+}
+
+public class Cau2 {
+   public static void main(){
+      int row = 5;
+      for(int i = 0; i < row; i++){
+          for(int j = 0; j < row*2 + 1; j++){
+              if(j > row - i - 1 && j < row + i + 1){
+                  System.out.print("*");
+              }else System.out.print(" ");
+          }
+          System.out.println();
+      }
+   }
+}

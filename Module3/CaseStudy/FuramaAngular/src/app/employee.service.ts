@@ -1,4 +1,6 @@
 import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 export interface Employee {
   userName: string;
@@ -15,96 +17,29 @@ export interface Employee {
   providedIn: 'root'
 })
 export class EmployeeService {
-  listEmployee: Array<Employee> = [
-    {
-      userName: 'khanhq',
-      password: 'khanhq',
-      id: 'NV-0001',
-      name: 'khanhquoc',
-      birthday: '02-09-2001',
-      idCard: '47534934',
-      phoneNumber: '0393074552',
-      email: 'khanhquocdo@gamil.com',
-    },
-    {
-      userName: 'khanhq',
-      password: 'khanhq',
-      id: 'NV-0002',
-      name: 'khanh',
-      birthday: '02-09-2001',
-      idCard: '47534934',
-      phoneNumber: '0393074552',
-      email: 'khanhquocdo@gamil.com',
-    },
-    {
-      userName: 'khanhq',
-      password: 'khanhq',
-      id: 'NV-0003',
-      name: 'khanh',
-      birthday: '02-09-2001',
-      idCard: '47534934',
-      phoneNumber: '0393074552',
-      email: 'khanhquocdo@gamil.com',
-    },
-    {
-      userName: 'khanhq',
-      password: 'khanhq',
-      id: 'NV-0004',
-      name: 'khanh',
-      birthday: '02-09-2001',
-      idCard: '47534934',
-      phoneNumber: '0393074552',
-      email: 'khanhquocdo@gamil.com',
-    },
-    {
-      userName: 'khanhq',
-      password: 'khanhq',
-      id: 'NV-0005',
-      name: 'khanh',
-      birthday: '02-09-2001',
-      idCard: '47534934',
-      phoneNumber: '0393074552',
-      email: 'khanhquocdo@gamil.com',
-    },
-  ];
+  private API_URL = 'http://localhost:3000/employeeList';
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
   }
 
-  getAll(): Array<Employee> {
-    return this.listEmployee;
+  getAll(): Observable<Employee[]> {
+    return this.httpClient.get<Employee[]>(this.API_URL);
   }
 
-  add(employee: Employee): void {
-    this.listEmployee.push(employee);
+  add(employee: Employee): Observable<Employee> {
+    return this.httpClient.post<Employee>(this.API_URL, employee);
   }
 
 
-  findById(id: string): Employee {
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < this.listEmployee.length; i++) {
-      if (this.listEmployee[i].id === id) {
-        return this.listEmployee[i];
-      }
-    }
-    return null;
+  findById(id: string): Observable<Employee> {
+     return this.httpClient.get<Employee>(this.API_URL + '/' + id);
   }
 
-  updateById(id: string,  employee: Employee): void {
-    for (let i = 0; i < this.listEmployee.length; i++) {
-      if (this.listEmployee[i].id === id) {
-        this.listEmployee[i] = employee;
-        return;
-      }
-    }
+  updateById(employee: Employee): Observable<Employee> {
+     return this.httpClient.patch<Employee>(this.API_URL + '/' + employee.id, employee);
   }
 
-  deleteById(id: string): void {
-    for (let i = 0; i < this.listEmployee.length; i++) {
-      if (this.listEmployee[i].id === id) {
-        this.listEmployee.splice(i, 1);
-        return;
-      }
-    }
+  deleteById(id: string): Observable<Employee> {
+    return this.httpClient.delete<Employee>(this.API_URL + '/' + id);
   }
 }

@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Service, ServiceService} from '../../../service.service';
+import {Router} from '@angular/router';
+import {SubscriptionLike} from 'rxjs';
 
 @Component({
   selector: 'app-add-service',
@@ -8,13 +10,15 @@ import {Service, ServiceService} from '../../../service.service';
   styleUrls: ['./add-service.component.css']
 })
 
-export class AddServiceComponent implements OnInit {
+export class AddServiceComponent implements OnInit{
   service: Service;
   addService: FormGroup;
-  status: string;
+  success: string;
+  failure: string;
 
   constructor(private formBuilder: FormBuilder,
-              private serviceService: ServiceService) {
+              private serviceService: ServiceService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -31,13 +35,21 @@ export class AddServiceComponent implements OnInit {
     });
   }
 
-  changeStatus(): void {
-    this.status = '';
+  changeStatus(success: string, failure: string): void {
+    this.success = success;
+    this.failure = failure;
   }
 
   add(): void {
+    //  method post error when id existed
     this.service = this.addService.value;
-    this.serviceService.add(this.service);
-    this.status = 'add successful!';
+    this.serviceService.add(this.service).subscribe(
+      () => this.changeStatus('add successful!', ''),
+      error => this.changeStatus('', 'add failure, ID service existed!')
+    );
+  }
+
+  returnListPage(): void {
+    this.router.navigateByUrl('home/allService');
   }
 }

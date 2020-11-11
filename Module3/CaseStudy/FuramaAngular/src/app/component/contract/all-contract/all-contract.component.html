@@ -22,7 +22,11 @@
       </thead>
 
       <tbody>
-      <tr *ngFor="let contract of contracts">
+      <tr *ngFor="let contract of contracts | paginate: {
+      id: 'listing_pagination',
+      itemsPerPage: 4,
+      currentPage: currentPage,
+      totalItems: totalItem}">
         <th scope="row">{{contract.id}}</th>
         <td>{{contract.idCustomer}}</td>
         <td>{{contract.idService}}</td>
@@ -53,8 +57,16 @@
       </tr>
       </tbody>
     </table>
-    <a class="text-decoration-none" [routerLink]="['addContract']">
-      <button class="text-info border-info">add new contract >></button>
-    </a>
+    <div class="row">
+      <div class="col-4">
+        <a class="text-decoration-none" [routerLink]="['addContract']">
+          <button class="text-info border-info">add new contract >></button>
+        </a>
+      </div>
+      <div class="col-4">
+        <pagination-controls id="listing_pagination" maxSize="4" directionLinks="true" (pageChange)="currentPage = $event"></pagination-controls>
+      </div>
+    </div>
   </div>
 </div>
+

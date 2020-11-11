@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Employee, EmployeeService} from '../../../employee.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-employee',
@@ -10,10 +11,12 @@ import {Employee, EmployeeService} from '../../../employee.service';
 export class AddEmployeeComponent implements OnInit {
   addEmployee: FormGroup;
   employee: Employee;
-  status: string;
+  success: string;
+  failure: string;
 
   constructor(private formBuilder: FormBuilder,
-              private employeeService: EmployeeService) {
+              private employeeService: EmployeeService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -31,11 +34,19 @@ export class AddEmployeeComponent implements OnInit {
 
   add(): void {
     this.employee = this.addEmployee.value;
-    this.employeeService.add(this.employee);
-    this.status = 'add successful !';
+    this.employeeService.add(this.employee).subscribe(
+      () => this.changeStatus('add successful!', ''),
+      error => this.changeStatus('', 'add failure, ID service existed!')
+    );
+
   }
 
-  changeStatus(): void {
-    this.status = '';
+  changeStatus(success: string, failure: string): void {
+    this.success = success;
+    this.failure = failure;
+  }
+
+  returnListPage(): void{
+    this.router.navigateByUrl('home/allService');
   }
 }

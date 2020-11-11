@@ -22,9 +22,15 @@ export class UpdateEmployeeComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       const id = String(paramMap.get('id'));
-      this.employee = this.employeeService.findById(id);
+      this.employeeService.findById(id).subscribe(
+        employee => this.employee = employee,
+        error => null,
+        () => this.validate()
+      );
     });
+  }
 
+  validate(): void {
     this.updateEmployee = this.formBuilder.group({
       userName: [this.employee.userName, [Validators.pattern('^[a-zA-Z0-9]{6,20}$'), Validators.required]],
       password: [this.employee.password, [Validators.pattern('^[a-zA-Z0-9]{6,20}$'), Validators.required]],
@@ -39,8 +45,8 @@ export class UpdateEmployeeComponent implements OnInit {
 
   update(): void {
     this.employee = this.updateEmployee.value;
-    this.employeeService.updateById(this.employee.id, this.employee);
-    this.status = 'add successful !';
+    this.employeeService.updateById(this.employee).subscribe();
+    this.status = 'update successful !';
     this.router.navigateByUrl('home/allEmployee');
   }
 

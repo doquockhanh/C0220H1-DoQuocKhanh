@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-12 bg-color opacity">
-    <form [formGroup]="addService" (ngSubmit)="update()" (change)="changeStatus()" class="form-group m-5 p-5">
+    <form *ngIf="addService" [formGroup]="addService" (ngSubmit)="update()" (change)="changeStatus()" class="form-group m-5 p-5">
       <h6 style="color: green">{{status}}</h6>
       <h4 class="margin-left-220">Update Service</h4><br>
 
@@ -104,7 +104,7 @@
             not empty!
           </span>
       </div>
-      <button [disabled]="addService.invalid" type="submit" class="btn btn-primary" style="margin-left: 300px">Create
+      <button [disabled]="addService.invalid" type="submit" class="btn btn-primary" style="margin-left: 300px">Update
       </button>
     </form>
   </div>

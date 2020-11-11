@@ -1,0 +1,43 @@
+Class Cau1{
+    public static void main(String args[]){
+        System.out.print(sort(["abc", "", "aaa", "a", "zz"]));
+    }
+    
+    private string[] sort(string[] arr){
+       int index = 0;
+       string[] arrReturn = new string[arr.length];
+       for (int a = 0; a < 9669; a++){
+          if(index != arr.length){
+             for(int b = 0; b < arr.length; b++){
+                if(arr[b].length = a){
+                    arrReturn[index] = arr[b];
+                    index ++;
+                }
+             }
+          }else{return arrReturn;}
+       }
+       return null;
+    }
+}
+
+Class Cau2{
+    public static void main(String args[]){
+        System.out.print("so ki tu trung nhau la :" + findSame("aabcc", "adcaa"));
+    }
+    
+    private int findSame(string a, string b){
+        int index = 0;
+        char[] arrA = a.split("");
+        char[] arrB = b.split("");
+        for(int a = 0; a < arrA.length; a++){
+           for(int b = 0; b < arrB.length; b++){
+               if(arrA[a] == arrB[b]){
+                   index ++;
+                   arrB[b] = '';
+                   b = arrB.length;
+               }
+           }
+        }
+        return index;
+    }
+}

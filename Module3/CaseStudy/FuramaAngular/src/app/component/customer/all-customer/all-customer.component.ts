@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Customer, CustomerService} from '../../../customer.service';
 
 @Component({
@@ -10,17 +10,23 @@ import {Customer, CustomerService} from '../../../customer.service';
 export class AllCustomerComponent implements OnInit {
   customers: Array<Customer>;
   firstName: string;
+  currentPage: number;
+  totalItem: number;
 
   constructor(private customerService: CustomerService) {
   }
 
   ngOnInit(): void {
-    this.customers = this.customerService.findAll();
+    this.getCustomerApi();
   }
 
   delete(id: string): void {
-    if (confirm('are you sure about that?')) {
-      this.customerService.deleteById(id);
+    if (confirm('are you sure to delete ' + id + '?')) {
+      this.customerService.deleteById(id).subscribe(
+        () => null,
+        error => null,
+        () => this.getCustomerApi()
+      );
     }
   }
 
@@ -37,7 +43,16 @@ export class AllCustomerComponent implements OnInit {
           || res.email.toLocaleLowerCase().match(this.firstName.toLocaleLowerCase());
       });
     } else if (this.firstName === '') {
-      this.customers = this.customerService.findAll();
+      this.getCustomerApi();
     }
+  }
+
+  getCustomerApi(): void {
+    this.customerService.findAll().subscribe(
+      list => this.customers = list, error => {
+        this.customers = [];
+      },
+      () => this.totalItem = this.customers.length
+    );
   }
 }

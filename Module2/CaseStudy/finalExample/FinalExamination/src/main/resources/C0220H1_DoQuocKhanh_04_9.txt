@@ -1,0 +1,54 @@
+class Cau1 {
+   public static void main (String args){
+     compareString("abc", "abcabcabc")
+   }
+
+   public void compareString(String S, String T){
+      boolean check = true;
+      List<String> A = S.split("");  
+      List<String> B = T.split("");
+      for(int i = 0; i < B.length(); i++){
+         if(B.get(i) === A.get(0)){
+            check = true;
+            for(int j = 1; j < A.length(); j++){
+                if(B.get(i + j) !== A.get(j){
+                    check = false;
+                }
+            }
+            if(check === true){
+               System.out.print(i + 1);
+            }
+         }
+      }
+   }
+}
+
+------------------------------------------------------------------
+
+class Cau2 {
+   public static void main (String args){
+      draw(4);
+   }
+
+   public void draw(int a){
+      int check = a*2+1;
+      for(int i = 0; i <= a*2; i++){
+         for(int j = 0; j <= a*2; i++){
+            if(check > 0){
+                if(j >= a - a + i && j <= a + a - i){
+                    System.out.print("*");
+                }else{
+                    System.out.print(" ");
+                }
+            }else {
+                if(j >= a + (a - i) && j <= a + (i - a) ){
+                    System.out.print("*");
+                }else{
+                    System.out.print(" ");
+                }
+            }
+         }
+         check -= 2;
+      }
+   }
+}

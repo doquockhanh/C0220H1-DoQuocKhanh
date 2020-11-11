@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List test</title>
+    <link rel="stylesheet" href="resource/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <script src="resource/jquery-3.5.1.min.js"></script>
+    <script src="resource/bootstrap-4.5.0-dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="resource/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container-fluid font">
+    <!--    header-->
+    <div class="row header">
+        <div class="col-md-12 d-flex align-items-center p-1">
+            <span>List test</span>
+        </div>
+    </div>
+
+    <!--thanh chọn bảng-->
+    <div class="row">
+        <div class="col-md pt-3 pb-3 pl-1">
+            <div class="dropdown">
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                List name:
+                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span>List test</span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button">List test</button>
+                    <button class="dropdown-item" type="button">List member</button>
+                    <button class="dropdown-item" type="button">Question bank</button>
+                    <button class="dropdown-item" type="button">TOP</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--            bảng -->
+    <div class="row">
+        <div class="col-md-12 p-0 m-0">
+            <table class="table table-bordered table-responsive-md text-center">
+                <thead class="header">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">TestCode</th>
+                    <th scope="col">NameTest</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Grade</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">View</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="col">1</th>
+                    <td>001</td>
+                    <td>Test 1</td>
+                    <td>Physical</td>
+                    <td>A</td>
+                    <td>
+                        <input id="box1" type="checkbox">
+                    </td>
+                    <td>
+                        <a href="#" class="text-decoration-none">View</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col">2</th>
+                    <td>002</td>
+                    <td>Test 2</td>
+                    <td>Chemical</td>
+                    <td>B</td>
+                    <td>
+                        <input id="box2" type="checkbox">
+                    </td>
+                    <td>
+                        <a href="#" class="text-decoration-none">View</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col">3</th>
+                    <td>003</td>
+                    <td>Test 3</td>
+                    <td>English</td>
+                    <td>D</td>
+                    <td>
+                        <input id="box3" type="checkbox">
+                    </td>
+                    <td>
+                        <a href="#" class="text-decoration-none">View</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--   nút thêm xóa -->
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <button id="import" class="btn btn-dark" style="width: 140px; height: 40px">
+                        <i class="fa fa-download" aria-hidden="true"></i>
+                        Import Test
+                        <input type="file" class="custom-file-input" for="import">
+                    </button>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <button onclick="del()" id="delete" class="btn btn-outline-info" data-toggle="modal"
+                            data-target="#exampleModal">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        Delete item
+                    </button>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="http://localhost:63342/prototype_c02h1_doquockhanh/add-exam.html?_ijt=2h6f7k9fqq193mh2rtto7usv59"
+                       class="btn btn-outline-info">
+                        <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
+                        Add new
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <button class="btn btn-outline-info">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--code của cái custom confirm-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirm delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="confirmBody"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--cái này để hiển thị tên bảng trên btn dropdown-->
+<script>
+    $(function () {
+        $(".dropdown-menu button").click(function () {
+            $("#dropdownMenu2").text($(this).text());
+            // $(".btn:first-child").val($(this).text());
+        });
+    });
+</script>
+
+<!--cái này để xác định thông báo cho confirm xóa-->
+<script>
+    function del() {
+        let a = '';
+        if (document.getElementById('box1').checked) {
+            a += '001 '
+        }
+        if (document.getElementById('box2').checked) {
+            a += '002 '
+        }
+        if (document.getElementById('box3').checked) {
+            a += '003 '
+        }
+
+        if (a === '') {
+            document.getElementById('confirmBody').innerText = 'Please choose at least one test to delete!'
+        } else {
+            document.getElementById('confirmBody').innerText = 'Are you sure to delete test ' + a + ' ?'
+        }
+    }
+</script>
+</body>
+</html>

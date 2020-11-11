@@ -1,4 +1,6 @@
 import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 export interface Contract {
   id: string;
@@ -14,97 +16,93 @@ export interface Contract {
   providedIn: 'root'
 })
 export class ContractService {
-  listContract: Array<Contract> = [
-    {
-      id: 'HD-0001',
-      idCustomer: 'KH-0001',
-      idService: 'DV-0001',
-      dateStartRent: '01-01-2020',
-      dateEndRent: '01-02-2020',
-      deposit: 101,
-      price: 1000,
-    },
-    {
-      id: 'HD-0002',
-      idCustomer: 'KH-0001',
-      idService: 'DV-0001',
-      dateStartRent: '01-01-2020',
-      dateEndRent: '01-02-2020',
-      deposit: 100,
-      price: 1000,
-    },
-    {
-      id: 'HD-0003',
-      idCustomer: 'KH-0001',
-      idService: 'DV-0001',
-      dateStartRent: '01-01-2020',
-      dateEndRent: '01-02-2020',
-      deposit: 100,
-      price: 1000,
-    },
-    {
-      id: 'HD-0004',
-      idCustomer: 'KH-0001',
-      idService: 'DV-0001',
-      dateStartRent: '01-01-2020',
-      dateEndRent: '01-02-2020',
-      deposit: 100,
-      price: 1000,
-    },
-    {
-      id: 'HD-0005',
-      idCustomer: 'KH-0001',
-      idService: 'DV-0001',
-      dateStartRent: '01-01-2020',
-      dateEndRent: '01-02-2020',
-      deposit: 100,
-      price: 1000,
-    },
-    {
-      id: 'HD-0006',
-      idCustomer: 'KH-0001',
-      idService: 'DV-0001',
-      dateStartRent: '01-01-2020',
-      dateEndRent: '01-02-2020',
-      deposit: 100,
-      price: 1000,
-    },
-    {
-      id: 'HD-0007',
-      idCustomer: 'KH-0001',
-      idService: 'DV-0001',
-      dateStartRent: '01-01-2020',
-      dateEndRent: '01-02-2020',
-      deposit: 100,
-      price: 1000,
-    },
-  ];
+  private API_URL = 'http://localhost:3000/contractList';
+  // listContract: Array<Contract> = [
+  //   {
+  //     id: 'HD-0001',
+  //     idCustomer: 'KH-0001',
+  //     idService: 'DV-0001',
+  //     dateStartRent: '01-01-2020',
+  //     dateEndRent: '01-02-2020',
+  //     deposit: 101,
+  //     price: 1000,
+  //   },
+  //   {
+  //     id: 'HD-0002',
+  //     idCustomer: 'KH-0001',
+  //     idService: 'DV-0001',
+  //     dateStartRent: '01-01-2020',
+  //     dateEndRent: '01-02-2020',
+  //     deposit: 100,
+  //     price: 1000,
+  //   },
+  //   {
+  //     id: 'HD-0003',
+  //     idCustomer: 'KH-0001',
+  //     idService: 'DV-0001',
+  //     dateStartRent: '01-01-2020',
+  //     dateEndRent: '01-02-2020',
+  //     deposit: 100,
+  //     price: 1000,
+  //   },
+  //   {
+  //     id: 'HD-0004',
+  //     idCustomer: 'KH-0001',
+  //     idService: 'DV-0001',
+  //     dateStartRent: '01-01-2020',
+  //     dateEndRent: '01-02-2020',
+  //     deposit: 100,
+  //     price: 1000,
+  //   },
+  //   {
+  //     id: 'HD-0005',
+  //     idCustomer: 'KH-0001',
+  //     idService: 'DV-0001',
+  //     dateStartRent: '01-01-2020',
+  //     dateEndRent: '01-02-2020',
+  //     deposit: 100,
+  //     price: 1000,
+  //   },
+  //   {
+  //     id: 'HD-0006',
+  //     idCustomer: 'KH-0001',
+  //     idService: 'DV-0001',
+  //     dateStartRent: '01-01-2020',
+  //     dateEndRent: '01-02-2020',
+  //     deposit: 100,
+  //     price: 1000,
+  //   },
+  //   {
+  //     id: 'HD-0007',
+  //     idCustomer: 'KH-0001',
+  //     idService: 'DV-0001',
+  //     dateStartRent: '01-01-2020',
+  //     dateEndRent: '01-02-2020',
+  //     deposit: 100,
+  //     price: 1000,
+  //   },
+  // ];
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
   }
 
-  findAll(): Array<Contract> {
-    return this.listContract;
+  findAll(): Observable<Contract[]> {
+    return this.httpClient.get<Contract[]>(this.API_URL);
   }
 
-  add(contract: Contract): void {
-    this.listContract.push(contract);
+  add(contract: Contract): Observable<Contract> {
+    return this.httpClient.post<Contract>(this.API_URL, contract);
   }
 
-  updateById(id: string, contract: Contract): void {
-    for (let i = 0; i < this.listContract.length; i++) {
-      if (this.listContract[i].id === id) {
-        this.listContract[i] = contract;
-        return;
-      }
-    }
+  updateById(contract: Contract): Observable<any> {
+    return this.httpClient.patch(this.API_URL + '/' + contract.id, contract);
   }
 
-  deleteById(id: string): void {
-    this.listContract.splice(this.listContract.indexOf(this.findById(id)), 1);
+  deleteById(id: string): Observable<Contract> {
+    return this.httpClient.delete<Contract>(this.API_URL + '/' + id);
   }
 
-  findById(id: string): Contract {
-    return this.listContract.find(contract => contract.id === id);
+  findById(id: string): Observable<Contract> {
+    return this.httpClient.get<Contract>(this.API_URL + '/' + id);
   }
 }
