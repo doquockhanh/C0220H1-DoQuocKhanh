@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Contract, ContractService} from '../../../contract.service';
 
 @Component({
@@ -9,16 +9,23 @@ import {Contract, ContractService} from '../../../contract.service';
 export class AllContractComponent implements OnInit {
   contracts: Array<Contract>;
   inputName: string;
+  currentPage: number;
+  totalItem: number;
 
-  constructor(private contractService: ContractService) { }
+  constructor(private contractService: ContractService) {
+  }
 
   ngOnInit(): void {
-    this.contracts = this.contractService.listContract;
+    this.getContractAPI();
   }
 
   delete(id: string): void {
-    if (confirm('are you sure about that?')) {
-      this.contractService.deleteById(id);
+    if (confirm('are you sure to delete ' + id + '?')) {
+      this.contractService.deleteById(id).subscribe(
+        () => null,
+        error => null,
+        () => this.getContractAPI()
+      );
     }
   }
 
@@ -34,7 +41,16 @@ export class AllContractComponent implements OnInit {
           res.dateEndRent.toLocaleLowerCase().match(this.inputName.toLocaleLowerCase());
       });
     } else if (this.inputName === '') {
-      this.contracts = this.contractService.findAll();
+      this.getContractAPI();
     }
+  }
+
+  getContractAPI(): void {
+    this.contractService.findAll().subscribe(
+      list => this.contracts = list, error => {
+        this.contracts = [];
+      },
+      () => this.totalItem = this.contracts.length
+    );
   }
 }

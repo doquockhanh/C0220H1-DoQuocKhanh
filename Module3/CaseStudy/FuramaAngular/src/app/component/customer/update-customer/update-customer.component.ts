@@ -22,9 +22,15 @@ export class UpdateCustomerComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       const id = String(paramMap.get('id'));
-      this.customer = this.customerService.findById(id);
+      this.customerService.findById(id).subscribe(
+        customer => this.customer = customer,
+        error => null,
+        () => this.validate()
+      );
     });
+  }
 
+  validate(): void {
     this.updateCustomer = this.formBuilder.group({
       id: [this.customer.id, [Validators.pattern('^(KH-)[0-9]{4}$'), Validators.required]],
       typeCus: [this.customer.typeCus, Validators.required],
@@ -39,7 +45,7 @@ export class UpdateCustomerComponent implements OnInit {
 
   update(): void {
     this.customer = this.updateCustomer.value;
-    this.customerService.updateById(this.customer.id, this.customer);
+    this.customerService.updateById(this.customer).subscribe();
     this.status = 'update successful !';
     this.router.navigateByUrl('home/allCustomer');
   }

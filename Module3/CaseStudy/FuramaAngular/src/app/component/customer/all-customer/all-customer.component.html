@@ -23,7 +23,11 @@
       </thead>
 
       <tbody>
-      <tr *ngFor="let customer of customers">
+      <tr *ngFor="let customer of customers | paginate: {
+      id: 'listing_pagination',
+      itemsPerPage: 4,
+      currentPage: currentPage,
+      totalItems: totalItem}">
         <th scope="row">{{customer.id}}</th>
         <td>{{customer.name}}</td>
         <td>{{customer.typeCus}}</td>
@@ -55,8 +59,15 @@
       </tr>
       </tbody>
     </table>
-    <a class="text-decoration-none" [routerLink]="['addCustomer']">
-      <button class="text-info border-info">add new customer >></button>
-    </a>
+    <div class="row">
+      <div class="col-4">
+        <a class="text-decoration-none" [routerLink]="['addCustomer']">
+          <button class="text-info border-info">add new customer >></button>
+        </a>
+      </div>
+      <div class="col-4">
+        <pagination-controls id="listing_pagination" maxSize="4" directionLinks="true" (pageChange)="currentPage = $event"></pagination-controls>
+      </div>
+    </div>
   </div>
 </div>

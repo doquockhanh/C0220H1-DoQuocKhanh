@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Service} from '../../../service.service';
 import {Contract, ContractService} from '../../../contract.service';
+import {Router} from '@angular/router';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-add-contract',
@@ -11,10 +12,13 @@ import {Contract, ContractService} from '../../../contract.service';
 export class AddContractComponent implements OnInit {
   contract: Contract;
   addContract: FormGroup;
-  status: string;
+  success: string;
+  failure: string;
+  pipe = new DatePipe('en-US');
 
   constructor(private formBuilder: FormBuilder,
-              private contractService: ContractService) {
+              private contractService: ContractService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -29,13 +33,26 @@ export class AddContractComponent implements OnInit {
     });
   }
 
-  changeStatus(): void {
-    this.status = '';
+  changeStatus(success: string, failure: string): void {
+    this.success = success;
+    this.failure = failure;
   }
 
   add(): void {
     this.contract = this.addContract.value;
-    this.contractService.add(this.contract);
-    this.status = 'add successful!';
+    this.contract.dateEndRent = this.pipe.transform(this.contract.dateEndRent, 'dd-MM-yyyy');
+    this.contract.dateStartRent = this.pipe.transform(this.contract.dateStartRent, 'dd-MM-yyyy');
+    this.contractService.add(this.contract).subscribe(
+      () => {
+        this.changeStatus('add successful!', '');
+        this.addContract.reset();
+      },
+
+      error => this.changeStatus('', 'add failure, ID contract existed!')
+    );
+  }
+
+  returnListPage(): void{
+    this.router.navigateByUrl('home/allService');
   }
 }

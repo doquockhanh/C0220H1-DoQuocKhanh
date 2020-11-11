@@ -9,8 +9,6 @@ import org.springframework.validation.Validator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.Period;
-import java.util.Set;
 
 @Entity
 public class Contract implements Validator {

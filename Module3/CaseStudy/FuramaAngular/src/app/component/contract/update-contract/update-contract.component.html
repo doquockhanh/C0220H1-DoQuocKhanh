@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-12 bg-color opacity">
-    <form [formGroup]="updateContract" (ngSubmit)="update()" (change)="changeStatus()" class="form-group m-5 p-5">
+    <form *ngIf="updateContract" [formGroup]="updateContract"  (ngSubmit)="update()" (change)="changeStatus()" class="form-group m-5 p-5">
       <h6 style="color: green">{{status}}</h6>
       <h4 class="margin-left-220">Update Service</h4><br>
 
@@ -40,7 +40,7 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label" style="text-align: right">date rent</label>
         <div class="col-sm-5">
-          <input formControlName="dateStartRent" class="form-control">
+          <input formControlName="dateStartRent" class="form-control" type="date">
         </div>
         <span class="text-danger" *ngIf="updateContract.get('dateStartRent').hasError('required') &&
           updateContract.get('dateStartRent').touched">
@@ -50,7 +50,7 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label" style="text-align: right">date end</label>
         <div class="col-sm-5">
-          <input formControlName="dateEndRent" class="form-control">
+          <input formControlName="dateEndRent" class="form-control" type="date">
         </div>
         <span class="text-danger" *ngIf="updateContract.get('dateEndRent').hasError('required') &&
           updateContract.get('dateEndRent').touched">

@@ -285,7 +285,7 @@ class Game {
             context.fillText("Power = " + this.config.power, 20, 40);
             context.fillText("Playing: " + this.currentPlayer.name, 1200, 25);
 
-            context.font = "15px arial"
+            context.font = "15px arial";
             context.fillText("windpower", 580, 25, 100);
             if (windPower > 0) {
                 context.fillText("<<<<", 550, 50, 50);

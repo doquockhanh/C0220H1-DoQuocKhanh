@@ -9,16 +9,23 @@ import {Employee, EmployeeService} from '../../../employee.service';
 export class AllEmployeeComponent implements OnInit {
   employees: Array<Employee>;
   firstName: string;
+  currentPage: number;
+  totalItem: number;
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService) {
+  }
 
   ngOnInit(): void {
-    this.employees = this.employeeService.getAll();
+    this.getEmployeeApi();
   }
 
   delete(id: string): void {
-    if (confirm('are you sure about that?')) {
-      this.employeeService.deleteById(id);
+    if (confirm('are you sure to delete ' + id + '?')) {
+      this.employeeService.deleteById(id).subscribe(
+        () => null,
+        error => null,
+        () => this.getEmployeeApi()
+      );
     }
   }
 
@@ -33,7 +40,16 @@ export class AllEmployeeComponent implements OnInit {
           || res.email.toLocaleLowerCase().match(this.firstName.toLocaleLowerCase());
       });
     } else if (this.firstName === '') {
-      this.employees = this.employeeService.getAll();
+      this.getEmployeeApi();
     }
+  }
+
+  getEmployeeApi(): void {
+    this.employeeService.getAll().subscribe(
+      list => this.employees = list, error => {
+        this.employees = [];
+      },
+      () => this.totalItem = this.employees.length
+    );
   }
 }

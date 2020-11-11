@@ -22,9 +22,15 @@ export class UpdateContractComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       const id = String(paramMap.get('id'));
-      this.contract = this.contractService.findById(id);
+      this.contractService.findById(id).subscribe(
+        contract => this.contract = contract,
+        error => this.contract = null,
+        () => this.validate()
+      );
     });
+  }
 
+  validate(): void{
     this.updateContract = this.formBuilder.group({
       id: [this.contract.id, [Validators.pattern('^(HD-)[0-9]{4}$'), Validators.required]],
       idCustomer: [this.contract.idCustomer, [Validators.pattern('^(KH-)[0-9]{4}$'), Validators.required]],
@@ -42,8 +48,11 @@ export class UpdateContractComponent implements OnInit {
 
   update(): void {
     this.contract = this.updateContract.value;
-    this.contractService.updateById(this.contract.id, this.contract);
+    this.contractService.updateById(this.contract).subscribe(
+      () => null,
+      error => null,
+      () => this.router.navigateByUrl('home/allContract')
+    );
     this.status = 'update successful!';
-    this.router.navigateByUrl('home/allContract');
   }
 }

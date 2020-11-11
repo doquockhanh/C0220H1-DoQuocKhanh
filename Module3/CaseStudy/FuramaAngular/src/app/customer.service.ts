@@ -1,4 +1,6 @@
 import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 export interface Customer {
   id: string;
@@ -16,124 +18,28 @@ export interface Customer {
 })
 
 export class CustomerService {
-  listCustomer: Array<Customer> = [
-    {
-      id: 'KH-0001',
-      typeCus: 'diamond',
-      name: 'khanhquoc',
-      birthday: '02-09-2001',
-      idCard: '46445235',
-      phoneNumber: '0393074552',
-      email: 'khanhquocdo@gmail.com',
-      address: 'hvt',
-    },
-    {
-      id: 'KH-0001',
-      typeCus: 'diamond',
-      name: 'khanh',
-      birthday: '02-09-2001',
-      idCard: '46445235',
-      phoneNumber: '0393074552',
-      email: 'khanhquocdo@gmail.com',
-      address: 'hvt',
-    },
-    {
-      id: 'KH-0002',
-      typeCus: 'diamond',
-      name: 'khanh',
-      birthday: '02-09-2001',
-      idCard: '46445235',
-      phoneNumber: '0393074552',
-      email: 'khanhquocdo@gmail.com',
-      address: 'hvt',
-    },
-    {
-      id: 'KH-0003',
-      typeCus: 'diamond',
-      name: 'khanh',
-      birthday: '02-09-2001',
-      idCard: '46445235',
-      phoneNumber: '0393074552',
-      email: 'khanhquocdo@gmail.com',
-      address: 'hvt',
-    },
-    {
-      id: 'KH-0004',
-      typeCus: 'diamond',
-      name: 'khanh',
-      birthday: '02-09-2001',
-      idCard: '46445235',
-      phoneNumber: '0393074552',
-      email: 'khanhquocdo@gmail.com',
-      address: 'hvt',
-    },
-    {
-      id: 'KH-0005',
-      typeCus: 'diamond',
-      name: 'khanh',
-      birthday: '02-09-2001',
-      idCard: '46445235',
-      phoneNumber: '0393074552',
-      email: 'khanhquocdo@gmail.com',
-      address: 'hvt',
-    },
-    {
-      id: 'KH-0006',
-      typeCus: 'diamond',
-      name: 'khanh',
-      birthday: '02-09-2001',
-      idCard: '46445235',
-      phoneNumber: '0393074552',
-      email: 'khanhquocdo@gmail.com',
-      address: 'hvt',
-    },
-    {
-      id: 'KH-0007',
-      typeCus: 'diamond',
-      name: 'khanh',
-      birthday: '02-09-2001',
-      idCard: '46445235',
-      phoneNumber: '0393074552',
-      email: 'khanhquocdo@gmail.com',
-      address: 'hvt',
-    },
-    {
-      id: 'KH-0008',
-      typeCus: 'diamond',
-      name: 'khanh',
-      birthday: '02-09-2001',
-      idCard: '46445235',
-      phoneNumber: '0393074552',
-      email: 'khanhquocdo@gmail.com',
-      address: 'hvt',
-    }
-  ];
+  private API_URL = 'http://localhost:3000/customerList';
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
   }
 
-  findAll(): Array<Customer> {
-    return this.listCustomer;
+  findAll(): Observable<Customer[]> {
+    return this.httpClient.get<Customer[]>(this.API_URL);
   }
 
-  add(customer: Customer): void {
-    this.listCustomer.push(customer);
+  add(customer: Customer): Observable<Customer> {
+    return this.httpClient.post<Customer>(this.API_URL, customer);
   }
 
-  updateById(id: string, customer: Customer): void {
-    for (let i = 0; i < this.listCustomer.length; i++) {
-      if (this.listCustomer[i].id === id) {
-        this.listCustomer[i] = customer;
-        return;
-      }
-    }
+  updateById(customer: Customer): Observable<Customer> {
+     return this.httpClient.patch<Customer>(this.API_URL + '/' + customer.id, customer);
   }
 
-  deleteById(id: string): void {
-    this.listCustomer.splice(this.listCustomer.indexOf(this.findById(id)), 1);
+  deleteById(id: string): Observable<Customer> {
+    return this.httpClient.delete<Customer>(this.API_URL + '/' + id);
   }
 
-  findById(id: string): Customer {
-    return this.listCustomer.find(customer => customer.id === id);
+  findById(id: string): Observable<Customer> {
+    return this.httpClient.get<Customer>(this.API_URL + '/' + id);
   }
 }

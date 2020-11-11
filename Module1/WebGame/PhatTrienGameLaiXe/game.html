@@ -11,14 +11,37 @@
     let context = canvas.getContext("2d");
     let background = new Image();
     background.src = "background.png";
-    window.onload = animate;
+    window.onload = mainLoop;
+    let bgX = 0;
+    let bgY = 0;
+    let bgW = 250;
+    let bgH = 350;
+    let bgS = 0.5;
 
+    function mainLoop() {
+        game.update();
+        if(game.status === GAME_STATUS_PLAYING){
+            animate();
+        }
+        context.stroke();
+
+        if (game.status === GAME_STATUS_OVER) {
+            context.font = "30px Arial";
+            context.fillStyle = "black";
+            context.fillText("Enter to Play!", 50, 180, 150);
+        }
+        requestAnimationFrame(mainLoop)
+    }
 
     function animate() {
-        game.update();
         context.beginPath();
         context.clearRect(0, 0, canvas.width, canvas.height);
-        context.drawImage(background, 0, 0, 250, 350);
+        //xử lí bg cuộn
+        context.drawImage(background, bgX, bgY += bgS, bgW, bgH);
+        context.drawImage(background, bgX, (bgY += bgS) - bgH , bgW, bgH);
+        if(bgY === bgH){
+            bgY = 0
+        }
 
         //ve ra xe
         context.fillStyle = "darkred";
@@ -36,15 +59,6 @@
         context.fillText("score : " + score, 200, 10, 40);
         context.fillText("hight score : " + hightScore, 120, 10, 70);
         context.stroke();
-
-
-        if (game.status === GAME_STATUS_OVER) {
-            context.font = "30px Arial";
-            context.fillStyle = "black";
-            context.fillText("Enter to Play!", 50, 180, 150);
-        }
-
-        requestAnimationFrame(animate)
     }
 
     function onKeyPressed(event) {

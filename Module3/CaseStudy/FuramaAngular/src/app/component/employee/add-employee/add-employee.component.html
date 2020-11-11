@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col-lg-12 bg-color opacity">
-    <form [formGroup]="addEmployee" (ngSubmit)="add()" (change)="changeStatus()" class="form-group m-5 p-5">
-      <h6 style="color:green">{{status}}</h6>
+    <form [formGroup]="addEmployee" (ngSubmit)="add()" (change)="changeStatus('','')" class="form-group m-5 p-5">
       <h4 class="margin-left-220">Register Employee</h4><br>
       <h6 class="margin-left-220">Account</h6>
       <div class="form-group row" style="margin-top: 20px">
@@ -93,8 +92,14 @@
            format XXXXXXXX !
           </span>
       </div>
+      <div class="row" style="height: 2em">
+        <h6 style="color: green; margin-left: 223px">{{success}}</h6>
+        <h6 style="color: red">{{failure}}</h6>
+      </div>
       <button [disabled]="addEmployee.invalid" type="submit" class="btn btn-primary"
               style="margin-left: 300px">Create
+      </button>
+      <button (click)="returnListPage()" type="submit" class="btn btn-primary" style="margin-left: 200px">return list page
       </button>
     </form>
 

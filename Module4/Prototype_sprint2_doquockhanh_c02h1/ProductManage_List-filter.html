@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="resource/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <script src="resource/jquery-3.5.1.min.js"></script>
+    <script src="resource/bootstrap-4.5.0-dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="resource/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container font header-border">
+    <!--    table title-->
+    <div class="row header">
+        <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 p-2">
+            Quản lí sản phẩm
+        </div>
+    </div>
+
+    <!--    search area-->
+    <div class="row">
+        <div class="col-12">
+            <form action="">
+                <div class="row">
+                    <div class="col-md-2 col-sm-4 d-flex mt-5">
+                        <span>Tên sản phẩm</span>
+                        <span>
+                            <input type="text" style="width: 55px">
+                        </span>
+                    </div>
+                    <div class="col-md-2 col-sm-4 d-flex mt-5">
+                        <div class="row">
+                            <span>Loại sản phẩm</span>
+                            <span>
+                                <label>
+                                    <select style="width: 80px; height: 30px">
+                                         <option value="">Tất cả</option>
+                                        <option value="Điện tử"> Điện tử</option>
+                                        <option value="Gia dụng"> Gia dụng</option>
+                                        <option value="Khác"> Khác</option>
+                                    </select>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 d-flex mt-5">
+                        <div class="row">
+                            <span>Người đăng</span>
+                            <span>
+                               <label>
+                                    <input type="text" style="width: 100px">
+                               </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 d-flex mt-5">
+                        <div class="row">
+                            <span>Giá</span>
+                            <span>
+                               <label>
+                                   <select style="width: 100px; height: 30px">
+                                        <option value="">Tất cả</option>
+                                        <option value="">0 -> 100.000</option>
+                                        <option value="">100.000 -> 1000.000</option>
+                                        <option value="">> 1000.000</option>
+                                   </select>
+                               </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 d-flex mt-5">
+                        <div class="row">
+                            <span>Tình trạng</span>
+                            <span>
+                               <label>
+                                    <select style="width: 100px; height: 30px">
+                                        <option value="">Tất cả</option>
+                                        <option value="">Chưa đấu giá</option>
+                                        <option value="">Đã đấu giá</option>
+                                        <option value="">đang đấu giá</option>
+                                    </select>
+                               </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 d-flex mt-5 mb-1">
+                        <input type="submit" class="btn btn-outline-info" value="Lọc kết quả">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 p-0 m-0">
+            <table class="table table-bordered table-responsive-md text-center">
+                <thead class="header">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Chọn</th>
+                    <th scope="col">ID sản phẩm</th>
+                    <th scope="col">Tên sản phẩm</th>
+                    <th scope="col">Chủng loại</th>
+                    <th scope="col">Người đăng</th>
+                    <th scope="col">Giá ban đầu</th>
+                    <th scope="col">Trạng thái duyệt</th>
+                    <th scope="col">Tình trạng</th>
+                    <th scope="col">Chi tiết sản phẩm</th>
+                    <th scope="col">Hình ảnh</th>
+                    <th scope="col">Sửa</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="col">1</th>
+                    <td>
+                        <label>
+                            <input type="checkbox">
+                        </label>
+                    </td>
+                    <td>99</td>
+                    <td>Redmi 7</td>
+                    <td>Điện tử</td>
+                    <td>Khánh</td>
+                    <td>999.000 VND</td>
+                    <td>Đã duyệt</td>
+                    <td>Chưa đấu giá</td>
+                    <td>abcd</td>
+                    <td>img</td>
+                    <td><a href="#">Sửa</a></td>
+                </tr>
+                <tr>
+                    <th scope="col">1</th>
+                    <td>
+                        <label>
+                            <input type="checkbox">
+                        </label>
+                    </td>
+                    <td>99</td>
+                    <td>Redmi 7</td>
+                    <td>Điện tử</td>
+                    <td>Khánh</td>
+                    <td>999.000 VND</td>
+                    <td>Đã duyệt</td>
+                    <td>Chưa đấu giá</td>
+                    <td>abcd</td>
+                    <td>img</td>
+                    <td><a href="#">Sửa</a></td>
+                </tr>
+                <tr>
+                    <th scope="col">1</th>
+                    <td>
+                        <label>
+                            <input type="checkbox">
+                        </label>
+                    </td>
+                    <td>99</td>
+                    <td>Redmi 7</td>
+                    <td>Điện tử</td>
+                    <td>Khánh</td>
+                    <td>999.000 VND</td>
+                    <td>Đã duyệt</td>
+                    <td>Chưa đấu giá</td>
+                    <td>abcd</td>
+                    <td>img</td>
+                    <td><a href="#">Sửa</a></td>
+                </tr>
+                <tr>
+                    <th scope="col">1</th>
+                    <td>
+                        <label>
+                            <input type="checkbox">
+                        </label>
+                    </td>
+                    <td>99</td>
+                    <td>Redmi 7</td>
+                    <td>Điện tử</td>
+                    <td>Khánh</td>
+                    <td>999.000 VND</td>
+                    <td>Đã duyệt</td>
+                    <td>Chưa đấu giá</td>
+                    <td>abcd</td>
+                    <td>img</td>
+                    <td><a href="#">Sửa</a></td>
+                </tr>
+                <tr>
+                    <th scope="col">1</th>
+                    <td>
+                        <label>
+                            <input type="checkbox">
+                        </label>
+                    </td>
+                    <td>99</td>
+                    <td>Redmi 7</td>
+                    <td>Điện tử</td>
+                    <td>Khánh</td>
+                    <td>999.000 VND</td>
+                    <td>Đã duyệt</td>
+                    <td>Chưa đấu giá</td>
+                    <td>abcd</td>
+                    <td>img</td>
+                    <td><a href="#">Sửa</a></td>
+                </tr>
+                <tr>
+                    <th scope="col">1</th>
+                    <td>
+                        <label>
+                            <input type="checkbox">
+                        </label>
+                    </td>
+                    <td>99</td>
+                    <td>Redmi 7</td>
+                    <td>Điện tử</td>
+                    <td>Khánh</td>
+                    <td>999.000 VND</td>
+                    <td>Đã duyệt</td>
+                    <td>Chưa đấu giá</td>
+                    <td>abcd</td>
+                    <td>img</td>
+                    <td><a href="#">Sửa</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-2 col-sm-4">
+            <button id="import" class="btn btn-outline-info" style="width: 140px; height: 40px">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                Xóa
+            </button>
+        </div>
+        <div class="col-md-2 col-sm-4">
+            <button class="btn btn-outline-info" style="width: 140px; height: 40px">
+                <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
+                Thêm mới
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

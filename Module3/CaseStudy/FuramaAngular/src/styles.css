@@ -1,3 +1,5 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 div.selector-bar {
   background-color: aliceblue;
   opacity: 85%;
