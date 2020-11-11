@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e0ea6ba5-195a-47bd-84ca-8a23f2d93168" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1csgwqZzNGdOJHmOW9zvXB3rw0G" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\luu file chay thu\RunRun" />
+      <recent name="D:\luu file chay thu\RunRun\ImageSrc" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\luu file chay thu\RunRun\ImageSrc" />
+      <recent name="D:\luu file chay thu\RunRun" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e0ea6ba5-195a-47bd-84ca-8a23f2d93168" name="Default Changelist" comment="" />
+      <created>1591322955643</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591322955643</updated>
+      <workItem from="1591322957323" duration="4785000" />
+      <workItem from="1591362299358" duration="620000" />
+      <workItem from="1591412236783" duration="1700000" />
+      <workItem from="1591413981617" duration="1192000" />
+      <workItem from="1591489800280" duration="2947000" />
+      <workItem from="1591498026421" duration="3801000" />
+      <workItem from="1591522124399" duration="2628000" />
+      <workItem from="1591525110021" duration="5487000" />
+      <workItem from="1591533671103" duration="4076000" />
+      <workItem from="1591541077493" duration="2730000" />
+      <workItem from="1591579745108" duration="11770000" />
+      <workItem from="1591630268454" duration="325000" />
+      <workItem from="1591670199591" duration="1467000" />
+      <workItem from="1592033635974" duration="390000" />
+      <workItem from="1592148132039" duration="19000" />
+      <workItem from="1592454895283" duration="180000" />
+      <workItem from="1593852911949" duration="671000" />
+      <workItem from="1594171458738" duration="413000" />
+      <workItem from="1600921950863" duration="1034000" />
+      <workItem from="1601109394058" duration="56000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="531" y="203" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591504522745">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="531" y="203" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1591504522745" />
+    <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591583570600">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1591583570600" />
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1594171855688">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594171855688" />
+  </component>
+</project>
