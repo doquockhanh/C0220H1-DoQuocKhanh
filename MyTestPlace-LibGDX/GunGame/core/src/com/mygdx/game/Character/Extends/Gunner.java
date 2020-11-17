@@ -1,23 +1,32 @@
-package com.mygdx.game.Character;
+package com.mygdx.game.Character.Extends;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
+import com.mygdx.game.Character.Player;
+import com.mygdx.game.GunGame;
 
-public class Gunner {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Gunner extends Player {
     private static final int AIM = 1;
     private static final int FIRE = 2;
     private static final int FIRING = 4;
     private static final int BULLET_DISPOSE = 3;
     private static final int CHARACTER_LOOK_LEFT = -45;
     private static final int CHARACTER_LOOK_RIGHT = 45;
-    private static final int CHARACTER_MOVE_SPEED = 1;
+    private static final double CHARACTER_MOVE_SPEED = 0.2;
 
     private Vector2 characterCoordinate;
     private Vector2 characterSize;
     private int characterPosition = CHARACTER_LOOK_LEFT;
     private int gunnerFrameCount;
     private float flagIncreaseFrame;
+    private List<Texture> gunnerAnimationLeft = new ArrayList<>();
+    private List<Texture> gunnerAnimationRight = new ArrayList<>();
+    private GunGame game;
 
     //  thuộc tính đạn
     private Vector2 bulletCoordinate;
@@ -31,7 +40,17 @@ public class Gunner {
     private float cosX = (float) Math.cos(-Math.PI * fireAngle / 180);
     private float sinY = (float) -Math.sin(-Math.PI * fireAngle / 180);
 
-    public Gunner() {
+    public Gunner(GunGame game) {
+        this.game = game;
+        gunnerAnimationLeft.add(new Texture("gunnerLeft1.png"));
+        gunnerAnimationLeft.add(new Texture("gunnerLeft2.png"));
+        gunnerAnimationLeft.add(new Texture("gunnerLeft3.png"));
+        gunnerAnimationLeft.add(new Texture("gunnerLeft4.png"));
+        gunnerAnimationRight.add(new Texture("gunnerRight1.png"));
+        gunnerAnimationRight.add(new Texture("gunnerRight2.png"));
+        gunnerAnimationRight.add(new Texture("gunnerRight3.png"));
+        gunnerAnimationRight.add(new Texture("gunnerRight4.png"));
+
         characterCoordinate = new Vector2(300, 200);
         characterSize = new Vector2(60, 60);
 
@@ -43,13 +62,15 @@ public class Gunner {
         gunnerFrameCount = 0;
     }
 
-    public void gunnerController() {
+
+    @Override
+    public void controller() {
         if (bulletStatus != FIRING) {
             characterMoveAndAngle();
         }
 
         if (bulletStatus == FIRE) {
-            gunnerFire();
+            fire();
         }
         if (bulletStatus == FIRING) {
             bulletFiring(0.0001);
@@ -58,35 +79,11 @@ public class Gunner {
 //      điểm xuất hiện đạn
         cosX = (float) Math.cos(-Math.PI * fireAngle / 180);
         sinY = (float) -Math.sin(-Math.PI * fireAngle / 180);
-
-    }
-
-    public void gunnerFire() {
-//      tốc độ đạn ban đầu
-        bulletSpeedY = -bulletPower * 0.06 * Math.sin(Math.PI * fireAngle / 180);
-        bulletSpeedX = bulletPower * 0.06 * Math.cos(Math.PI * fireAngle / 180);
-        bulletStatus = FIRING;
-    }
-
-    public void bulletFiring(double wind) {
-        timer += 0.06;
-        bulletCoordinate.x += bulletSpeedX;
-        bulletCoordinate.y -= bulletSpeedY;
-        double gravity = 0.1;
-        bulletSpeedY += gravity;
-        bulletSpeedX -= timer * wind;
-        if (bulletCoordinate.x > Gdx.graphics.getWidth() || bulletCoordinate.x < 0 || bulletCoordinate.y > Gdx.graphics.getHeight() || bulletCoordinate.y < 0) {
-            bulletStatus = BULLET_DISPOSE;
-            bulletCoordinate.x = characterCoordinate.x + characterSize.x / 2 + 80 * cosX;
-            bulletCoordinate.y = characterCoordinate.y + characterSize.y / 2 + 80 * sinY;
-            bulletStatus = AIM;
-            bulletPower = 0;
-        }
     }
 
     private boolean flagFire;
     private boolean flagAIM = false;
-
+    @Override
     public void characterMoveAndAngle() {
         flagFire = false;
 
@@ -98,7 +95,7 @@ public class Gunner {
                 fireAngle = 180 - fireAngle;
             }
             flagIncreaseFrame ++;
-            if(flagIncreaseFrame == 10){
+            if(flagIncreaseFrame == 7){
                 flagIncreaseFrame = 0;
                 gunnerFrameCount ++;
                 gunnerFrameCount = gunnerFrameCount % 4;
@@ -113,7 +110,7 @@ public class Gunner {
                 fireAngle = 180 - fireAngle;
             }
             flagIncreaseFrame ++;
-            if(flagIncreaseFrame == 10){
+            if(flagIncreaseFrame == 7){
                 flagIncreaseFrame = 0;
                 gunnerFrameCount ++;
                 gunnerFrameCount = gunnerFrameCount % 4;
@@ -147,15 +144,44 @@ public class Gunner {
                 bulletPower += 1;
             } else if (flagAIM) {
                 bulletStatus = FIRE;
-                gunnerFire();
+                fire();
                 flagAIM = false;
             }
         }
+
     }
 
-    private void updateBulletPosition() {
+    @Override
+    public void updateBulletPosition() {
         bulletCoordinate.x = characterCoordinate.x + characterSize.x / 2 + 80 * cosX;
         bulletCoordinate.y = characterCoordinate.y + characterSize.y / 2 + 80 * sinY;
+
+    }
+
+    @Override
+    public void fire() {
+//      tốc độ đạn ban đầu
+        bulletSpeedY = -bulletPower * 0.06 * Math.sin(Math.PI * fireAngle / 180);
+        bulletSpeedX = bulletPower * 0.06 * Math.cos(Math.PI * fireAngle / 180);
+        bulletStatus = FIRING;
+    }
+
+    @Override
+    public void bulletFiring(double wind) {
+        timer += 0.06;
+        bulletCoordinate.x += bulletSpeedX;
+        bulletCoordinate.y -= bulletSpeedY;
+        double gravity = 0.1;
+        bulletSpeedY += gravity;
+        bulletSpeedX -= timer * wind;
+        if (bulletCoordinate.x > Gdx.graphics.getWidth() || bulletCoordinate.x < 0 || bulletCoordinate.y > Gdx.graphics.getHeight() || bulletCoordinate.y < 0) {
+            bulletStatus = BULLET_DISPOSE;
+            bulletCoordinate.x = characterCoordinate.x + characterSize.x / 2 + 80 * cosX;
+            bulletCoordinate.y = characterCoordinate.y + characterSize.y / 2 + 80 * sinY;
+            bulletPower = 0;
+            game.turn ++;
+            game.turn = game.turn % game.players.size();
+        }
     }
 
     public Vector2 getCharacterCoordinate() {
@@ -192,5 +218,13 @@ public class Gunner {
 
     public int getGunnerFrameCount() {
         return gunnerFrameCount;
+    }
+
+    public List<Texture> getGunnerAnimationLeft() {
+        return gunnerAnimationLeft;
+    }
+
+    public List<Texture> getGunnerAnimationRight() {
+        return gunnerAnimationRight;
     }
 }
